@@ -1,0 +1,3584 @@
+{
+    "artist_id": "6SgxxKwvGosbX2WvlVyCmm",
+    "artist_name": "ramona galarza",
+    "features_summary": [
+        [
+            0.0,
+            0.518,
+            0.575,
+            0.647,
+            0.881,
+            0.568,
+            0.117,
+            112.0
+        ],
+        [
+            0.151,
+            0.348,
+            0.462,
+            0.554,
+            0.806,
+            0.453,
+            0.142,
+            112.0
+        ],
+        [
+            0.0,
+            0.579,
+            0.726,
+            0.797,
+            0.966,
+            0.682,
+            0.18,
+            112.0
+        ],
+        [
+            0.0,
+            0.043,
+            0.054,
+            0.072,
+            0.3,
+            0.067,
+            0.046,
+            112.0
+        ],
+        [
+            0.174,
+            0.52,
+            0.669,
+            0.778,
+            0.956,
+            0.643,
+            0.173,
+            112.0
+        ],
+        [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.152,
+            0.002,
+            0.016,
+            112.0
+        ],
+        [
+            0.035,
+            0.093,
+            0.146,
+            0.238,
+            0.974,
+            0.187,
+            0.144,
+            112.0
+        ]
+    ],
+    "measures_summary": [
+        [
+            0.0,
+            99.598,
+            124.51,
+            134.254,
+            185.794,
+            119.625,
+            27.823,
+            112.0
+        ],
+        [
+            -17.072,
+            -12.184,
+            -7.842,
+            -5.088,
+            -3.166,
+            -8.646,
+            4.084,
+            112.0
+        ],
+        [
+            111933.0,
+            144327.25,
+            161697.5,
+            176192.75,
+            265133.0,
+            162602.634,
+            25897.363,
+            112.0
+        ]
+    ],
+    "key_counts": [
+        [
+            3.0,
+            3.0,
+            9.0,
+            6.0,
+            11.0,
+            5.0,
+            8.0,
+            3.0,
+            1.0,
+            0.0,
+            0.0,
+            2.0
+        ],
+        [
+            12.0,
+            5.0,
+            8.0,
+            9.0,
+            8.0,
+            8.0,
+            1.0,
+            1.0,
+            2.0,
+            3.0,
+            0.0,
+            4.0
+        ]
+    ],
+    "albums": [
+        {
+            "album_id": "1JvfVnnIOwhQmcvDdUAyYW",
+            "album_name": "Coleccion Aniversario",
+            "features_summary": [
+                [
+                    0.259,
+                    0.428,
+                    0.533,
+                    0.594,
+                    0.742,
+                    0.511,
+                    0.135,
+                    14.0
+                ],
+                [
+                    0.231,
+                    0.308,
+                    0.35,
+                    0.416,
+                    0.673,
+                    0.391,
+                    0.152,
+                    14.0
+                ],
+                [
+                    0.122,
+                    0.499,
+                    0.771,
+                    0.913,
+                    0.966,
+                    0.695,
+                    0.258,
+                    14.0
+                ],
+                [
+                    0.029,
+                    0.037,
+                    0.041,
+                    0.062,
+                    0.091,
+                    0.05,
+                    0.018,
+                    14.0
+                ],
+                [
+                    0.275,
+                    0.572,
+                    0.696,
+                    0.764,
+                    0.892,
+                    0.655,
+                    0.165,
+                    14.0
+                ],
+                [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                [
+                    0.047,
+                    0.078,
+                    0.153,
+                    0.219,
+                    0.345,
+                    0.16,
+                    0.095,
+                    14.0
+                ]
+            ],
+            "measures_summary": [
+                [
+                    79.137,
+                    108.12,
+                    133.386,
+                    143.324,
+                    174.961,
+                    126.797,
+                    26.861,
+                    14.0
+                ],
+                [
+                    -16.707,
+                    -13.544,
+                    -11.988,
+                    -10.857,
+                    -10.364,
+                    -12.35,
+                    1.787,
+                    14.0
+                ],
+                [
+                    120946.0,
+                    133732.75,
+                    155206.5,
+                    166886.25,
+                    265133.0,
+                    159485.357,
+                    38275.521,
+                    14.0
+                ]
+            ],
+            "key_counts": [
+                [
+                    1.0,
+                    0.0,
+                    1.0,
+                    1.0,
+                    2.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                ],
+                [
+                    1.0,
+                    1.0,
+                    3.0,
+                    1.0,
+                    2.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            ],
+            "tracks": [
+                {
+                    "track_id": "2kdfzSsLYAmnMgdMXlRKKN",
+                    "track_name": "Las Tres Marias",
+                    "x": -0.69,
+                    "y": -0.75,
+                    "features": [
+                        0.636,
+                        0.638,
+                        0.922,
+                        0.0728,
+                        0.433,
+                        0.0,
+                        0.0468
+                    ],
+                    "measures": [
+                        105.724,
+                        -10.711,
+                        120946
+                    ],
+                    "key": 9,
+                    "mode": 1
+                },
+                {
+                    "track_id": "4WNxSgtE5JXiAKuRpOVftj",
+                    "track_name": "Kil\u00f3metro 11",
+                    "x": -0.17,
+                    "y": -0.03,
+                    "features": [
+                        0.547,
+                        0.642,
+                        0.966,
+                        0.0485,
+                        0.549,
+                        0.000127,
+                        0.0636
+                    ],
+                    "measures": [
+                        151.65,
+                        -10.686,
+                        132906
+                    ],
+                    "key": 5,
+                    "mode": 1
+                },
+                {
+                    "track_id": "5kdPIoGqZWRwOlD2khXd03",
+                    "track_name": "Taipero Poriajhu",
+                    "x": -0.31,
+                    "y": -0.49,
+                    "features": [
+                        0.308,
+                        0.31,
+                        0.468,
+                        0.043,
+                        0.727,
+                        0.0,
+                        0.102
+                    ],
+                    "measures": [
+                        174.961,
+                        -11.552,
+                        156120
+                    ],
+                    "key": 5,
+                    "mode": 0
+                },
+                {
+                    "track_id": "5jogpE4AhaOvdOD2wOX1SM",
+                    "track_name": "Romance De Luna Y Flor",
+                    "x": -0.84,
+                    "y": -1.44,
+                    "features": [
+                        0.536,
+                        0.418,
+                        0.773,
+                        0.0385,
+                        0.777,
+                        0.0,
+                        0.233
+                    ],
+                    "measures": [
+                        144.278,
+                        -12.424,
+                        158786
+                    ],
+                    "key": 7,
+                    "mode": 1
+                },
+                {
+                    "track_id": "78pvOPMifwfOIY5gwYJ4Oo",
+                    "track_name": "Amar Amando",
+                    "x": -0.62,
+                    "y": -1.24,
+                    "features": [
+                        0.362,
+                        0.351,
+                        0.405,
+                        0.0336,
+                        0.643,
+                        2.53e-06,
+                        0.136
+                    ],
+                    "measures": [
+                        115.306,
+                        -11.211,
+                        200093
+                    ],
+                    "key": 9,
+                    "mode": 0
+                },
+                {
+                    "track_id": "140SrmjYIhulGUXQJTO9Fz",
+                    "track_name": "Ba\u00f1ado Norte",
+                    "x": -1.23,
+                    "y": -2.17,
+                    "features": [
+                        0.601,
+                        0.408,
+                        0.961,
+                        0.0396,
+                        0.782,
+                        0.0,
+                        0.0731
+                    ],
+                    "measures": [
+                        140.464,
+                        -11.33,
+                        123680
+                    ],
+                    "key": 2,
+                    "mode": 1
+                },
+                {
+                    "track_id": "0mQNeSIOuGaMxOX1FNRqZh",
+                    "track_name": "Alla En El Parana",
+                    "x": -1.2,
+                    "y": -1.7,
+                    "features": [
+                        0.473,
+                        0.348,
+                        0.732,
+                        0.039,
+                        0.674,
+                        1.64e-06,
+                        0.268
+                    ],
+                    "measures": [
+                        132.478,
+                        -10.739,
+                        121360
+                    ],
+                    "key": 10,
+                    "mode": 0
+                },
+                {
+                    "track_id": "3GNLbeotmzq0gxlanDUU8v",
+                    "track_name": "Memorias De Una Vieja",
+                    "x": -0.41,
+                    "y": -0.68,
+                    "features": [
+                        0.528,
+                        0.314,
+                        0.769,
+                        0.0571,
+                        0.689,
+                        0.0,
+                        0.17
+                    ],
+                    "measures": [
+                        134.295,
+                        -13.765,
+                        181520
+                    ],
+                    "key": 7,
+                    "mode": 0
+                },
+                {
+                    "track_id": "6kIjciUK1KBVKzUBT3el6d",
+                    "track_name": "Collar De Caracolas",
+                    "x": 0.78,
+                    "y": -1.21,
+                    "features": [
+                        0.573,
+                        0.237,
+                        0.593,
+                        0.0687,
+                        0.709,
+                        6.34e-06,
+                        0.0643
+                    ],
+                    "measures": [
+                        137.032,
+                        -16.707,
+                        136213
+                    ],
+                    "key": 9,
+                    "mode": 0
+                },
+                {
+                    "track_id": "6zUXN3NsbZYqqhhcWbUttU",
+                    "track_name": "Retorno",
+                    "x": -1.16,
+                    "y": -0.73,
+                    "features": [
+                        0.742,
+                        0.307,
+                        0.931,
+                        0.0367,
+                        0.702,
+                        1.17e-06,
+                        0.0919
+                    ],
+                    "measures": [
+                        125.711,
+                        -14.085,
+                        166893
+                    ],
+                    "key": 7,
+                    "mode": 1
+                },
+                {
+                    "track_id": "6K6MgxNOk6ttUVZ3VuyLDL",
+                    "track_name": "Colorado Rheta (Tierra De Los Colorados)",
+                    "x": -1.23,
+                    "y": 0.3,
+                    "features": [
+                        0.64,
+                        0.352,
+                        0.792,
+                        0.0908,
+                        0.502,
+                        1.78e-05,
+                        0.175
+                    ],
+                    "measures": [
+                        149.382,
+                        -12.879,
+                        166866
+                    ],
+                    "key": 9,
+                    "mode": 1
+                },
+                {
+                    "track_id": "6NH7n5CDQ5pEew6IlF7QsV",
+                    "track_name": "Merceditas",
+                    "x": -1.44,
+                    "y": 1.31,
+                    "features": [
+                        0.413,
+                        0.246,
+                        0.414,
+                        0.0343,
+                        0.892,
+                        1.27e-06,
+                        0.294
+                    ],
+                    "measures": [
+                        96.07,
+                        -13.835,
+                        154293
+                    ],
+                    "key": 2,
+                    "mode": 0
+                },
+                {
+                    "track_id": "0qMgxlql8mqgFA0EDwKQGf",
+                    "track_name": "Siete Higueras",
+                    "x": -1.45,
+                    "y": 0.37,
+                    "features": [
+                        0.53,
+                        0.673,
+                        0.887,
+                        0.0632,
+                        0.275,
+                        1e-06,
+                        0.345
+                    ],
+                    "measures": [
+                        79.137,
+                        -10.364,
+                        147986
+                    ],
+                    "key": 0,
+                    "mode": 1
+                },
+                {
+                    "track_id": "0Cs6dyCKVK9HYUC4YppRO1",
+                    "track_name": "La Hermanita Perdida",
+                    "x": 0.08,
+                    "y": 0.57,
+                    "features": [
+                        0.259,
+                        0.231,
+                        0.122,
+                        0.0288,
+                        0.813,
+                        0.0,
+                        0.174
+                    ],
+                    "measures": [
+                        88.672,
+                        -12.605,
+                        265133
+                    ],
+                    "key": 7,
+                    "mode": 1
+                }
+            ]
+        },
+        {
+            "album_id": "1qKy2bQCcasMFnwyHtvQKz",
+            "album_name": "Esenciales",
+            "features_summary": [
+                [
+                    0.481,
+                    0.522,
+                    0.575,
+                    0.646,
+                    0.699,
+                    0.578,
+                    0.069,
+                    25.0
+                ],
+                [
+                    0.362,
+                    0.462,
+                    0.548,
+                    0.612,
+                    0.806,
+                    0.541,
+                    0.111,
+                    25.0
+                ],
+                [
+                    0.423,
+                    0.623,
+                    0.745,
+                    0.825,
+                    0.961,
+                    0.711,
+                    0.155,
+                    25.0
+                ],
+                [
+                    0.037,
+                    0.048,
+                    0.056,
+                    0.081,
+                    0.3,
+                    0.084,
+                    0.063,
+                    25.0
+                ],
+                [
+                    0.283,
+                    0.481,
+                    0.596,
+                    0.65,
+                    0.741,
+                    0.564,
+                    0.128,
+                    25.0
+                ],
+                [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                [
+                    0.035,
+                    0.08,
+                    0.139,
+                    0.248,
+                    0.974,
+                    0.216,
+                    0.231,
+                    25.0
+                ]
+            ],
+            "measures_summary": [
+                [
+                    74.693,
+                    92.157,
+                    118.168,
+                    129.462,
+                    185.794,
+                    116.585,
+                    26.787,
+                    25.0
+                ],
+                [
+                    -12.582,
+                    -6.668,
+                    -5.266,
+                    -4.01,
+                    -3.166,
+                    -5.944,
+                    2.827,
+                    25.0
+                ],
+                [
+                    111933.0,
+                    147573.0,
+                    167480.0,
+                    186840.0,
+                    238826.0,
+                    167901.04,
+                    26598.093,
+                    25.0
+                ]
+            ],
+            "key_counts": [
+                [
+                    1.0,
+                    1.0,
+                    2.0,
+                    1.0,
+                    3.0,
+                    1.0,
+                    2.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                [
+                    2.0,
+                    0.0,
+                    0.0,
+                    3.0,
+                    3.0,
+                    5.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0,
+                    0.0,
+                    0.0
+                ]
+            ],
+            "tracks": [
+                {
+                    "track_id": "0h28D8JYtau82dDrNPNKiV",
+                    "track_name": "Chamam\u00e9 (with An\u00edbal Maldonado y su Conjunto)",
+                    "x": 1.09,
+                    "y": -1.53,
+                    "features": [
+                        0.517,
+                        0.446,
+                        0.457,
+                        0.3,
+                        0.552,
+                        0.0,
+                        0.151
+                    ],
+                    "measures": [
+                        92.157,
+                        -6.902,
+                        188920
+                    ],
+                    "key": 4,
+                    "mode": 0
+                },
+                {
+                    "track_id": "6QdPMZ82bP0kpjoPx6WUuA",
+                    "track_name": "Alma Guaran\u00ed",
+                    "x": 2.22,
+                    "y": -0.71,
+                    "features": [
+                        0.583,
+                        0.366,
+                        0.749,
+                        0.0416,
+                        0.741,
+                        0.0,
+                        0.0555
+                    ],
+                    "measures": [
+                        127.654,
+                        -12.582,
+                        156866
+                    ],
+                    "key": 9,
+                    "mode": 0
+                },
+                {
+                    "track_id": "1hJBycpqkHdgtM6dF3Rdfa",
+                    "track_name": "Apurate Jos\u00e9 (with An\u00edbal Maldonado y su Conjunto)",
+                    "x": 1.54,
+                    "y": -0.47,
+                    "features": [
+                        0.5,
+                        0.494,
+                        0.755,
+                        0.167,
+                        0.481,
+                        0.0,
+                        0.208
+                    ],
+                    "measures": [
+                        83.177,
+                        -5.266,
+                        167480
+                    ],
+                    "key": 2,
+                    "mode": 1
+                },
+                {
+                    "track_id": "3UcdEFPga9IMM4yPCqs20O",
+                    "track_name": "Litorale\u00f1a (with An\u00edbal Maldonado y su Conjunto)",
+                    "x": 0.87,
+                    "y": -1.77,
+                    "features": [
+                        0.688,
+                        0.575,
+                        0.961,
+                        0.0508,
+                        0.492,
+                        6.14e-05,
+                        0.123
+                    ],
+                    "measures": [
+                        137.013,
+                        -5.531,
+                        155853
+                    ],
+                    "key": 4,
+                    "mode": 1
+                },
+                {
+                    "track_id": "33hro2iGYK4S573LZs8M0R",
+                    "track_name": "A Villa Guillermina",
+                    "x": 1.03,
+                    "y": -0.89,
+                    "features": [
+                        0.672,
+                        0.362,
+                        0.825,
+                        0.0651,
+                        0.687,
+                        0.0,
+                        0.0898
+                    ],
+                    "measures": [
+                        129.462,
+                        -11.866,
+                        190333
+                    ],
+                    "key": 4,
+                    "mode": 1
+                },
+                {
+                    "track_id": "4oVJUv31mGwS2tKQcQw5en",
+                    "track_name": "Pueblero de Alla Ite",
+                    "x": 1.57,
+                    "y": -1.27,
+                    "features": [
+                        0.522,
+                        0.506,
+                        0.532,
+                        0.0425,
+                        0.65,
+                        0.0,
+                        0.523
+                    ],
+                    "measures": [
+                        105.95,
+                        -4.628,
+                        189360
+                    ],
+                    "key": 2,
+                    "mode": 1
+                },
+                {
+                    "track_id": "3gjl8UdWhVHFJdOEhw1hwQ",
+                    "track_name": "Lucerito Alba",
+                    "x": 2.75,
+                    "y": 1.87,
+                    "features": [
+                        0.507,
+                        0.546,
+                        0.96,
+                        0.187,
+                        0.713,
+                        0.0,
+                        0.0457
+                    ],
+                    "measures": [
+                        185.794,
+                        -11.7,
+                        111933
+                    ],
+                    "key": 9,
+                    "mode": 1
+                },
+                {
+                    "track_id": "6UClBm9XJaDTWogDzPKUZQ",
+                    "track_name": "Posade\u00f1a Linda",
+                    "x": 1.84,
+                    "y": 0.26,
+                    "features": [
+                        0.585,
+                        0.575,
+                        0.648,
+                        0.0552,
+                        0.714,
+                        0.0,
+                        0.176
+                    ],
+                    "measures": [
+                        74.693,
+                        -3.265,
+                        175946
+                    ],
+                    "key": 0,
+                    "mode": 0
+                },
+                {
+                    "track_id": "65WpwSTCihOtiFrGDjQGeL",
+                    "track_name": "Ah! Mi Corrientes Pora - En Vivo",
+                    "x": 1.58,
+                    "y": -1.23,
+                    "features": [
+                        0.487,
+                        0.646,
+                        0.487,
+                        0.0708,
+                        0.537,
+                        0.0,
+                        0.974
+                    ],
+                    "measures": [
+                        113.788,
+                        -5.522,
+                        193000
+                    ],
+                    "key": 9,
+                    "mode": 0
+                },
+                {
+                    "track_id": "7f5B5xO2ux6JWLNzQKNqKt",
+                    "track_name": "Soy Entrerriano",
+                    "x": 1.82,
+                    "y": -1.26,
+                    "features": [
+                        0.646,
+                        0.552,
+                        0.717,
+                        0.0562,
+                        0.723,
+                        0.0,
+                        0.102
+                    ],
+                    "measures": [
+                        117.744,
+                        -4.041,
+                        186840
+                    ],
+                    "key": 2,
+                    "mode": 0
+                },
+                {
+                    "track_id": "1KhVqsugWoTdJfXys2u823",
+                    "track_name": "El Cosechero",
+                    "x": 2.54,
+                    "y": 0.83,
+                    "features": [
+                        0.481,
+                        0.45,
+                        0.521,
+                        0.0452,
+                        0.612,
+                        0.0,
+                        0.0353
+                    ],
+                    "measures": [
+                        128.17,
+                        -10.809,
+                        171133
+                    ],
+                    "key": 5,
+                    "mode": 0
+                },
+                {
+                    "track_id": "1FiyHlCBqTFUCZyDrtTRy3",
+                    "track_name": "Kil\u00f3metro 11 - En Vivo",
+                    "x": 1.34,
+                    "y": -2.1,
+                    "features": [
+                        0.522,
+                        0.806,
+                        0.752,
+                        0.193,
+                        0.613,
+                        0.0,
+                        0.793
+                    ],
+                    "measures": [
+                        126.823,
+                        -5.679,
+                        180493
+                    ],
+                    "key": 4,
+                    "mode": 1
+                },
+                {
+                    "track_id": "1rN95lfjV1Hqfw6CZHu7L0",
+                    "track_name": "El Encadenao (with An\u00edbal Maldonado y su Conjunto)",
+                    "x": -0.48,
+                    "y": -0.63,
+                    "features": [
+                        0.495,
+                        0.494,
+                        0.791,
+                        0.104,
+                        0.301,
+                        0.0,
+                        0.139
+                    ],
+                    "measures": [
+                        167.653,
+                        -6.791,
+                        167066
+                    ],
+                    "key": 5,
+                    "mode": 1
+                },
+                {
+                    "track_id": "4jHTynbKkHJ6zm3pB079dz",
+                    "track_name": "Paraje Palmitas",
+                    "x": 0.71,
+                    "y": -0.71,
+                    "features": [
+                        0.597,
+                        0.541,
+                        0.672,
+                        0.0374,
+                        0.607,
+                        1.57e-06,
+                        0.293
+                    ],
+                    "measures": [
+                        129.779,
+                        -3.319,
+                        140533
+                    ],
+                    "key": 7,
+                    "mode": 0
+                },
+                {
+                    "track_id": "0NXOtRW51AYAEsglADHapM",
+                    "track_name": "Canto Islero (with An\u00edbal Maldonado y su Conjunto)",
+                    "x": 1.55,
+                    "y": -1.54,
+                    "features": [
+                        0.561,
+                        0.559,
+                        0.731,
+                        0.108,
+                        0.382,
+                        0.0,
+                        0.161
+                    ],
+                    "measures": [
+                        124.661,
+                        -4.868,
+                        165733
+                    ],
+                    "key": 8,
+                    "mode": 1
+                },
+                {
+                    "track_id": "5m61uDO6tZeIVqSOhzaRIt",
+                    "track_name": "Mi \u00daltima Flor",
+                    "x": 0.48,
+                    "y": -1.26,
+                    "features": [
+                        0.67,
+                        0.68,
+                        0.863,
+                        0.0468,
+                        0.622,
+                        3.74e-06,
+                        0.0651
+                    ],
+                    "measures": [
+                        131.877,
+                        -3.491,
+                        161560
+                    ],
+                    "key": 9,
+                    "mode": 1
+                },
+                {
+                    "track_id": "5FXsi8pDurld6fWqHQpGPF",
+                    "track_name": "Rumbo a Paso de la Patria (with An\u00edbal Maldonado y su Conjunto)",
+                    "x": 1.6,
+                    "y": -1.82,
+                    "features": [
+                        0.672,
+                        0.391,
+                        0.734,
+                        0.0564,
+                        0.437,
+                        0.0,
+                        0.0795
+                    ],
+                    "measures": [
+                        116.596,
+                        -6.668,
+                        183960
+                    ],
+                    "key": 5,
+                    "mode": 1
+                },
+                {
+                    "track_id": "5sjWjloG01OKPViTppuWa7",
+                    "track_name": "Nendivei",
+                    "x": -0.07,
+                    "y": -0.11,
+                    "features": [
+                        0.547,
+                        0.666,
+                        0.788,
+                        0.0494,
+                        0.52,
+                        2.54e-06,
+                        0.0697
+                    ],
+                    "measures": [
+                        82.998,
+                        -3.245,
+                        147373
+                    ],
+                    "key": 4,
+                    "mode": 1
+                },
+                {
+                    "track_id": "4zwSPRz4N4HJ2mhvDuXag3",
+                    "track_name": "Desde el Alma",
+                    "x": 1.23,
+                    "y": -0.93,
+                    "features": [
+                        0.553,
+                        0.462,
+                        0.479,
+                        0.0482,
+                        0.699,
+                        0.0,
+                        0.35
+                    ],
+                    "measures": [
+                        79.035,
+                        -5.062,
+                        136440
+                    ],
+                    "key": 7,
+                    "mode": 0
+                },
+                {
+                    "track_id": "0D7OhiYmVs2sbU4mUTFJJ4",
+                    "track_name": "El Ni\u00f1o Quiere Dormir (with An\u00edbal Maldonado y su Conjunto)",
+                    "x": 0.74,
+                    "y": -1.29,
+                    "features": [
+                        0.535,
+                        0.586,
+                        0.745,
+                        0.081,
+                        0.643,
+                        0.0,
+                        0.17
+                    ],
+                    "measures": [
+                        136.347,
+                        -4.479,
+                        238826
+                    ],
+                    "key": 11,
+                    "mode": 0
+                },
+                {
+                    "track_id": "291O5OWbtce3se7W0kChhL",
+                    "track_name": "Yo Voy Mariscando",
+                    "x": 0.71,
+                    "y": -0.66,
+                    "features": [
+                        0.575,
+                        0.548,
+                        0.623,
+                        0.0488,
+                        0.596,
+                        0.0,
+                        0.117
+                    ],
+                    "measures": [
+                        118.168,
+                        -4.01,
+                        197453
+                    ],
+                    "key": 9,
+                    "mode": 0
+                },
+                {
+                    "track_id": "6xnY7palynSgv9GzLHyDxK",
+                    "track_name": "Bienvenido Forastero (with An\u00edbal Maldonado y su Conjunto)",
+                    "x": 0.52,
+                    "y": 0.12,
+                    "features": [
+                        0.588,
+                        0.612,
+                        0.841,
+                        0.0762,
+                        0.448,
+                        0.0,
+                        0.264
+                    ],
+                    "measures": [
+                        86.958,
+                        -3.812,
+                        147573
+                    ],
+                    "key": 2,
+                    "mode": 1
+                },
+                {
+                    "track_id": "5fuW9PtvnekwjExDgs1wUx",
+                    "track_name": "El \u00daltimo Cachape",
+                    "x": 1.4,
+                    "y": -0.82,
+                    "features": [
+                        0.699,
+                        0.621,
+                        0.829,
+                        0.0415,
+                        0.469,
+                        0.0,
+                        0.0548
+                    ],
+                    "measures": [
+                        126.81,
+                        -3.166,
+                        143066
+                    ],
+                    "key": 9,
+                    "mode": 1
+                },
+                {
+                    "track_id": "3QOpk6Bi6qlQ30tXylMOTa",
+                    "track_name": "Boliche de Pueblo Chico (with An\u00edbal Maldonado y su Conjunto)",
+                    "x": 0.62,
+                    "y": -1.12,
+                    "features": [
+                        0.586,
+                        0.684,
+                        0.896,
+                        0.075,
+                        0.283,
+                        0.000912,
+                        0.248
+                    ],
+                    "measures": [
+                        92.0,
+                        -5.849,
+                        128613
+                    ],
+                    "key": 4,
+                    "mode": 1
+                },
+                {
+                    "track_id": "4mAsBIWpbMQG0jNLsRubBT",
+                    "track_name": "Imploraci\u00f3n (with An\u00edbal Maldonado y su Conjunto)",
+                    "x": -0.31,
+                    "y": -2.08,
+                    "features": [
+                        0.654,
+                        0.365,
+                        0.423,
+                        0.0548,
+                        0.574,
+                        0.0,
+                        0.122
+                    ],
+                    "measures": [
+                        99.321,
+                        -6.054,
+                        171173
+                    ],
+                    "key": 11,
+                    "mode": 0
+                }
+            ]
+        },
+        {
+            "album_id": "1soY0c0RsuNKvWBiAqJkfU",
+            "album_name": "Ramona Galarza con An\u00edbal Maldonado y Su Conjunto: Chamam\u00e9!",
+            "features_summary": [
+                [
+                    0.495,
+                    0.519,
+                    0.561,
+                    0.587,
+                    0.672,
+                    0.569,
+                    0.059,
+                    13.0
+                ],
+                [
+                    0.366,
+                    0.446,
+                    0.494,
+                    0.574,
+                    0.684,
+                    0.51,
+                    0.093,
+                    13.0
+                ],
+                [
+                    0.41,
+                    0.643,
+                    0.744,
+                    0.791,
+                    0.961,
+                    0.712,
+                    0.167,
+                    13.0
+                ],
+                [
+                    0.037,
+                    0.055,
+                    0.075,
+                    0.104,
+                    0.296,
+                    0.094,
+                    0.07,
+                    13.0
+                ],
+                [
+                    0.283,
+                    0.403,
+                    0.481,
+                    0.537,
+                    0.643,
+                    0.464,
+                    0.104,
+                    13.0
+                ],
+                [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                [
+                    0.08,
+                    0.123,
+                    0.151,
+                    0.208,
+                    0.349,
+                    0.174,
+                    0.074,
+                    13.0
+                ]
+            ],
+            "measures_summary": [
+                [
+                    83.174,
+                    92.824,
+                    116.596,
+                    127.073,
+                    167.653,
+                    115.499,
+                    24.268,
+                    13.0
+                ],
+                [
+                    -6.902,
+                    -6.052,
+                    -5.459,
+                    -4.868,
+                    -3.812,
+                    -5.496,
+                    0.963,
+                    13.0
+                ],
+                [
+                    128613.0,
+                    165733.0,
+                    171173.0,
+                    188920.0,
+                    238826.0,
+                    177064.308,
+                    28304.488,
+                    13.0
+                ]
+            ],
+            "key_counts": [
+                [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0,
+                    3.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                [
+                    4.0,
+                    0.0,
+                    0.0,
+                    2.0,
+                    0.0,
+                    2.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0,
+                    0.0,
+                    0.0
+                ]
+            ],
+            "tracks": [
+                {
+                    "track_id": "3IE0gMDo00heO9buuWtIBv",
+                    "track_name": "Chamam\u00e9 (with An\u00edbal Maldonado y su Conjunto)",
+                    "x": -2.01,
+                    "y": 0.95,
+                    "features": [
+                        0.519,
+                        0.446,
+                        0.459,
+                        0.296,
+                        0.555,
+                        0.0,
+                        0.151
+                    ],
+                    "measures": [
+                        92.824,
+                        -6.902,
+                        188920
+                    ],
+                    "key": 4,
+                    "mode": 0
+                },
+                {
+                    "track_id": "7k02PFWULV6SvEhanoh34y",
+                    "track_name": "Rumbo a Paso de la Patria (with An\u00edbal Maldonado y su Conjunto)",
+                    "x": -1.06,
+                    "y": 0.72,
+                    "features": [
+                        0.672,
+                        0.391,
+                        0.735,
+                        0.0564,
+                        0.437,
+                        0.0,
+                        0.0795
+                    ],
+                    "measures": [
+                        116.596,
+                        -6.668,
+                        183960
+                    ],
+                    "key": 5,
+                    "mode": 1
+                },
+                {
+                    "track_id": "6OsR4jZdlpOIdKUUUL6csc",
+                    "track_name": "Boliche de Pueblo Chico (with An\u00edbal Maldonado y su Conjunto)",
+                    "x": -1.2,
+                    "y": 1.18,
+                    "features": [
+                        0.586,
+                        0.684,
+                        0.896,
+                        0.075,
+                        0.283,
+                        0.000935,
+                        0.248
+                    ],
+                    "measures": [
+                        92.001,
+                        -5.849,
+                        128613
+                    ],
+                    "key": 4,
+                    "mode": 1
+                },
+                {
+                    "track_id": "5VjVUi1bOiClqx6sRmUJXt",
+                    "track_name": "Homenaje al Canillita (with An\u00edbal Maldonado y su Conjunto)",
+                    "x": -1.25,
+                    "y": 0.21,
+                    "features": [
+                        0.552,
+                        0.466,
+                        0.643,
+                        0.046,
+                        0.537,
+                        0.0,
+                        0.122
+                    ],
+                    "measures": [
+                        122.002,
+                        -5.459,
+                        176933
+                    ],
+                    "key": 5,
+                    "mode": 1
+                },
+                {
+                    "track_id": "7kqWKmwE2wbEF8G4txWA1T",
+                    "track_name": "Imploraci\u00f3n (with An\u00edbal Maldonado y su Conjunto)",
+                    "x": -2.05,
+                    "y": -0.3,
+                    "features": [
+                        0.655,
+                        0.366,
+                        0.41,
+                        0.0544,
+                        0.574,
+                        0.0,
+                        0.122
+                    ],
+                    "measures": [
+                        99.32,
+                        -6.052,
+                        171173
+                    ],
+                    "key": 11,
+                    "mode": 0
+                },
+                {
+                    "track_id": "1gsVrE0COOVBfMSZVUuQlQ",
+                    "track_name": "Bienvenido Forastero (with An\u00edbal Maldonado y su Conjunto)",
+                    "x": -1.31,
+                    "y": 2.33,
+                    "features": [
+                        0.587,
+                        0.612,
+                        0.841,
+                        0.0764,
+                        0.448,
+                        0.0,
+                        0.264
+                    ],
+                    "measures": [
+                        86.958,
+                        -3.812,
+                        147573
+                    ],
+                    "key": 2,
+                    "mode": 1
+                },
+                {
+                    "track_id": "4z02mgQuODpGUi65Y49EQ5",
+                    "track_name": "El Encadenao (with An\u00edbal Maldonado y su Conjunto)",
+                    "x": -1.67,
+                    "y": 0.89,
+                    "features": [
+                        0.495,
+                        0.494,
+                        0.791,
+                        0.104,
+                        0.301,
+                        0.0,
+                        0.139
+                    ],
+                    "measures": [
+                        167.653,
+                        -6.791,
+                        167066
+                    ],
+                    "key": 5,
+                    "mode": 1
+                },
+                {
+                    "track_id": "6FlnAtRaIpauJZk7pF3zjc",
+                    "track_name": "Apurate Jos\u00e9 (with An\u00edbal Maldonado y su Conjunto)",
+                    "x": -1.22,
+                    "y": 1.29,
+                    "features": [
+                        0.5,
+                        0.494,
+                        0.755,
+                        0.167,
+                        0.481,
+                        0.0,
+                        0.208
+                    ],
+                    "measures": [
+                        83.174,
+                        -5.266,
+                        167480
+                    ],
+                    "key": 2,
+                    "mode": 1
+                },
+                {
+                    "track_id": "0xvNKIF2Tg8q8sgmCSrLFH",
+                    "track_name": "Litorale\u00f1a (with An\u00edbal Maldonado y su Conjunto)",
+                    "x": -0.61,
+                    "y": -0.67,
+                    "features": [
+                        0.649,
+                        0.574,
+                        0.961,
+                        0.0549,
+                        0.489,
+                        6.06e-05,
+                        0.123
+                    ],
+                    "measures": [
+                        137.013,
+                        -5.531,
+                        155853
+                    ],
+                    "key": 4,
+                    "mode": 1
+                },
+                {
+                    "track_id": "6852In3AZ8vyn3OIvmLrLK",
+                    "track_name": "Santa Ana de Ayer (with An\u00edbal Maldonado y su Conjunto)",
+                    "x": -1.73,
+                    "y": 0.29,
+                    "features": [
+                        0.513,
+                        0.421,
+                        0.5,
+                        0.0372,
+                        0.5,
+                        0.0,
+                        0.129
+                    ],
+                    "measures": [
+                        115.779,
+                        -5.429,
+                        209573
+                    ],
+                    "key": 11,
+                    "mode": 0
+                },
+                {
+                    "track_id": "1DvUa2O7UnfLogrP64u7SH",
+                    "track_name": "Mi Glorioso General (with An\u00edbal Maldonado y su Conjunto)",
+                    "x": -1.17,
+                    "y": 1.08,
+                    "features": [
+                        0.569,
+                        0.532,
+                        0.786,
+                        0.0657,
+                        0.403,
+                        0.0,
+                        0.349
+                    ],
+                    "measures": [
+                        127.073,
+                        -4.34,
+                        200133
+                    ],
+                    "key": 5,
+                    "mode": 1
+                },
+                {
+                    "track_id": "1ERZnoIfxZTz8erHnScGEm",
+                    "track_name": "El Ni\u00f1o Quiere Dormir (with An\u00edbal Maldonado y su Conjunto)",
+                    "x": 0.36,
+                    "y": 0.77,
+                    "features": [
+                        0.535,
+                        0.586,
+                        0.744,
+                        0.0808,
+                        0.643,
+                        0.0,
+                        0.17
+                    ],
+                    "measures": [
+                        136.312,
+                        -4.479,
+                        238826
+                    ],
+                    "key": 11,
+                    "mode": 0
+                },
+                {
+                    "track_id": "5bZ5HggQceNYNCTbLEO9gI",
+                    "track_name": "Canto Islero (with An\u00edbal Maldonado y su Conjunto)",
+                    "x": -0.52,
+                    "y": 1.35,
+                    "features": [
+                        0.561,
+                        0.559,
+                        0.732,
+                        0.108,
+                        0.382,
+                        0.0,
+                        0.161
+                    ],
+                    "measures": [
+                        124.779,
+                        -4.868,
+                        165733
+                    ],
+                    "key": 8,
+                    "mode": 1
+                }
+            ]
+        },
+        {
+            "album_id": "2Gy9ptJeOiCpgUQRU6qrdA",
+            "album_name": "Acuarela del R\u00edo",
+            "features_summary": [
+                [
+                    0.0,
+                    0.526,
+                    0.602,
+                    0.677,
+                    0.881,
+                    0.575,
+                    0.183,
+                    23.0
+                ],
+                [
+                    0.151,
+                    0.252,
+                    0.296,
+                    0.434,
+                    0.592,
+                    0.328,
+                    0.125,
+                    23.0
+                ],
+                [
+                    0.0,
+                    0.562,
+                    0.693,
+                    0.756,
+                    0.83,
+                    0.626,
+                    0.203,
+                    23.0
+                ],
+                [
+                    0.0,
+                    0.046,
+                    0.055,
+                    0.076,
+                    0.189,
+                    0.065,
+                    0.038,
+                    23.0
+                ],
+                [
+                    0.174,
+                    0.626,
+                    0.782,
+                    0.848,
+                    0.956,
+                    0.717,
+                    0.199,
+                    23.0
+                ],
+                [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.002,
+                    0.152,
+                    0.011,
+                    0.034,
+                    23.0
+                ],
+                [
+                    0.074,
+                    0.101,
+                    0.176,
+                    0.238,
+                    0.379,
+                    0.182,
+                    0.088,
+                    23.0
+                ]
+            ],
+            "measures_summary": [
+                [
+                    0.0,
+                    114.477,
+                    123.745,
+                    129.164,
+                    145.892,
+                    116.186,
+                    30.852,
+                    23.0
+                ],
+                [
+                    -17.072,
+                    -15.294,
+                    -13.784,
+                    -12.392,
+                    -10.828,
+                    -13.935,
+                    1.799,
+                    23.0
+                ],
+                [
+                    116951.0,
+                    144967.5,
+                    160314.0,
+                    173239.5,
+                    204085.0,
+                    160929.13,
+                    22843.59,
+                    23.0
+                ]
+            ],
+            "key_counts": [
+                [
+                    0.0,
+                    0.0,
+                    2.0,
+                    2.0,
+                    3.0,
+                    0.0,
+                    3.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                [
+                    3.0,
+                    4.0,
+                    3.0,
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    2.0
+                ]
+            ],
+            "tracks": [
+                {
+                    "track_id": "0UsiUUNgl2lzqPQOaXImBl",
+                    "track_name": "Acuarela del R\u00edo",
+                    "x": 0.89,
+                    "y": -1.36,
+                    "features": [
+                        0.643,
+                        0.164,
+                        0.734,
+                        0.124,
+                        0.553,
+                        9.16e-06,
+                        0.29
+                    ],
+                    "measures": [
+                        135.58,
+                        -17.072,
+                        138580
+                    ],
+                    "key": 0,
+                    "mode": 1
+                },
+                {
+                    "track_id": "1EdnfX7tVj99H4FJxinS3a",
+                    "track_name": "Trasnochados Espineles",
+                    "x": 0.38,
+                    "y": -1.71,
+                    "features": [
+                        0.745,
+                        0.345,
+                        0.752,
+                        0.189,
+                        0.657,
+                        0.00611,
+                        0.0897
+                    ],
+                    "measures": [
+                        115.052,
+                        -12.606,
+                        146156
+                    ],
+                    "key": 9,
+                    "mode": 0
+                },
+                {
+                    "track_id": "1wanuYC3Id7iNSmDXugRNX",
+                    "track_name": "Rio Manso",
+                    "x": -0.06,
+                    "y": -1.03,
+                    "features": [
+                        0.624,
+                        0.302,
+                        0.761,
+                        0.0664,
+                        0.943,
+                        0.0642,
+                        0.14
+                    ],
+                    "measures": [
+                        122.786,
+                        -15.345,
+                        166895
+                    ],
+                    "key": 7,
+                    "mode": 0
+                },
+                {
+                    "track_id": "4kPc1uv050CNvGZknvpgYT",
+                    "track_name": "El Cosechero",
+                    "x": 1.81,
+                    "y": 0.17,
+                    "features": [
+                        0.678,
+                        0.433,
+                        0.784,
+                        0.0636,
+                        0.856,
+                        0.000266,
+                        0.0933
+                    ],
+                    "measures": [
+                        129.174,
+                        -12.768,
+                        172294
+                    ],
+                    "key": 9,
+                    "mode": 0
+                },
+                {
+                    "track_id": "6otkY7kAaz7Ks7QCyvBLqo",
+                    "track_name": "Juan Pay\u00e9",
+                    "x": 0.27,
+                    "y": -1.54,
+                    "features": [
+                        0.881,
+                        0.174,
+                        0.811,
+                        0.0898,
+                        0.734,
+                        0.000883,
+                        0.257
+                    ],
+                    "measures": [
+                        127.805,
+                        -16.578,
+                        146861
+                    ],
+                    "key": 5,
+                    "mode": 1
+                },
+                {
+                    "track_id": "7nYGU6srUxMhuHlpQ1LS3I",
+                    "track_name": "Nda Recoi la Culpa",
+                    "x": 0.96,
+                    "y": -0.92,
+                    "features": [
+                        0.692,
+                        0.446,
+                        0.796,
+                        0.0512,
+                        0.815,
+                        0.00249,
+                        0.111
+                    ],
+                    "measures": [
+                        114.066,
+                        -12.544,
+                        116951
+                    ],
+                    "key": 0,
+                    "mode": 1
+                },
+                {
+                    "track_id": "2wwlwodJVr5WR5qmUfXlrU",
+                    "track_name": "R\u00edo Rebelde",
+                    "x": -0.35,
+                    "y": -1.98,
+                    "features": [
+                        0.673,
+                        0.435,
+                        0.604,
+                        0.0468,
+                        0.877,
+                        1.06e-06,
+                        0.108
+                    ],
+                    "measures": [
+                        118.259,
+                        -11.939,
+                        169394
+                    ],
+                    "key": 0,
+                    "mode": 1
+                },
+                {
+                    "track_id": "3EkrfwgrAjddsBeGgNuA8Z",
+                    "track_name": "Regalito",
+                    "x": -0.52,
+                    "y": -1.41,
+                    "features": [
+                        0.585,
+                        0.253,
+                        0.389,
+                        0.0342,
+                        0.796,
+                        0.000803,
+                        0.143
+                    ],
+                    "measures": [
+                        108.068,
+                        -15.854,
+                        204085
+                    ],
+                    "key": 0,
+                    "mode": 1
+                },
+                {
+                    "track_id": "4izx8zJCL5HvOQVvqdgWYS",
+                    "track_name": "Che Maitei",
+                    "x": 1.14,
+                    "y": 0.41,
+                    "features": [
+                        0.432,
+                        0.202,
+                        0.555,
+                        0.0354,
+                        0.174,
+                        5.24e-06,
+                        0.238
+                    ],
+                    "measures": [
+                        66.322,
+                        -15.242,
+                        135445
+                    ],
+                    "key": 10,
+                    "mode": 1
+                },
+                {
+                    "track_id": "027UceZAzLLWMjWe8uWOtO",
+                    "track_name": "La Voz del Tarag\u00fci",
+                    "x": 0.68,
+                    "y": -1.02,
+                    "features": [
+                        0.675,
+                        0.347,
+                        0.801,
+                        0.105,
+                        0.732,
+                        0.00939,
+                        0.379
+                    ],
+                    "measures": [
+                        114.889,
+                        -13.093,
+                        160314
+                    ],
+                    "key": 7,
+                    "mode": 1
+                },
+                {
+                    "track_id": "3e6Wt8MHab5ZYrS202iU1h",
+                    "track_name": "Cuando Vuelvas",
+                    "x": 1.33,
+                    "y": 0.33,
+                    "features": [
+                        0.567,
+                        0.496,
+                        0.553,
+                        0.0543,
+                        0.841,
+                        0.0,
+                        0.0745
+                    ],
+                    "measures": [
+                        122.36,
+                        -11.941,
+                        196718
+                    ],
+                    "key": 11,
+                    "mode": 0
+                },
+                {
+                    "track_id": "5FKfcx1VennTuvxROzI612",
+                    "track_name": "Che Cu\u00f1atai",
+                    "x": 0.41,
+                    "y": -1.98,
+                    "features": [
+                        0.542,
+                        0.296,
+                        0.681,
+                        0.0536,
+                        0.893,
+                        0.000747,
+                        0.13
+                    ],
+                    "measures": [
+                        127.466,
+                        -14.037,
+                        159660
+                    ],
+                    "key": 2,
+                    "mode": 1
+                },
+                {
+                    "track_id": "2gE7Nr59ciduA6gYrjmNPD",
+                    "track_name": "Ag\u00fcita Mansa",
+                    "x": 0.65,
+                    "y": -0.84,
+                    "features": [
+                        0.0,
+                        0.25,
+                        0.0,
+                        0.0,
+                        0.388,
+                        0.000231,
+                        0.216
+                    ],
+                    "measures": [
+                        0.0,
+                        -12.24,
+                        139834
+                    ],
+                    "key": 9,
+                    "mode": 0
+                },
+                {
+                    "track_id": "7o64S6fmaBqsEGxAMvncBq",
+                    "track_name": "Una L\u00e1grima",
+                    "x": 1.07,
+                    "y": -1.08,
+                    "features": [
+                        0.357,
+                        0.26,
+                        0.383,
+                        0.0372,
+                        0.596,
+                        3.09e-05,
+                        0.238
+                    ],
+                    "measures": [
+                        94.606,
+                        -13.539,
+                        181029
+                    ],
+                    "key": 5,
+                    "mode": 1
+                },
+                {
+                    "track_id": "4es7NV7wgFDub0nGd1SdVi",
+                    "track_name": "R\u00edo de Amor",
+                    "x": 1.83,
+                    "y": -1.32,
+                    "features": [
+                        0.555,
+                        0.284,
+                        0.711,
+                        0.0534,
+                        0.956,
+                        2.28e-05,
+                        0.207
+                    ],
+                    "measures": [
+                        145.892,
+                        -14.952,
+                        164697
+                    ],
+                    "key": 10,
+                    "mode": 1
+                },
+                {
+                    "track_id": "3ZK1yCxWQFR5FGqVveajBV",
+                    "track_name": "Fiebre",
+                    "x": 0.9,
+                    "y": -2.36,
+                    "features": [
+                        0.629,
+                        0.298,
+                        0.693,
+                        0.0461,
+                        0.905,
+                        0.152,
+                        0.225
+                    ],
+                    "measures": [
+                        126.415,
+                        -15.839,
+                        197015
+                    ],
+                    "key": 7,
+                    "mode": 1
+                },
+                {
+                    "track_id": "7lcqsFmMlN0jAvuHQJhHSt",
+                    "track_name": "Cabellera Blanca",
+                    "x": 0.44,
+                    "y": -1.45,
+                    "features": [
+                        0.28,
+                        0.151,
+                        0.251,
+                        0.0396,
+                        0.527,
+                        0.000353,
+                        0.289
+                    ],
+                    "measures": [
+                        99.691,
+                        -16.916,
+                        182048
+                    ],
+                    "key": 7,
+                    "mode": 0
+                },
+                {
+                    "track_id": "6eI5qto4wZw8FSzBWuGMlt",
+                    "track_name": "Aguas del Litoral",
+                    "x": 2.18,
+                    "y": -0.26,
+                    "features": [
+                        0.747,
+                        0.27,
+                        0.72,
+                        0.0649,
+                        0.782,
+                        0.00506,
+                        0.176
+                    ],
+                    "measures": [
+                        129.154,
+                        -14.536,
+                        143779
+                    ],
+                    "key": 2,
+                    "mode": 0
+                },
+                {
+                    "track_id": "5HlQe9wBn8d7jmSOVH6iAx",
+                    "track_name": "Rio de Ausencias",
+                    "x": -0.55,
+                    "y": -1.04,
+                    "features": [
+                        0.475,
+                        0.592,
+                        0.83,
+                        0.0618,
+                        0.386,
+                        0.0,
+                        0.314
+                    ],
+                    "measures": [
+                        143.788,
+                        -10.828,
+                        122915
+                    ],
+                    "key": 7,
+                    "mode": 1
+                },
+                {
+                    "track_id": "4APquqJGsfVVlZbt3JRroL",
+                    "track_name": "Anocheciendo",
+                    "x": 2.55,
+                    "y": 1.24,
+                    "features": [
+                        0.51,
+                        0.525,
+                        0.622,
+                        0.0878,
+                        0.832,
+                        1.09e-05,
+                        0.218
+                    ],
+                    "measures": [
+                        143.785,
+                        -12.165,
+                        167722
+                    ],
+                    "key": 2,
+                    "mode": 0
+                },
+                {
+                    "track_id": "392NuPq1QhCTneAVgiMGDf",
+                    "track_name": "R\u00edo Manso",
+                    "x": 0.49,
+                    "y": -1.04,
+                    "features": [
+                        0.602,
+                        0.251,
+                        0.672,
+                        0.0851,
+                        0.802,
+                        2.77e-05,
+                        0.0895
+                    ],
+                    "measures": [
+                        123.745,
+                        -13.784,
+                        174185
+                    ],
+                    "key": 5,
+                    "mode": 1
+                },
+                {
+                    "track_id": "6J8qu3DTDVfalOLvkfPsut",
+                    "track_name": "Trasnochados Espineles",
+                    "x": -0.13,
+                    "y": -1.46,
+                    "features": [
+                        0.591,
+                        0.514,
+                        0.721,
+                        0.0549,
+                        0.676,
+                        2.34e-06,
+                        0.0815
+                    ],
+                    "measures": [
+                        135.849,
+                        -12.158,
+                        158397
+                    ],
+                    "key": 11,
+                    "mode": 0
+                },
+                {
+                    "track_id": "4hcDCIM0D7uVhV8ZSIItgt",
+                    "track_name": "El Cosechero",
+                    "x": -1.17,
+                    "y": -1.38,
+                    "features": [
+                        0.738,
+                        0.256,
+                        0.569,
+                        0.0548,
+                        0.762,
+                        3.03e-05,
+                        0.0808
+                    ],
+                    "measures": [
+                        127.519,
+                        -14.53,
+                        156396
+                    ],
+                    "key": 11,
+                    "mode": 0
+                }
+            ]
+        },
+        {
+            "album_id": "5i05HrNYdKgoZmbKNVodeX",
+            "album_name": "Alma Guaran\u00ed",
+            "features_summary": [
+                [
+                    0.482,
+                    0.54,
+                    0.594,
+                    0.657,
+                    0.693,
+                    0.597,
+                    0.077,
+                    11.0
+                ],
+                [
+                    0.244,
+                    0.396,
+                    0.485,
+                    0.539,
+                    0.732,
+                    0.474,
+                    0.132,
+                    11.0
+                ],
+                [
+                    0.466,
+                    0.72,
+                    0.801,
+                    0.831,
+                    0.919,
+                    0.763,
+                    0.129,
+                    11.0
+                ],
+                [
+                    0.029,
+                    0.047,
+                    0.059,
+                    0.084,
+                    0.154,
+                    0.071,
+                    0.036,
+                    11.0
+                ],
+                [
+                    0.351,
+                    0.619,
+                    0.699,
+                    0.768,
+                    0.851,
+                    0.661,
+                    0.166,
+                    11.0
+                ],
+                [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                [
+                    0.074,
+                    0.114,
+                    0.177,
+                    0.33,
+                    0.637,
+                    0.232,
+                    0.169,
+                    11.0
+                ]
+            ],
+            "measures_summary": [
+                [
+                    62.41,
+                    100.742,
+                    131.161,
+                    141.768,
+                    184.442,
+                    123.44,
+                    35.123,
+                    11.0
+                ],
+                [
+                    -14.399,
+                    -9.578,
+                    -7.891,
+                    -7.328,
+                    -5.097,
+                    -8.666,
+                    2.974,
+                    11.0
+                ],
+                [
+                    127560.0,
+                    144833.0,
+                    151053.0,
+                    164131.0,
+                    179895.0,
+                    153105.636,
+                    16848.007,
+                    11.0
+                ]
+            ],
+            "key_counts": [
+                [
+                    0.0,
+                    1.0,
+                    0.0,
+                    1.0,
+                    2.0,
+                    2.0,
+                    0.0,
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0,
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            ],
+            "tracks": [
+                {
+                    "track_id": "6seAHjoUPhvUOequHjD3hX",
+                    "track_name": "Alma Guaran\u00ed",
+                    "x": 2.03,
+                    "y": -0.22,
+                    "features": [
+                        0.639,
+                        0.244,
+                        0.774,
+                        0.0457,
+                        0.851,
+                        1.69e-06,
+                        0.105
+                    ],
+                    "measures": [
+                        131.294,
+                        -13.234,
+                        163375
+                    ],
+                    "key": 0,
+                    "mode": 0
+                },
+                {
+                    "track_id": "0E5PisaR9prG3JoAcU1PFu",
+                    "track_name": "R\u00edo Manso",
+                    "x": 1.75,
+                    "y": -0.3,
+                    "features": [
+                        0.68,
+                        0.546,
+                        0.637,
+                        0.049,
+                        0.816,
+                        4.81e-06,
+                        0.206
+                    ],
+                    "measures": [
+                        124.359,
+                        -5.097,
+                        171572
+                    ],
+                    "key": 5,
+                    "mode": 1
+                },
+                {
+                    "track_id": "34dkng9LiWIdNhrun91T5B",
+                    "track_name": "La Vestido Celeste",
+                    "x": 1.27,
+                    "y": -0.73,
+                    "features": [
+                        0.594,
+                        0.328,
+                        0.895,
+                        0.0791,
+                        0.664,
+                        0.0,
+                        0.126
+                    ],
+                    "measures": [
+                        184.442,
+                        -10.599,
+                        127560
+                    ],
+                    "key": 4,
+                    "mode": 0
+                },
+                {
+                    "track_id": "02t5U6FktsrASQ9Qz6Us2h",
+                    "track_name": "Como Flor del Irup\u00e9",
+                    "x": 2.96,
+                    "y": -0.64,
+                    "features": [
+                        0.659,
+                        0.471,
+                        0.673,
+                        0.0643,
+                        0.575,
+                        0.0,
+                        0.35
+                    ],
+                    "measures": [
+                        82.83,
+                        -7.891,
+                        144510
+                    ],
+                    "key": 2,
+                    "mode": 1
+                },
+                {
+                    "track_id": "1SHXeclCSEOaEKF8zhqsE3",
+                    "track_name": "Anahi",
+                    "x": -1.4,
+                    "y": 0.16,
+                    "features": [
+                        0.482,
+                        0.402,
+                        0.466,
+                        0.0289,
+                        0.826,
+                        6.2e-06,
+                        0.311
+                    ],
+                    "measures": [
+                        89.474,
+                        -5.105,
+                        179895
+                    ],
+                    "key": 9,
+                    "mode": 1
+                },
+                {
+                    "track_id": "4YRflNp11r7ify2YQndzOj",
+                    "track_name": "Corrientes en Flor",
+                    "x": 0.94,
+                    "y": -0.79,
+                    "features": [
+                        0.49,
+                        0.582,
+                        0.768,
+                        0.041,
+                        0.387,
+                        0.0,
+                        0.35
+                    ],
+                    "measures": [
+                        131.161,
+                        -8.052,
+                        161835
+                    ],
+                    "key": 4,
+                    "mode": 0
+                },
+                {
+                    "track_id": "5B9objNGZUxSAbyu2NeZKE",
+                    "track_name": "Sargento Cabral",
+                    "x": -1.62,
+                    "y": -0.37,
+                    "features": [
+                        0.498,
+                        0.732,
+                        0.919,
+                        0.11,
+                        0.351,
+                        4.43e-06,
+                        0.123
+                    ],
+                    "measures": [
+                        156.323,
+                        -7.085,
+                        128300
+                    ],
+                    "key": 6,
+                    "mode": 0
+                },
+                {
+                    "track_id": "7A2D6CQoJXeITr411c3U7a",
+                    "track_name": "Merceditas",
+                    "x": -0.67,
+                    "y": -0.66,
+                    "features": [
+                        0.593,
+                        0.532,
+                        0.815,
+                        0.154,
+                        0.663,
+                        0.0,
+                        0.177
+                    ],
+                    "measures": [
+                        135.38,
+                        -7.738,
+                        164887
+                    ],
+                    "key": 2,
+                    "mode": 0
+                },
+                {
+                    "track_id": "39vtG4LteMFsjFurCf62lV",
+                    "track_name": "Costera",
+                    "x": -0.08,
+                    "y": -0.19,
+                    "features": [
+                        0.655,
+                        0.508,
+                        0.801,
+                        0.0589,
+                        0.718,
+                        0.000287,
+                        0.637
+                    ],
+                    "measures": [
+                        62.41,
+                        -8.556,
+                        146019
+                    ],
+                    "key": 9,
+                    "mode": 0
+                },
+                {
+                    "track_id": "22I9U15Zr8ZxtxTafrpoFO",
+                    "track_name": "Trasnochando Espineles",
+                    "x": -0.87,
+                    "y": 1.54,
+                    "features": [
+                        0.582,
+                        0.389,
+                        0.801,
+                        0.0578,
+                        0.719,
+                        0.00213,
+                        0.0971
+                    ],
+                    "measures": [
+                        112.01,
+                        -14.399,
+                        151053
+                    ],
+                    "key": 9,
+                    "mode": 0
+                },
+                {
+                    "track_id": "5Qg6X0NWdluEvM5wOUy3W4",
+                    "track_name": "Correntina",
+                    "x": -0.31,
+                    "y": -0.65,
+                    "features": [
+                        0.693,
+                        0.485,
+                        0.848,
+                        0.089,
+                        0.699,
+                        3.7e-06,
+                        0.0739
+                    ],
+                    "measures": [
+                        148.156,
+                        -7.571,
+                        145156
+                    ],
+                    "key": 7,
+                    "mode": 1
+                }
+            ]
+        },
+        {
+            "album_id": "6lKzLMMvhMcxVYcGA8o5u8",
+            "album_name": "Ramona Galarza",
+            "features_summary": [
+                [
+                    0.518,
+                    0.559,
+                    0.59,
+                    0.658,
+                    0.73,
+                    0.608,
+                    0.07,
+                    12.0
+                ],
+                [
+                    0.463,
+                    0.532,
+                    0.564,
+                    0.632,
+                    0.68,
+                    0.574,
+                    0.071,
+                    12.0
+                ],
+                [
+                    0.473,
+                    0.598,
+                    0.659,
+                    0.795,
+                    0.945,
+                    0.684,
+                    0.149,
+                    12.0
+                ],
+                [
+                    0.039,
+                    0.046,
+                    0.052,
+                    0.059,
+                    0.068,
+                    0.052,
+                    0.009,
+                    12.0
+                ],
+                [
+                    0.461,
+                    0.579,
+                    0.636,
+                    0.706,
+                    0.726,
+                    0.622,
+                    0.095,
+                    12.0
+                ],
+                [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                [
+                    0.055,
+                    0.094,
+                    0.113,
+                    0.306,
+                    0.523,
+                    0.193,
+                    0.15,
+                    12.0
+                ]
+            ],
+            "measures_summary": [
+                [
+                    79.948,
+                    111.819,
+                    120.278,
+                    127.126,
+                    133.551,
+                    115.696,
+                    17.742,
+                    12.0
+                ],
+                [
+                    -5.034,
+                    -4.063,
+                    -3.689,
+                    -3.306,
+                    -3.166,
+                    -3.808,
+                    0.592,
+                    12.0
+                ],
+                [
+                    131320.0,
+                    142432.75,
+                    152679.5,
+                    178669.5,
+                    197453.0,
+                    159304.167,
+                    22775.932,
+                    12.0
+                ]
+            ],
+            "key_counts": [
+                [
+                    0.0,
+                    1.0,
+                    3.0,
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    0.0,
+                    1.0,
+                    1.0,
+                    2.0,
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            ],
+            "tracks": [
+                {
+                    "track_id": "7aDlJPjxy1F7LvhXr35CEV",
+                    "track_name": "Mi \u00daltima Flor",
+                    "x": -0.34,
+                    "y": 0.45,
+                    "features": [
+                        0.67,
+                        0.68,
+                        0.863,
+                        0.0468,
+                        0.622,
+                        3.74e-06,
+                        0.0651
+                    ],
+                    "measures": [
+                        131.877,
+                        -3.491,
+                        161560
+                    ],
+                    "key": 9,
+                    "mode": 1
+                },
+                {
+                    "track_id": "4zKrQKM1jZfWOXDxSzQuUJ",
+                    "track_name": "Soy Entrerriano",
+                    "x": -0.45,
+                    "y": 0.73,
+                    "features": [
+                        0.646,
+                        0.552,
+                        0.718,
+                        0.057,
+                        0.721,
+                        0.0,
+                        0.102
+                    ],
+                    "measures": [
+                        117.746,
+                        -4.041,
+                        186840
+                    ],
+                    "key": 2,
+                    "mode": 0
+                },
+                {
+                    "track_id": "0yZhFhyT9kQ9QCYmVkXXdC",
+                    "track_name": "Yo Voy Mariscando",
+                    "x": -1.88,
+                    "y": 0.0,
+                    "features": [
+                        0.575,
+                        0.548,
+                        0.623,
+                        0.0488,
+                        0.599,
+                        0.0,
+                        0.117
+                    ],
+                    "measures": [
+                        118.159,
+                        -4.01,
+                        197453
+                    ],
+                    "key": 9,
+                    "mode": 0
+                },
+                {
+                    "track_id": "3ujKQfLlUxyXHGSqhYglGv",
+                    "track_name": "Desde el Alma",
+                    "x": -1.63,
+                    "y": 1.04,
+                    "features": [
+                        0.542,
+                        0.463,
+                        0.473,
+                        0.0587,
+                        0.703,
+                        0.0,
+                        0.35
+                    ],
+                    "measures": [
+                        79.948,
+                        -5.034,
+                        136440
+                    ],
+                    "key": 7,
+                    "mode": 0
+                },
+                {
+                    "track_id": "1UeiS6tceqOBGlkCAmYKBf",
+                    "track_name": "Paraje Palmitas",
+                    "x": 1.42,
+                    "y": -1.25,
+                    "features": [
+                        0.565,
+                        0.541,
+                        0.67,
+                        0.0386,
+                        0.608,
+                        1.44e-06,
+                        0.293
+                    ],
+                    "measures": [
+                        128.085,
+                        -3.319,
+                        140533
+                    ],
+                    "key": 7,
+                    "mode": 0
+                },
+                {
+                    "track_id": "3pmPnudJp0MLqPfXPP8NMC",
+                    "track_name": "Pueblero de Alla Ite",
+                    "x": -1.78,
+                    "y": 0.6,
+                    "features": [
+                        0.522,
+                        0.506,
+                        0.525,
+                        0.0432,
+                        0.65,
+                        0.0,
+                        0.523
+                    ],
+                    "measures": [
+                        105.95,
+                        -4.63,
+                        189360
+                    ],
+                    "key": 2,
+                    "mode": 1
+                },
+                {
+                    "track_id": "4fOpAId7teRorQdbEM2Y7j",
+                    "track_name": "Glorias de Nuestro Pasado (Soldado Desconocido)",
+                    "x": -1.66,
+                    "y": 0.94,
+                    "features": [
+                        0.587,
+                        0.579,
+                        0.493,
+                        0.0542,
+                        0.726,
+                        0.0,
+                        0.346
+                    ],
+                    "measures": [
+                        122.397,
+                        -4.128,
+                        157986
+                    ],
+                    "key": 7,
+                    "mode": 1
+                },
+                {
+                    "track_id": "3E54mpoxKoDfXQfur45rF7",
+                    "track_name": "Nendivei",
+                    "x": -1.6,
+                    "y": 1.12,
+                    "features": [
+                        0.593,
+                        0.666,
+                        0.784,
+                        0.0467,
+                        0.52,
+                        2.51e-06,
+                        0.0697
+                    ],
+                    "measures": [
+                        83.285,
+                        -3.245,
+                        147373
+                    ],
+                    "key": 4,
+                    "mode": 1
+                },
+                {
+                    "track_id": "1WL2PdOeTsuGcr626bFjsl",
+                    "track_name": "Canci\u00f3n de Puerto S\u00e1nchez",
+                    "x": -1.16,
+                    "y": 1.16,
+                    "features": [
+                        0.654,
+                        0.492,
+                        0.647,
+                        0.06,
+                        0.461,
+                        0.0,
+                        0.109
+                    ],
+                    "measures": [
+                        126.772,
+                        -3.887,
+                        143773
+                    ],
+                    "key": 7,
+                    "mode": 0
+                },
+                {
+                    "track_id": "2hzSE9TWMUD1iGma3ROxoG",
+                    "track_name": "Yeroki Yara",
+                    "x": -1.41,
+                    "y": 0.78,
+                    "features": [
+                        0.73,
+                        0.665,
+                        0.945,
+                        0.0675,
+                        0.676,
+                        3.14e-05,
+                        0.109
+                    ],
+                    "measures": [
+                        133.551,
+                        -3.48,
+                        131320
+                    ],
+                    "key": 4,
+                    "mode": 0
+                },
+                {
+                    "track_id": "4yfN6htjJ5bzzNHhLXbu5Z",
+                    "track_name": "El \u00daltimo Cachape",
+                    "x": -0.83,
+                    "y": 1.0,
+                    "features": [
+                        0.7,
+                        0.621,
+                        0.829,
+                        0.0415,
+                        0.469,
+                        0.0,
+                        0.0548
+                    ],
+                    "measures": [
+                        126.807,
+                        -3.166,
+                        143066
+                    ],
+                    "key": 9,
+                    "mode": 1
+                },
+                {
+                    "track_id": "6XvfeHRy09GgE5IR4SOb0O",
+                    "track_name": "Posade\u00f1a Linda",
+                    "x": -1.41,
+                    "y": 1.22,
+                    "features": [
+                        0.518,
+                        0.575,
+                        0.64,
+                        0.0586,
+                        0.714,
+                        0.0,
+                        0.176
+                    ],
+                    "measures": [
+                        113.776,
+                        -3.265,
+                        175946
+                    ],
+                    "key": 0,
+                    "mode": 0
+                }
+            ]
+        },
+        {
+            "album_id": "7iaR8xOLqxq8MGDvWpBqG0",
+            "album_name": "Galopera",
+            "features_summary": [
+                [
+                    0.312,
+                    0.47,
+                    0.55,
+                    0.62,
+                    0.718,
+                    0.536,
+                    0.119,
+                    14.0
+                ],
+                [
+                    0.296,
+                    0.342,
+                    0.37,
+                    0.416,
+                    0.545,
+                    0.393,
+                    0.078,
+                    14.0
+                ],
+                [
+                    0.328,
+                    0.52,
+                    0.604,
+                    0.704,
+                    0.875,
+                    0.617,
+                    0.142,
+                    14.0
+                ],
+                [
+                    0.032,
+                    0.037,
+                    0.044,
+                    0.051,
+                    0.072,
+                    0.045,
+                    0.011,
+                    14.0
+                ],
+                [
+                    0.71,
+                    0.784,
+                    0.824,
+                    0.841,
+                    0.92,
+                    0.822,
+                    0.06,
+                    14.0
+                ],
+                [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.001,
+                    0.008,
+                    0.001,
+                    0.003,
+                    14.0
+                ],
+                [
+                    0.072,
+                    0.078,
+                    0.131,
+                    0.168,
+                    0.283,
+                    0.138,
+                    0.066,
+                    14.0
+                ]
+            ],
+            "measures_summary": [
+                [
+                    90.785,
+                    97.351,
+                    128.899,
+                    142.62,
+                    182.919,
+                    127.734,
+                    31.388,
+                    14.0
+                ],
+                [
+                    -9.987,
+                    -8.678,
+                    -8.098,
+                    -7.556,
+                    -6.641,
+                    -8.133,
+                    0.971,
+                    14.0
+                ],
+                [
+                    132260.0,
+                    142116.75,
+                    155759.0,
+                    166533.0,
+                    185202.0,
+                    155868.286,
+                    16179.592,
+                    14.0
+                ]
+            ],
+            "key_counts": [
+                [
+                    1.0,
+                    0.0,
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    2.0,
+                    1.0,
+                    0.0,
+                    0.0,
+                    1.0
+                ],
+                [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0,
+                    1.0,
+                    2.0,
+                    1.0,
+                    0.0,
+                    2.0
+                ]
+            ],
+            "tracks": [
+                {
+                    "track_id": "6KXmu22Hf26ii2QNhn1ZYB",
+                    "track_name": "Galopera (Galopa)",
+                    "x": -0.19,
+                    "y": -0.76,
+                    "features": [
+                        0.374,
+                        0.492,
+                        0.706,
+                        0.0508,
+                        0.71,
+                        0.00165,
+                        0.0715
+                    ],
+                    "measures": [
+                        182.919,
+                        -7.977,
+                        166626
+                    ],
+                    "key": 1,
+                    "mode": 1
+                },
+                {
+                    "track_id": "0q4RKhmtPittiXm74SFmWd",
+                    "track_name": "Recuerdos de Ipacarai (Guaran\u00eda)",
+                    "x": 0.53,
+                    "y": -0.97,
+                    "features": [
+                        0.552,
+                        0.327,
+                        0.48,
+                        0.0418,
+                        0.828,
+                        0.000105,
+                        0.0818
+                    ],
+                    "measures": [
+                        90.785,
+                        -8.023,
+                        185202
+                    ],
+                    "key": 11,
+                    "mode": 1
+                },
+                {
+                    "track_id": "16ATfNOFc4ZRWrx3DFjblT",
+                    "track_name": "R\u00edo Rebelde (Canci\u00f3n)",
+                    "x": -0.94,
+                    "y": -1.34,
+                    "features": [
+                        0.57,
+                        0.418,
+                        0.731,
+                        0.0352,
+                        0.901,
+                        0.00176,
+                        0.15
+                    ],
+                    "measures": [
+                        129.026,
+                        -9.987,
+                        159196
+                    ],
+                    "key": 10,
+                    "mode": 1
+                },
+                {
+                    "track_id": "3jZLmLnawqzKZ9jORj55gq",
+                    "track_name": "Balsas de Recuerdos (Polca Canci\u00f3n)",
+                    "x": -0.85,
+                    "y": -0.59,
+                    "features": [
+                        0.464,
+                        0.367,
+                        0.614,
+                        0.0331,
+                        0.777,
+                        2.5e-05,
+                        0.283
+                    ],
+                    "measures": [
+                        100.91,
+                        -7.476,
+                        140805
+                    ],
+                    "key": 5,
+                    "mode": 0
+                },
+                {
+                    "track_id": "0jRjPWpzKz8OWnLSX5QgAZ",
+                    "track_name": "Canci\u00f3n del Jangadero (Arreglo en Galopa)",
+                    "x": -0.24,
+                    "y": -1.19,
+                    "features": [
+                        0.395,
+                        0.392,
+                        0.499,
+                        0.0497,
+                        0.82,
+                        0.000592,
+                        0.164
+                    ],
+                    "measures": [
+                        182.712,
+                        -8.269,
+                        152322
+                    ],
+                    "key": 5,
+                    "mode": 1
+                },
+                {
+                    "track_id": "2Ze06IPz8HXDWCecUBizcG",
+                    "track_name": "Anahi (Leyenda de la Flor del Ceibo)",
+                    "x": -1.03,
+                    "y": -1.67,
+                    "features": [
+                        0.528,
+                        0.296,
+                        0.475,
+                        0.0381,
+                        0.839,
+                        1.42e-05,
+                        0.15
+                    ],
+                    "measures": [
+                        93.463,
+                        -9.119,
+                        171641
+                    ],
+                    "key": 10,
+                    "mode": 1
+                },
+                {
+                    "track_id": "08wMeLO0qIwhByjtR2EOKY",
+                    "track_name": "Puente Pexoa (Rasguido Doble)",
+                    "x": 0.11,
+                    "y": -0.21,
+                    "features": [
+                        0.614,
+                        0.373,
+                        0.582,
+                        0.0503,
+                        0.836,
+                        0.0,
+                        0.18
+                    ],
+                    "measures": [
+                        143.175,
+                        -8.406,
+                        146052
+                    ],
+                    "key": 7,
+                    "mode": 0
+                },
+                {
+                    "track_id": "0KWEbLfEX0jn4UISWlA7DL",
+                    "track_name": "Trasnochados Espineles (Canci\u00f3n)",
+                    "x": -0.97,
+                    "y": -0.63,
+                    "features": [
+                        0.718,
+                        0.522,
+                        0.875,
+                        0.0533,
+                        0.733,
+                        0.00813,
+                        0.169
+                    ],
+                    "measures": [
+                        119.516,
+                        -6.641,
+                        139505
+                    ],
+                    "key": 10,
+                    "mode": 0
+                },
+                {
+                    "track_id": "5UMDT9VS4O0TfzNg7LKwmA",
+                    "track_name": "Has de Volver (Chaman\u00e9)",
+                    "x": -0.65,
+                    "y": -0.58,
+                    "features": [
+                        0.636,
+                        0.335,
+                        0.595,
+                        0.0399,
+                        0.842,
+                        0.00012,
+                        0.112
+                    ],
+                    "measures": [
+                        134.241,
+                        -9.38,
+                        149164
+                    ],
+                    "key": 6,
+                    "mode": 0
+                },
+                {
+                    "track_id": "4HrYpCNJWsX6ugoeyt5jAz",
+                    "track_name": "R\u00edo Manso (Canci\u00f3n Correntina)",
+                    "x": -0.82,
+                    "y": -0.95,
+                    "features": [
+                        0.686,
+                        0.41,
+                        0.7,
+                        0.0367,
+                        0.893,
+                        5.32e-06,
+                        0.0727
+                    ],
+                    "measures": [
+                        128.771,
+                        -6.752,
+                        166254
+                    ],
+                    "key": 6,
+                    "mode": 1
+                },
+                {
+                    "track_id": "2Ing3ezNVMDzzRRSkoE6wy",
+                    "track_name": "Ah! Mi Corriente Pora (Polca Canci\u00f3n)",
+                    "x": -1.16,
+                    "y": -1.62,
+                    "features": [
+                        0.547,
+                        0.545,
+                        0.687,
+                        0.0469,
+                        0.807,
+                        0.0,
+                        0.0767
+                    ],
+                    "measures": [
+                        153.715,
+                        -7.091,
+                        134861
+                    ],
+                    "key": 1,
+                    "mode": 0
+                },
+                {
+                    "track_id": "5wt6V1U4g9iQTrLGkjI7sK",
+                    "track_name": "Mis Noches Sin T\u00ed (Guaran\u00eda)",
+                    "x": -0.41,
+                    "y": -1.36,
+                    "features": [
+                        0.312,
+                        0.301,
+                        0.328,
+                        0.0324,
+                        0.92,
+                        0.000171,
+                        0.0755
+                    ],
+                    "measures": [
+                        91.917,
+                        -8.769,
+                        174614
+                    ],
+                    "key": 8,
+                    "mode": 1
+                },
+                {
+                    "track_id": "1hIzFkpZ9GgC1nNXH9pf3s",
+                    "track_name": "Acuarela del R\u00edo (Canci\u00f3n)",
+                    "x": -0.41,
+                    "y": -0.74,
+                    "features": [
+                        0.622,
+                        0.363,
+                        0.773,
+                        0.0722,
+                        0.775,
+                        1.34e-06,
+                        0.237
+                    ],
+                    "measures": [
+                        140.956,
+                        -8.172,
+                        132260
+                    ],
+                    "key": 1,
+                    "mode": 1
+                },
+                {
+                    "track_id": "7we5I8kf4irfiaPNzENdL8",
+                    "track_name": "El Mensu (Galopa)",
+                    "x": 0.35,
+                    "y": -0.68,
+                    "features": [
+                        0.486,
+                        0.364,
+                        0.592,
+                        0.0507,
+                        0.821,
+                        0.00792,
+                        0.102
+                    ],
+                    "measures": [
+                        96.164,
+                        -7.794,
+                        163654
+                    ],
+                    "key": 6,
+                    "mode": 0
+                }
+            ]
+        }
+    ]
+}
