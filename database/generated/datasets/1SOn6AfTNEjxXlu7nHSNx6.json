@@ -1,0 +1,566 @@
+{
+    "artist_id": "1SOn6AfTNEjxXlu7nHSNx6",
+    "artist_name": "pacha santa",
+    "features_summary": [
+        [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        [
+            0.016,
+            0.016,
+            0.016,
+            0.016,
+            0.016,
+            0.016,
+            0.0,
+            13.0
+        ],
+        [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        [
+            0.827,
+            0.827,
+            0.827,
+            0.827,
+            0.827,
+            0.827,
+            0.0,
+            13.0
+        ],
+        [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+        ]
+    ],
+    "measures_summary": [
+        [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        [
+            -21.997,
+            -21.997,
+            -21.997,
+            -21.997,
+            -21.997,
+            -21.997,
+            0.0,
+            13.0
+        ],
+        [
+            6306.0,
+            6306.0,
+            6306.0,
+            6306.0,
+            6306.0,
+            6306.0,
+            0.0,
+            13.0
+        ]
+    ],
+    "key_counts": [
+        [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+        ],
+        [
+            0.0,
+            13.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+        ]
+    ],
+    "albums": [
+        {
+            "album_id": "3mkaZiESN1sWu2kGrkcDDP",
+            "album_name": "Echando Ra\u00edces",
+            "features_summary": [
+                [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                [
+                    0.016,
+                    0.016,
+                    0.016,
+                    0.016,
+                    0.016,
+                    0.016,
+                    0.0,
+                    13.0
+                ],
+                [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                [
+                    0.827,
+                    0.827,
+                    0.827,
+                    0.827,
+                    0.827,
+                    0.827,
+                    0.0,
+                    13.0
+                ],
+                [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ]
+            ],
+            "measures_summary": [
+                [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                [
+                    -21.997,
+                    -21.997,
+                    -21.997,
+                    -21.997,
+                    -21.997,
+                    -21.997,
+                    0.0,
+                    13.0
+                ],
+                [
+                    6306.0,
+                    6306.0,
+                    6306.0,
+                    6306.0,
+                    6306.0,
+                    6306.0,
+                    0.0,
+                    13.0
+                ]
+            ],
+            "key_counts": [
+                [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    13.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            ],
+            "tracks": [
+                {
+                    "track_id": "5lA2Mq2PCvo4QKlHeZbazj",
+                    "track_name": "Chico copa",
+                    "x": -1.6,
+                    "y": 1.95,
+                    "features": [
+                        0.0,
+                        0.0164,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.827,
+                        0.0
+                    ],
+                    "measures": [
+                        0.0,
+                        -21.997,
+                        6306
+                    ],
+                    "key": 0,
+                    "mode": 1
+                },
+                {
+                    "track_id": "4bGJJ3kLix5RdGUFinxHwP",
+                    "track_name": "La cornisa",
+                    "x": -0.83,
+                    "y": 2.21,
+                    "features": [
+                        0.0,
+                        0.0164,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.827,
+                        0.0
+                    ],
+                    "measures": [
+                        0.0,
+                        -21.997,
+                        6306
+                    ],
+                    "key": 0,
+                    "mode": 1
+                },
+                {
+                    "track_id": "0rshiP10s0DWDwLZ0mTPe8",
+                    "track_name": "Ma\u00f1ana",
+                    "x": -1.76,
+                    "y": 0.61,
+                    "features": [
+                        0.0,
+                        0.0164,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.827,
+                        0.0
+                    ],
+                    "measures": [
+                        0.0,
+                        -21.997,
+                        6306
+                    ],
+                    "key": 0,
+                    "mode": 1
+                },
+                {
+                    "track_id": "4S3NNZjJjLVWKq38ngwFcA",
+                    "track_name": "Solo voy",
+                    "x": -1.16,
+                    "y": 0.11,
+                    "features": [
+                        0.0,
+                        0.0164,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.827,
+                        0.0
+                    ],
+                    "measures": [
+                        0.0,
+                        -21.997,
+                        6306
+                    ],
+                    "key": 0,
+                    "mode": 1
+                },
+                {
+                    "track_id": "5BkGRmnm2E2ZfCFZ2YPfq5",
+                    "track_name": "Miradas extra\u00f1as",
+                    "x": 0.29,
+                    "y": 1.27,
+                    "features": [
+                        0.0,
+                        0.0164,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.827,
+                        0.0
+                    ],
+                    "measures": [
+                        0.0,
+                        -21.997,
+                        6306
+                    ],
+                    "key": 0,
+                    "mode": 1
+                },
+                {
+                    "track_id": "6CuJYgqyRMX5fGjYAgW1ua",
+                    "track_name": "Si te vas",
+                    "x": -1.15,
+                    "y": 1.4,
+                    "features": [
+                        0.0,
+                        0.0164,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.827,
+                        0.0
+                    ],
+                    "measures": [
+                        0.0,
+                        -21.997,
+                        6306
+                    ],
+                    "key": 0,
+                    "mode": 1
+                },
+                {
+                    "track_id": "1734tbAuBdari5Fi94wb13",
+                    "track_name": "Intro (Nuevo camino)",
+                    "x": -0.86,
+                    "y": 1.49,
+                    "features": [
+                        0.0,
+                        0.0164,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.827,
+                        0.0
+                    ],
+                    "measures": [
+                        0.0,
+                        -21.997,
+                        6306
+                    ],
+                    "key": 0,
+                    "mode": 1
+                },
+                {
+                    "track_id": "79W0olMGy4FrTzWdGws6lT",
+                    "track_name": "Nuevo camino",
+                    "x": -1.73,
+                    "y": -0.13,
+                    "features": [
+                        0.0,
+                        0.0164,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.827,
+                        0.0
+                    ],
+                    "measures": [
+                        0.0,
+                        -21.997,
+                        6306
+                    ],
+                    "key": 0,
+                    "mode": 1
+                },
+                {
+                    "track_id": "3fKLhVcXvh4FhZBcJyE8HQ",
+                    "track_name": "Miedos masivos",
+                    "x": -1.44,
+                    "y": 1.33,
+                    "features": [
+                        0.0,
+                        0.0164,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.827,
+                        0.0
+                    ],
+                    "measures": [
+                        0.0,
+                        -21.997,
+                        6306
+                    ],
+                    "key": 0,
+                    "mode": 1
+                },
+                {
+                    "track_id": "1EoqMuoexNjdWkAmFvLcX6",
+                    "track_name": "9 de noviembre",
+                    "x": -0.36,
+                    "y": 1.28,
+                    "features": [
+                        0.0,
+                        0.0164,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.827,
+                        0.0
+                    ],
+                    "measures": [
+                        0.0,
+                        -21.997,
+                        6306
+                    ],
+                    "key": 0,
+                    "mode": 1
+                },
+                {
+                    "track_id": "3LU8nHcz6wH3zN0nhhIWKo",
+                    "track_name": "Una noche m\u00e1s",
+                    "x": -2.19,
+                    "y": 1.53,
+                    "features": [
+                        0.0,
+                        0.0164,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.827,
+                        0.0
+                    ],
+                    "measures": [
+                        0.0,
+                        -21.997,
+                        6306
+                    ],
+                    "key": 0,
+                    "mode": 1
+                },
+                {
+                    "track_id": "51OPYLNri7GF34KJAvk7aK",
+                    "track_name": "Aquel boulevard",
+                    "x": -2.33,
+                    "y": 1.76,
+                    "features": [
+                        0.0,
+                        0.0164,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.827,
+                        0.0
+                    ],
+                    "measures": [
+                        0.0,
+                        -21.997,
+                        6306
+                    ],
+                    "key": 0,
+                    "mode": 1
+                },
+                {
+                    "track_id": "5k8KIDKBacnHqdqN0a6pvD",
+                    "track_name": "Esas ganas",
+                    "x": -1.34,
+                    "y": 2.88,
+                    "features": [
+                        0.0,
+                        0.0164,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.827,
+                        0.0
+                    ],
+                    "measures": [
+                        0.0,
+                        -21.997,
+                        6306
+                    ],
+                    "key": 0,
+                    "mode": 1
+                }
+            ]
+        }
+    ]
+}
