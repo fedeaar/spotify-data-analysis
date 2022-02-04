@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> spotify-data-analisis </title>
+</head>
+
+
+<body>
+    <div id="main">
+        <!-- nav bar -->
+        <nav id="main-nav" class="navbar navbar-expand-md navbar-light bg-light">
+            <div id="nav-search-bar" class="container-fluid">
+                <!-- search bar -->
+                <!-- <select id="nav-search-bar" class="w-100 p-3 MSD" multiple></select> -->
+            </div>
+        </nav>
+
+        <!-- opciones -->
+        <div id="offcanvas-opciones" class="offcanvas offcanvas-start" tabindex="-1">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title"> Opciones </h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div id="SETTINGS" class="offcanvas-body opciones-panel">
+            </div>
+            <div class="offcanvas-body"> 
+                <ul class="opciones-ul">
+                    Observaciones:
+                    <li class="opciones-li" style="display: block; font-size:14px;">
+                        <span style="color: red">(!)</span> 
+                        el ACP es para fines ilustrativos. El vector base de 10 dimensiones (los predictores y medidas de cada canción) 
+                        fue reducido a dos con una varianza capturada en el eje X del 27.18% 
+                        y en eje Y del 16.33% (43.51% de la información original).
+                    </li>
+                    <li class="opciones-li" style="display: block; font-size:14px;">
+                        <span style="color: red">(!)</span>  
+                        comparar por albumes puede volverse lento y engorroso. Solo
+                        recomendable para comparar albumes específicos, no todo el repertorio de cada artista.
+                    </li>
+                    </ul>
+              </div>
+        </div>
+
+        <!-- tabs -->
+        <div id="main-tabs">
+            <ul id="main-tabs-ul" class="nav nav-tabs nav-justified">
+                <!-- opciones btn -->
+                <div>
+                    <li class="nav-item dropdown">
+                        <button class="btn btn-link btn-toggler" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvas-opciones">
+                            <span class="toggler">
+                            </span>
+                        </button>
+                    </li>
+                </div>
+                <!-- tab PCA -->
+                <li class="nav-item">
+                    <a id="tab-PCA" class="nav-link active" href="#">
+                        ACP
+                    </a>
+                </li>
+                <!-- tab atributos -->
+                <li class="nav-item">
+                    <a id="tab-atributos" class="nav-link" href="#">
+                        predictores
+                    </a>
+                </li>
+                 <!-- tab atributos -->
+                 <li class="nav-item">
+                    <a id="tab-medidas" class="nav-link" href="#">
+                        mediciones
+                    </a>
+                </li>
+                <!-- tab tonalidad -->
+                <li class="nav-item">
+                    <a id="tab-tonalidad" class="nav-link" href="#">
+                        tonalidad
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- ventana -->
+        <div id="main-window">
+
+            <!-- plots -->
+            <div id="main-content" class="container-fluid">
+                <div id="plot-display">
+                    
+                    <!-- plot PCA -->
+                    <div id="plot-PCA" class="chart" style="display: block;">
+                        <canvas id="canvas-PCA" class="canvas"></canvas>
+                    </div>
+
+                    <!-- plot atributos -->
+                    <div id="plot-atributos" class="chart" style="display: none">
+                        <canvas id="canvas-atributos" class="canvas"></canvas>
+                    </div>
+
+                    <!-- plot medidas -->
+                    <div id="plot-medidas" class="chart" style="display: none; max-width: 33.3%;">
+                        <canvas id="canvas-medidas-tempo" class="canvas" style="flex-grow: 1;"></canvas>
+                        <canvas id="canvas-medidas-loudness" class="canvas" style="flex-grow: 1;"></canvas>
+                        <canvas id="canvas-medidas-duration_ms" class="canvas" style="flex-grow: 1;"></canvas>
+                    </div>
+                    
+                    <!-- plot tonalidad -->
+                    <div id="plot-tonalidad" class="chart" style="display: none">
+                        <canvas id="canvas-tonalidad" class="canvas"></canvas>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- acordeón -->
+            <div id="opciones-acordeon" class="accordion accordion-flush">
+            </div>
+        </div>
+    </div>
+</body>
+
+<!-- scripts -->
+    <script src="./widget.js"></script>
+
+</html>

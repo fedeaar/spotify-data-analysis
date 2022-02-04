@@ -1,0 +1,7 @@
+artistas_db = 'database/artistas.db'
+analisis_db = 'database/analisis.db'
+artistas_json = 'database/artistas.json'
+generated = 'database/generated'
+artistas_dataset = generated + '/datasets'
+artistas_histograms = generated + '/histograms'
+logs = 'builder/logs'

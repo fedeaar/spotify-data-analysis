@@ -1,0 +1,178 @@
+<!-- 
+    url params:
+        f:  danceability | energy | valence | acousticness | liveness | instrumentalness | speechiness
+            key | loudness | duration_ms
+-->
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> spotify-data-analisis </title>
+
+    <style type="text/css">
+        body {
+            all: unset;
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        #main {
+            margin: 2.5%;
+            flex-grow: 1;
+            width: 95%;
+        }
+    </style>
+
+    <!-- chart js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"
+        integrity="sha512-TW5s0IT/IppJtu76UbysrBH9Hy/5X41OTAbQuffZFU6lQ1rdcLHzpU5BzVvr/YFykoiMYZVWlr/PX1mDcfM9Qg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+        </script>
+</head>
+
+<body>
+
+    <content id="main">
+        <canvas id="main-canvas"></canvas>
+    </content>
+</body>
+
+
+<script>
+
+    const nFormatter = new Intl.NumberFormat("en-US");
+    const pFormatter = new Intl.NumberFormat("en-US", { style: 'percent', maximumFractionDigits: 2 });
+
+    const PARAMS = new URLSearchParams(window.location.search);
+    const FEATURE = PARAMS.has('q') ? PARAMS.get('q').toLowerCase() : null;
+
+
+    function constructChart(data) {
+
+        const canvasElement = document.getElementById("main-canvas");
+        const chart = new Chart(canvasElement, {
+            type: 'bar',
+            data: {
+                labels: data.labels,
+                'datasets': datasets(data.data)
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                grouped: false,
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: `atributo '${FEATURE}'`,
+                        }
+                    },
+                    y: {
+                        ticks: {
+                            callback: function (value, index, ticks) {
+                                return pFormatter.format(value);
+                            }
+                        },
+                        title: {
+                            display: true,
+                            text: 'porcentaje sobre el total',
+                        }
+                    }
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: `Distrubición del atributo '${FEATURE}': 2018 - 2021.`,
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: ctx => {
+                                let label = ctx[0].label;
+                                if (FEATURE !== 'key' && FEATURE !== 'mode') {
+                                    label += ` : ${data.labels[ctx[0].dataIndex + 1]}`
+                                }
+                                return label
+                            },
+                            label: ctx => {
+                                const label = `${ctx.dataset.label}: ${pFormatter.format(ctx.raw)} (total: ${
+                                    nFormatter.format(ctx.dataset.qdata[ctx.dataIndex])})`
+                                return label;
+                            },
+                            footer: ctx => {
+                                text = []
+                                if (FEATURE !== 'key' && FEATURE !== 'mode') {
+                                    for (c of ctx) {
+                                        let sum = 0;
+                                        for (let i = 0; i <= c.dataIndex; ++i) {
+                                            sum += c.dataset.data[i];
+                                        }
+                                        text.push(`acumulado ${c.dataset.label}: ${pFormatter.format(Math.min(1, sum))}`)
+                                    }
+                                }
+                                return text
+                            }
+                        }
+                    }
+                },
+                interaction: {
+                    intersect: false,
+                    mode: 'index',
+                }
+            }
+        });
+        return chart;
+    }
+
+
+    function datasets(data) {
+
+        const datasets = [];
+        for (const [key, value] of Object.entries(data)) {
+            datasets.push(dataset(key, value));
+        }
+        return datasets;
+    }
+
+
+    function dataset(label, data) {
+        return {
+            label: label,
+            data: data.hist_density,
+            qdata: data.hist,
+            backgroundColor: data.color + '80',
+            borderColor: data.color + '40',
+            borderWidth: 1,
+            barPercentage: 1,
+            categoryPercentage: 1,
+            hidden: data.hidden
+        }
+    }
+
+
+    async function load() {
+
+        try {
+            const response = await fetch(`../../database/generated/histograms/${FEATURE}.json`);
+            constructChart(await response.json());
+        }
+        catch {
+            const errorElement = document.createElement('div');
+            errorElement.textContent = `Error en la carga de datos para el query: ${FEATURE}.`
+            const main = document.getElementById('main');
+            main.insertBefore(errorElement, main.firstChild);
+        }
+    }
+
+    load();
+
+</script>
+
+</html>

@@ -1,0 +1,40 @@
+.chartTooltip
+{
+    position: absolute;
+    
+    color: white;
+    background-color: rgba(44, 35, 35, 0.8);
+
+    border-radius: 4px;
+    padding: 0.25rem 0.5rem 0 0.5rem;
+
+    min-width: 0px;
+
+    pointer-events: none;
+
+    transition-property: opacity;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+}
+
+.chartTooltip-pill
+{
+    padding-bottom: 0.25rem;
+}
+
+.chartTooltip, .chartTooltip-text, .chartTooltip-pill
+{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.chartTooltip-square
+{  
+    display: inline-block;
+
+    margin-right: 0.3rem;
+    
+    width: 10px;
+    height: 10px;
+}

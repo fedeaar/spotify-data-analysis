@@ -1,0 +1,8 @@
+credentials.py
+*.db
+web/node_modules/
+
+.idea
+.cache
+venv
+__pycache__/

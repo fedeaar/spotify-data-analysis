@@ -1,0 +1,23 @@
+MSD:
+    searchbar setup html
+    mouse pointer icon
+    cleanup css
+
+change datastructure todo UPDATE widget
+rearmar tooltips todo use chartjs
+optimize togglelist
+tonalidad por %
+fix updates separados
+mouse pointer icons
+cleanup css
+
+
+terminar pagina para la nota + nota
+continuar cleanup
+registrar datos que uso en la nota
+
+fix bugs!
+
+index para la nota
+eliminar custom tooltips
+(para despues) agregar tab medidas

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> spotify-data-analisis </title>
+
+    <style type="text/css">
+        body {
+            all: unset;
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        #main {
+            margin: 2.5%;
+            flex-grow: 1;
+            width: 95%;
+        }
+    </style>
+
+    <!-- chart js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"
+        integrity="sha512-TW5s0IT/IppJtu76UbysrBH9Hy/5X41OTAbQuffZFU6lQ1rdcLHzpU5BzVvr/YFykoiMYZVWlr/PX1mDcfM9Qg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+        </script>
+</head>
+
+<body>
+
+    <content id="main">
+        <canvas id="main-canvas"></canvas>
+    </content>
+</body>
+
+
+<script>
+
+    const nFormatter = new Intl.NumberFormat("en-US");
+    const pFormatter = new Intl.NumberFormat("en-US", { style: 'percent', maximumFractionDigits: 2 });
+
+
+    function constructChart(data) {
+
+
+        const canvasElement = document.getElementById("main-canvas");
+        const chart = new Chart(canvasElement, {
+            type: 'bar',
+            data: {
+                labels: data.labels,
+                'datasets': [dataset(data.data)]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'artistas',
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'seguidores',
+                        },
+                        type: 'logarithmic'
+                    }
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: `Cantidad de artistas por cantidad de seguidores. Datos al 31 de Enero 2022.`,
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: ctx => `${ctx[0].label} : ${nFormatter.format(data.labels[ctx[0].dataIndex + 1])}`,
+                            label: ctx => {
+                                const label = `${ctx.dataset.label}: ${ctx.raw} (${pFormatter.format(data.data.hist_density[ctx.dataIndex])})`
+                                return label;
+                            },
+                            footer: ctx => {
+                                let sump = 0;
+                                let sumt = 0;
+                                for (let i = 0; i <= ctx[0].dataIndex; ++i) {
+                                    sump += data.data.hist_density[i];
+                                    sumt += data.data.hist[i];
+                                }
+                                const footer = `acumulado: ${nFormatter.format(sumt)} (${pFormatter.format(Math.min(1, sump))})`
+                                return footer
+                            }
+                        }
+                    }
+                },
+                interaction: {
+                    intersect: false,
+                    mode: 'index',
+                }
+            }
+        });
+        return chart;
+    }
+
+    function dataset(constructor) {
+
+        return {
+            label: 'total',
+            data: constructor.hist,
+            qdata: constructor.hist_density,
+            backgroundColor: constructor.color, 
+            borderColor: constructor.color,
+            borderWidth: 1,
+            barPercentage: 1,
+            categoryPercentage: 1,
+            barThickness: 'flex',
+            hidden: constructor.hidden
+        }
+    }
+
+
+    async function load() {
+
+        try {
+            const response = await fetch(`../../database/generated/followersDist.json`);
+            constructChart(await response.json());
+        }
+        catch (error) {
+            console.log(error)
+            const errorElement = document.createElement('div');
+            errorElement.textContent = `Error en la carga de datos para followersDist.json.`
+            const main = document.getElementById('main');
+            main.insertBefore(errorElement, main.firstChild);
+        }
+    }
+
+    load();
+
+</script>
+
+</html>

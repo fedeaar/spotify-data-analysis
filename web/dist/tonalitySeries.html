@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> spotify-data-analisis </title>
+
+    <style type="text/css">
+        body {
+            all: unset;
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        #main {
+            margin: 2.5%;
+            flex-grow: 1;
+            width: 95%;
+        }
+    </style>
+
+    <!-- chart js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"
+        integrity="sha512-TW5s0IT/IppJtu76UbysrBH9Hy/5X41OTAbQuffZFU6lQ1rdcLHzpU5BzVvr/YFykoiMYZVWlr/PX1mDcfM9Qg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+        </script>
+</head>
+
+<body>
+
+    <content id="main">
+        <canvas id="main-canvas"></canvas>
+    </content>
+</body>
+
+
+<script>
+    
+    const pFormatter = new Intl.NumberFormat("en-US", { style: 'percent', maximumFractionDigits: 2 });
+
+    function constructChart(data) {
+
+        const canvasElement = document.getElementById("main-canvas");
+        const chart = new Chart(canvasElement, {
+            type: 'bar',
+            data: {
+                'labels': data.labels,
+                'datasets': datasets(data.keys)
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: `distribución de tonalidades por año: 2000 - 2021.`,
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: ctx => {
+                                const label = ctx.dataset.label + ': ' + pFormatter.format(ctx.raw)
+                                return label;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        stacked: true,
+                        title: {
+                            display: true,
+                            text: 'año',
+                        }
+                    },
+                    y: {
+                        stacked: true,
+                        max: 1,
+                        title: {
+                            display: true,
+                            text: 'tonalidades',
+                        }
+                    }
+                },
+                interaction: {
+                    intersect: false,
+                    mode: 'index',
+                }
+            }
+        });
+        return chart;
+    }
+
+
+    function datasets(data) {
+
+        const datasets = [];
+        for (const [key, value] of Object.entries(data)) {
+            datasets.push(dataset(key, value.hist, value.color));
+        }
+        return datasets;
+    }
+
+
+    function dataset(label, data, hexcolor) {
+
+        return {
+            label: label,
+            data: data,
+            backgroundColor: hexcolor,
+            borderColor: hexcolor,
+            borderWidth: 1,
+            barPercentage: 1,
+            categoryPercentage: 1
+        }
+    }
+
+
+    async function load() {
+
+        try {
+            const response = await fetch(`../../database/generated/tonalitySeries.json`);
+            constructChart(await response.json());
+        }
+        catch {
+            const errorElement = document.createElement('div');
+            errorElement.textContent = `Error en la carga de datos. No se encontró tonalitySeries.json.`
+            const main = document.getElementById('main');
+            main.insertBefore(errorElement, main.firstChild);
+        }
+    }
+
+    load();
+
+</script>
+
+</html>

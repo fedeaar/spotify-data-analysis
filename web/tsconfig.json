@@ -1,0 +1,21 @@
+{
+    "compilerOptions": 
+    {
+        "outDir": "./dist/",
+        "module": "es6",
+        "target": "es2016",
+        
+        "allowJs": true,
+        "moduleResolution": "node",
+        
+        "jsx": "react",
+        "jsxFactory": "NodeHandler.createElement", 
+
+        "allowUmdGlobalAccess": true,
+        
+         /* Type Checking */
+        "strict": true,                                      
+        "noImplicitAny": true,                               
+        "strictNullChecks": true,         
+    }
+}

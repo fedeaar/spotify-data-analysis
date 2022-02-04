@@ -1,0 +1,1039 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> spotify-data-analisis </title>
+
+    <style type="text/css">
+        body {
+            all: unset;
+            font-family: sans-serif;
+        }
+
+        .main,
+        content {
+            display: block;
+            width: 95%;
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        #header-img {
+            width: 100%;
+            max-height: 50vh;
+        }
+
+        p {
+            text-align: justify;
+            color: rgb(49, 44, 44);
+        }
+
+        figcaption {
+            padding-top: 1em;
+            font-size: 12;
+            font-style: italic;
+        }
+
+        .chartfig {
+            padding-top: none;
+            padding-bottom: 1em;
+            text-align: center;
+            color: #666666;
+        }
+
+        h1 {
+            margin: 3rem 0 2rem;
+            border-bottom: 1px solid lightgray;
+            padding-bottom: 1rem;
+        }
+
+        h3 {
+            font-style: italic;
+            font-weight: unset;
+        }
+
+        h4 {
+            border-bottom: 1px solid lightgray;
+            padding-bottom: 1rem;
+            padding-top: 2rem;
+        }
+
+        h5 {
+            padding-top: 1rem;
+            padding-bottom: 0;
+        }
+
+        #index {
+            color: rgb(49, 44, 44);
+            text-decoration: none;
+            margin: 1em auto 0 auto;
+            font-style: italic;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5em;
+        }
+
+        a:link {
+            color: black;
+            /* text-decoration: none; */
+        }
+
+        a:visited {
+            color: black;
+            /* text-decoration: none; */
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        a:active {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <img id="header-img" class="main" src="header.png" alt="imágen de un gráfico de barras.">
+    <figcaption class="main"> Distribución de las tonalidades, por año, de 208,884 canciónes nacionales (2000 -
+        2021). Cada columna representa un año, cada color una tonalidad (desde do).
+    </figcaption>
+    
+    <h4 class="main">
+        &lt; índice /&gt;
+    </h4>
+    <div id="index" class="main" >
+        <span>
+            &gt;
+            <a href="#1">La información que Spotify comparte</a>
+        </span>
+        <span>
+            &gt;
+            <a href="#2">la muestra</a>
+        </span>
+        <span>
+            &gt;
+            <a href="#3">Una primera mirada macro</a>
+            :
+            <a href="#4">publicaciones</a>
+            -
+            <a href="#5">géneros</a>
+            -
+            <a href="#6">popularidad</a>
+        </span>
+        <span>
+            &gt;
+            <a href="#8">Los aspectos escenciales</a>
+        </span>
+        <span>
+            &gt;
+            <a href="#9">Predictores</a>
+            :
+            <a href="#10">danceability</a>
+            -
+            <a href="#11">energy</a>
+            -
+            <a href="#12">valence</a>
+            -
+            <a href="#13">acousticness</a>
+            -
+            <a href="#14">instrumentalness</a>
+            -
+            <a href="#15">liveness</a>
+            -
+            <a href="#16">speechiness</a>
+        </span>
+        <span>
+            &gt;
+            <a href="#17">Medidas</a>
+            :
+            <a href="#18">key</a>
+            -
+            <a href="#19">mode</a>
+            -
+            <a href="#20">duration_ms</a>
+            -
+            <a href="#21">tempo</a>
+            -
+            <a href="#22">loudness</a>
+        </span>
+        <span>
+            &gt;
+            <a href="#23">La exploración micro</a>
+        </span>
+        <span>
+            &gt;
+            <a href="#24">Rakings y curiosidades</a>
+        </span>
+        <span>
+            &gt;
+            <a href="#25">Explorar el Dataset</a>
+        </span>
+    </div>
+    
+    <content>
+        <header>
+            <h1>
+                La huella digital de la música argentina
+            </h1>
+            <h6 >por Federico Arienti.</h6>
+            <h3>
+                5,083 artistas, 35,741 álbumes y 239,342 canciones recopiladas. ¿Qué nos puede decir una
+                plataforma de streaming, como Spotify, respecto a la música argentina y los cambios que ella atravesó en
+                estos últimos cuatro años?
+            </h3>
+        </header>
+        
+        <p>
+            Una base de datos enorme, tanto de música como de hábitos de consumo, tiene las puertas abiertas para
+            cualquier curioso que quiera aventurarse a recorrerla. O mejor dicho, entreabiertas. Los hábitos de consumo
+            están bajo llave -salvo los propios- pero toda clase de información respecto a la música que en ella se
+            almacena está disponible para investigar de forma masiva. Siempre y cuando, se sepa qué es lo que se está
+            buscando.
+        </p>
+        <p>
+            En particular, la creciente popularidad de Spotify en Argentina -desde su lanzamiento en el 2013- la ha
+            convertido en el sitio predilecto para que toda clase de artistas carguen su música. Sean del género que
+            fueren, sean conocidos o desconocidos, hayan grabado profesionalmente o con un celular -y lo hayan hecho
+            hoy o hace 50 años-, todos tienen su presencia digital garantizada, si así lo desean.
+            Aunque, a veces, también sin
+            su consentimiento.
+        </p>
+        <p>
+            Con la música, se ha publicado una gran cantidad de información -directa e indirectamente
+            relacionada-
+            que la plataforma almacena. Estos
+            datos se utilizan a diario para hacer toda clase de inferencias y análisis respecto a los vínculos y
+            cualidades
+            musicales de todo álbum, sencillo, compilado, y canción en el catálogo.
+        </p>
+        
+        </h4>
+        <h4 id="1">
+            &lt; La información que Spotify comparte /&gt;
+        </h4>
+        <p>
+            La página web para desarrolladores de la plataforma lo resume de la siguiente manera: “Basado en principios
+            REST simples, la API web de Spotify provee información sobre artistas musicales, álbumes y canciones,
+            directo del catálogo de Spotify Data. También, provee acceso a la información relacionada con un usuario,
+            como sus listas de reproducción o música guardada. Tal acceso se autoriza de manera selectiva por el
+            usuario.”
+        </p>
+        <p>
+            Una API es una interfaz de programación para una aplicación, los principios REST son un estilo de
+            arquitectura de software para sistemas distribuidos -es decir con partes que se comunican
+            independientemente- y, en este caso, ambos son el canal por el que se puede acceder a la información que la
+            plataforma tiene y quiere compartir.
+        </p>
+        <p>
+            Esta provee información sobre cuántos seguidores tiene un artista, qué tan popular es, a qué géneros
+            -calcula- pertenece, y con quiénes se lo puede relacionar. Para cada uno de sus lanzamientos, sean albumes,
+            singles o compilados, provee su fecha de publicación y una serie de atributos para cada canción: si es
+            explícita, en qué tonalidad está, en qué modo (mayor o menor), su métrica y tempo, su duración, y su volumen
+            percibido. Además, permite calcular una serie de características que -para Spotify- determinan las
+            cualidades de una canción.
+        </p>
+
+        <h4 id="2">
+            &lt; la muestra /&gt;
+        </h4>
+        <p>
+            La base de datos recolectada se compone de 5083 artistas argentinos curados de distintos medios: páginas
+            enciclopédicas como
+            <a href="https://www.rock.com.ar" rel="noreferrer noopener" target="blank" referrerpolicy='no-referrer'>
+                rock.com.ar</a>, diversas playlists de diversos géneros de música nacional, y una búsqueda
+            reiterada a los ‘artistas relacionados’ -una información que provee la plataforma- de cada músico ya en la
+            base de datos, y de los ‘artistas invitados’ para cada canción suya.
+        </p>
+        <p>
+            Dado que Spotify no comparte información sobre la procedencia de los artistas, cada uno fue seleccionado
+            bajo algún claro indicio de pertenecer al país -o de tener miembros argentinos en el caso de las bandas-,
+            sea por medio de una búsqueda por fuera de Spotify, o que en su ‘bio’ o ‘géneros’ se destaque su localidad.
+            Se tomaron precauciones en el caso de los géneros, ya que se encontraron artistas locales catalogados en
+            referencia a otros países (el 0.47% del total). Por ejemplo, la histórica banda de rock progresivo Crucis
+            es catalogada como perteneciente al rock progresivo italiano.
+        </p>
+
+        <h4 id="3">
+            &lt; Una primera mirada macro /&gt;
+        </h4>
+            <p>
+                Para tener un patallazo de toda esta información, podemos concentrarnos en tres aspectos principales: qué y cuánto se publica,
+                cuáles son los géneros más cómunes, y a quiénes se los escucha más.
+            </p>
+        <h5 id="4">
+            &lt; publicaciones &gt;
+        </h5>
+        <p>
+            Se escucha a menudo que lo principal ya no es lanzar álbumes, sino sencillos. Entre las razones, se suele
+            citar la idea que lanzar poco material ‘seguido’ mantiene más el interés que lanzar mucho ‘cada tanto’.
+            ¿Hasta qué
+            punto se verifica está idea en los datos?
+        </p>
+        <p>
+            El siguiente gráfico describe la cantidad de lanzamientos, de álbumes y de sencillos, por mes desde el año
+            2000 hasta el final del 2021 para todas las muestras cuya fecha de lanzamiento esté catalogada con una
+            ‘precisión’ -según la plataforma- del día exacto (el 95.4% del total):
+        </p>
+    </content>
+
+    <iframe class="main" src="releaseSeries.html" width="100%" height="80%" frameBorder="0">
+        <p>Error al cargar el iframe. Tu browser no es compatible.</p>
+    </iframe>
+    <figcaption class="chartfig main"> gráfico interactivo. Clickeá las leyendas para ocultarlas. Deslizá el mouse
+        sobre las barras para ver información adicional.
+    </figcaption>
+
+    <content>
+        <p>
+            Ya que es posible que los datos previos al lanzamiento de la plataforma no sean representativos por
+            incompletos -probablemente muchos de los sencillos y álbumes ‘menores’, que fracasaron o fueron olvidados,
+            nunca se cargaron en el catálogo-, es mejor concentrarse en los años posteriores.
+        </p>
+        <p>
+            En estos, la diferencia es significativa. Del 2013 al 2017 hubo -al menos- 4,036 álbumes y 2,841
+            sencillos. Una relación de 0.7 sencillos por álbum. En cambio, en los últimos cuatro años se lanzaron -al
+            menos- 4,017 álbumes y 15,258 sencillos. Es decir, 3.8 sencillos por álbum.
+
+        </p>
+        <p>
+            Los datos parecen confirmar el patrón mencionado más arriba y, además, muestran que la cantidad de
+            lanzamientos, en general, comienza a acelerar pasado el 2013. Más allá, el
+            aumento sigue siendo significativo hasta el día de hoy. Una explicación posible es que la masificación de
+            los métodos de grabación caseros y la sencillez para publicar en esta plataforma, o similares -en
+            comparación a la publicación por medio de sellos discográficos-, permiten que cada vez más bandas y artistas puedan
+            producir y lanzar su música.
+        </p>
+        <p>
+            No solo eso: a pesar de las dificultades, el 2020 fue el año con mayor cantidad de lanzamientos de las
+            últimas dos décadas. <!-- Comparativamente, en el 2018 hubo, al menos, 2,258 singles y 936 álbumes. En el 2019
+            hubo, al menos, 3,404 singles y 892 álbumes. Mientras que en el 2020 hubo, como mínimo, 5,304 singles y
+            1,237 álbumes. Para completar la imagen, en el 2021 la muestra registra 2,684 singles y 560 álbumes. Es
+            decir, en el 2020 se duplicó la cantidad de lanzamientos con respecto a tanto el 2019 como el 2021. --> Fue
+            el doble que tanto en el 2019 como en el 2021.
+        </p>
+      <!--   <p>
+            Aunque el gráfico está filtrado para incluir solo aquellos discos cuya precisión es diaria -así se evitan
+            distorsiones en las cantidades-, los picos de enero previos al 2013 son probablemente eso mismo: errores de
+            precisión. En algunos casos analizados, se pudo observar que los discos en esos meses no se cargaron con la
+            fecha correcta.
+        </p> -->
+
+        <h5 id=5>
+            &lt; géneros &gt;
+        </h5>
+        <p>
+            Acerca de los géneros, del total de la muestra, el 61% no tiene ninguno asociado o no se le ha asignado.
+            Para el resto, unos 1987 artistas, el siguiente gráfico resume como se distribuyen<!-- la heterogeneidad visible -->:
+        </p>
+    </content>
+
+    <iframe class="main" src="genresDist.html" width="100%" height="80%" frameBorder="0">
+        <p>Error al cargar el iframe. Tu browser no es compatible.</p>
+    </iframe>
+    <figcaption class="chartfig main"> gráfico interactivo. Clickeá las leyendas para ocultarlas. Deslizá el mouse
+        sobre las barras para ver información adicional.
+    </figcaption>
+
+    <content>
+        <p>
+            Un mismo artista puede pertenecer a más de un género pero no se considera que pertenezca a más de un
+            subgénero dentro del mismo. Es decir, no hay necesariamente una relación uno a uno entre artista y la cantidad
+            de géneros a los que pertenece, pero sí entre artistas y géneros en particular (en los casos en que el artista
+            pertenezca a más de un subgénero dentro del mismo grupo).
+        </p>
+        <p>
+            También, se opto por incluir aquellos subgéneros que hacen referencia explícita a otros países, ya que no necesariamente
+            se refieren a la procedencia (y se verificó), sino que pueden refererirse a tipos de música regional que bien 
+            pueden ser interpretados por algún artista argentino. 
+        </p>
+        <p>
+            Si se considera que los datos son lo suficientemente representativos, se puede inferir algo sobre cuáles
+            son y cómo se distribuyen por cantidad algunos de los géneros más comunes de la música argentina (otra forma
+            podría ser por su popularidad).<!--  Del total, se puede destacar que alrededor del 24.5% hace rock, el 12.5%
+            folclore, el 8.7% metal, el 7.3% pop, el 4.2% trap, el 3.9% cumbia, el 2.3% jazz y el 1.6% tango, de manera
+            no exclusiva necesariamente. -->
+        </p>
+        <!-- <p>
+            Cabe aclarar que el ‘indie’ es un término paraguas para toda clase de música que se hace por fuera de las
+            discográficas más importantes. Por lo que su presencia en el gráfico debe tomarse con pinzas. Algo similar
+            sucede con los otros géneros, pero en el sentido que pueden llegar a englobar música muy diferente, ya que
+            se componen de subgéneros muy diversos. Es decir, simplifican el verdadero ecosistema musical.
+        </p> -->
+
+        <h5 id="6">
+            &lt; popularidad &gt;
+        </h5>
+        <p>
+            A pesar de que Spotify no brinda una forma detallada de conocer los hábitos de consumo de los oyentes de su
+            plataforma, se puede tener una idea del peso que tienen los diversos artistas por los datos que si comparte:
+            su ‘popularidad’ y su cantidad de seguidores.
+        </p>
+        <p>
+            La ‘popularidad’, como parámetro para Spotify, se deriva -según la documentación de la plataforma-, de “la
+            cantidad de reproducciones de cada track del artista” y de ”qué tan recientes son esas reproducciones”. En
+            particular,
+            se altera día a día. Como la muestra no registra estos cambios, resulta más conveniente enfocarse en
+            la cantidad de seguidores<!--  para tener una idea de la popularidad verdadera de los artistas -->.
+        </p>
+        <p>
+            El siguiente histograma muestra cómo se distribuyen los artistas de la muestra según la cantidad de
+            seguidores. Se tomó una escala logarítmica para abarcar todos los datos. Salvo las primeras, las cajas
+            representan medidas equidistantes <!-- logarítmicamente -->.
+        </p>
+    </content>
+
+    <iframe class="main" src="followersHist.html" width="100%" height="80%" frameBorder="0">
+        <p>Error al cargar el iframe. Tu browser no es compatible.</p>
+    </iframe>
+    <figcaption class="chartfig main"> gráfico interactivo. Clickeá las leyendas para ocultarlas. Deslizá el mouse
+        sobre las barras para ver información adicional.
+    </figcaption>
+
+    <content>
+        <p>
+            Se puede observar que el 36.67% de los artistas tienen -a lo sumo- 100 seguidores, el 68.23% -3,468
+            artistas- no supera los 1,000 seguidores, y el 90.79%  -4,615 artistas- no supera los 20,000 seguidores.
+            Solo un 0.75% supera el millón: 38 artistas.
+        </p>
+        <p>
+            A pesar de las apariencias del gráfico (por la escala utilizada),<!--  la distribución está fuertemente ladeada 
+            hacia la izquierda y tiene una cola muy larga y angosta. --> la diferencia entre el 'primer' 90% y el artista
+            con mayor cantidad de seguidores es de más de 14.5 millones. 
+        </p>
+        <p>
+            La mayoría de los artistas no son conocidos en la plataforma 
+            (más abajo se pueden explorar).
+            Asimismo, estos datos tampoco son lo suficientemente incisivos como para sacar conclusiones particulares respecto 
+            a cada uno. Sino, dan un panorama general de la popularidad <!-- como un fenómeno social -->.
+        </p>
+        <p>
+            El ranking al 31 de enero de 2021 es el siguiente:
+        </p>
+        <ul>
+            <li>
+                Paulo Londra: 14,629,973 seguidores.
+            </li>
+            <li>
+                Soda Stereo:6,272,402 seguidores.
+            </li>
+            <li>
+                Duki: 5,258,435 seguidores.
+            </li>
+            <li>
+                Bizarrap 4,422,620 seguidores.
+            </li>
+            <li>
+                Cazzu: 4,198,218 seguidores.
+            </li>
+            <li>
+                Tini: 3,775,643 seguidores.
+            </li>
+            <li>
+                Khea: 3,700,828 seguidores.
+            </li>
+            <li>
+                Abel Pintos: 2,937,433 seguidores.
+            </li>
+            <li>
+                Gustavo Cerati: 2,903,882 seguidores.
+            </li>
+            <li>
+                Lit Killah: 2,887,629 seguidores.
+            </li>
+
+        </ul>
+        <!-- <p>
+            Una limitación importante a mencionar es que cualquier inferencia que se pueda hacer respecto a los hábitos
+            de consumo -entre ellos alguna noción de la popularidad- está fuertemente influenciada por quiénes
+            consumen la plataforma. Si este no es un grupo representativo, tampoco lo van a ser los datos.
+        </p> -->
+
+        <h4 id="8">
+            &lt; los aspectos escenciales /&gt;
+        </h4>
+        <p>
+            Los ‘features’, o atributos -también llamados cualidades, o vectores-, son, en el mundo de la estadística y
+            el
+            reconocimiento de patrones, propiedades mensurables, o medidas de confianza, respecto a ciertas
+            características
+            que se suponen describen a un fenómeno. Spotify calcula y permite el acceso a una serie de atributos de
+            audio
+            para cada canción que está cargada en la plataforma. Estos datos luego se utilizan para generar una serie de
+            inferencias y relaciones. En particular, para predecir si un tema nuevo puede llegar a gustarle a un
+            usuario, según
+            su historial de escucha.
+        </p>
+        <p>
+            Los atributos que comparte la plataforma se pueden dividir en dos tipos: predictores y mediciones. 
+        </p>
+        <p>
+            En las siguientes secciones se da un panorama de ambos tipos de atributos para las canciones de la muestra. Se
+            observan solo los últimos cuatro años para dar una mirada más actual y posiblemente más representativa
+            (dada la madurez de la plataforma como medio de consumo en el país). 
+        </p>
+        <h4 id="9">
+            &lt; predictores /&gt;
+        </h4>
+        <p>
+            Los
+            predictores, valga la redundancia, predicen.
+            Es decir, dan un grado de confianza respecto a qué tan presente está una cualidad en una canción, acorde
+            -por ejemplo- a cómo se compara
+            con otras canciones que usa de referencia (el 'training set' o grupo de control) o a la detección de otras
+            cualidades que se usan
+            como indicios. En general, se expresan como un porcentaje codificado entre 0 y 1. Spotify calcula los siguientes:
+        </p>
+        <h5 id="10">
+            &lt; danceability &gt;
+        </h5>
+        <p>
+            La ‘danceability’ o ‘bailabilidad’ es un predictor sobre qué tan bailable es una canción. Se calcula -según
+            el manual
+            para desarrolladores- acorde a “una combinación de elementos musicales que incluyen el tempo,
+            la estabilidad rítmica, la fuerza del beat y la regularidad general del tema”.
+        </p>
+        <p>
+            En el siguiente gráfico se resume -con una serie de histogramas- la distribución de esta propiedad para el
+            total de canciones
+            recolectadas en los últimos cuatro años:
+        </p>
+    </content>
+
+    <iframe class="main" src="attributeHist.html?q=danceability" width="100%" height="80%" frameBorder="0">
+        <p>Error al cargar el iframe. Tu browser no es compatible.</p>
+    </iframe>
+    <figcaption class="chartfig main"> gráfico interactivo. Clickeá las leyendas para ocultarlas. Deslizá el mouse
+        sobre las barras para ver información adicional.
+    </figcaption>
+
+    <content>
+        <p>
+            En este caso, es interesante notar el pequeño sesgo por encima del 50% que tiene la distribución. En
+            general, las canciones
+            tienden a inclinarse hacia aquellas propiedades que las hacen más bailables, aunque solo por un poco. Por
+            otra parte, entre
+            el 2018 y el 2021 se puede notar un aumento del 4.7% en temas con una 'bailabilidad' predicta mayor al 0.6
+            (60%).
+        </p>
+
+        <h5 id="11">
+            &lt; energy &gt;
+        </h5>
+        <p>
+            La ‘energía’ de un tema es una métrica que describe la intensidad y actividad que se puede percibir en el
+            mismo. Spotify detalla:
+            “típicamente, una canción energética se siente rápida, fuerte y ruidosa. [...] las cualidades perceptuales
+            que contribuyen a este
+            atributo incluyen el rango de dinámicas, el volúmen percibido, el timbre, la tasa de ‘golpe’ de los sonidos
+            (si ocurren repentinamente o de forma gradual), y la entropía general".
+        </p>
+        <p>
+            El siguiente gráfico describe la distribución de esta propiedad en el total de canciones recolectadas para
+            cada uno de los últimos cuatro años:
+        </p>
+    </content>
+
+    <iframe class="main" src="attributeHist.html?q=energy" width="100%" height="80%" frameBorder="0">
+        <p>Error al cargar el iframe. Tu browser no es compatible.</p>
+    </iframe>
+    <figcaption class="chartfig main"> gráfico interactivo. Clickeá las leyendas para ocultarlas. Deslizá el mouse
+        sobre las barras para ver información adicional.
+    </figcaption>
+
+    <content>
+        <p>
+            Se puede notar que hay un sesgo más pronunciado hacia los valores altos de energía. Asimismo, también, hubo
+            un decremento
+            del 8.8% para los valores mayores al 0.7 (70%) entre el 2018 y el 2021. Esta diferencia, conjunto a la
+            variación en la
+            'bailabilidad', se puede interpretar como un movimiento leve de la música hacia géneros menos energéticos y
+            más bailables.
+            Por ejemplo, de algo más rockero hacia algo más pop.
+        </p>
+
+        <h5 id="12">
+            &lt; valence &gt;
+        </h5>
+        <p>
+            La ‘valencia’ predice cuánta ‘positividad’ transmite una canción. Valores cercanos a cero son descriptos
+            como
+            “tristes, deprimentes o enojados” y valores cercanos a uno como “felices, alegres o eufóricos”.
+        </p>
+        <p>
+            El siguiente gráfico destaca la distribución de ésta propiedad durante los últimos cuatro años:
+        </p>
+    </content>
+
+    <iframe class="main" src="attributeHist.html?q=valence" width="100%" height="80%" frameBorder="0">
+        <p>Error al cargar el iframe. Tu browser no es compatible.</p>
+    </iframe>
+    <figcaption class="chartfig main"> gráfico interactivo. Clickeá las leyendas para ocultarlas. Deslizá el mouse
+        sobre las barras para ver información adicional.
+    </figcaption>
+
+    <content>
+        <p>
+            En general, parece no haber sesgos hacia ninguno de los dos extremos.
+        </p>
+        <h5 id="13">
+            &lt; acousticness &gt;
+        </h5>
+        <p>
+            Otro atributo a considerar es su ‘acousticness’ o ‘acusticidad’. Esta cualidad representa el grado de
+            confianza
+            que tiene Spotify respecto a si un tema es acústico o no.
+        </p>
+        <p>
+            El siguiente gráfico describe la distribución de esta propiedad durante los últimos cuatro años:
+        </p>
+    </content>
+
+    <iframe class="main" src="attributeHist.html?q=acousticness" width="100%" height="80%" frameBorder="0">
+        <p>Error al cargar el iframe. Tu browser no es compatible.</p>
+    </iframe>
+    <figcaption class="chartfig main"> gráfico interactivo. Clickeá las leyendas para ocultarlas. Deslizá el mouse
+        sobre las barras para ver información adicional.
+    </figcaption>
+
+    <content>
+        <p>
+            En general, Spotify considera que la mayoría de los temas no son acústicos. Alrededor del 30%
+            de los datos -en cualquiera de estos años- registra entre un 0 (0%) y 0.05 (5%) de confianza.
+            Mientras que alrededor del 65% presenta valores menores o iguales al 0.5 (50%).
+        </p>
+        <p>
+            Por otro lado, hubo un crecimiento del 7.5% en la confianza mayor a 0.7 (70%)
+            entre el 2018 y el 2021. Es decir, hubo un aumento en los temas probablemente -para Spotify- acústicos.
+        </p>
+
+        <h5 id="14">
+            &lt; instrumentalness &gt;
+        </h5>
+        <p>
+            La ‘instrumentalidad’ de un tema predice si un tema tiene, o no, voces. El manual lo define del siguiente modo: 
+            “Los ‘aah’ y
+            ‘ooh’ se tratan como sonidos instrumentales. El rap y la palabra hablada son claramente vocales. [...] La
+            intención de esta medida es que los valores mayores a 0.5 representen tracks instrumentales”.
+        </p>
+        <p>
+            El siguiente gráfico muestra la distribución de éste predictor -para cada uno de los últimos cuatro años-
+            sobre las canciones de la muestra:
+        </p>
+    </content>
+
+    <iframe class="main" src="attributeHist.html?q=instrumentalness" width="100%" height="80%" frameBorder="0">
+        <p>Error al cargar el iframe. Tu browser no es compatible.</p>
+    </iframe>
+    <figcaption class="chartfig main"> gráfico interactivo. Clickeá las leyendas para ocultarlas. Deslizá el mouse
+        sobre las barras para ver información adicional.
+    </figcaption>
+
+    <content>
+        <p>
+            Spotify predice, con alta probabilidad, que alrededor del 70% de las canciones en estos años no son
+            instrumentales. Es decir, tiene una confianza entre el 0 (0%) y 0.05 (5%) de que lo sean. En cambio, entre
+            el 14.29% (2018) y 19.5%
+            (2020, 2021) de las canciones entran en el umbral de probablemente instrumentales (más de 50% de confianza).
+            En
+            el 2021, solo el 5.03% de los datos tuvieron una alta confianza de ser instrumentales (más del 90%).
+        </p>
+
+        <h5 id="15">
+            &lt; liveness &gt;
+        </h5>
+        <p>
+            El ‘liveness’ o ‘en vivo’ calcula la probabilidad de que haya una audiencia presente en una grabación.
+            En este caso, valores mayores al 0.8 (80%) dan una probabilidad alta de que el tema sea en vivo.
+        </p>
+        <p>
+            El siguiente gráfico
+            describe la distribución de éste atributo para los últimos años:
+        </p>
+    </content>
+
+    <iframe class="main" src="attributeHist.html?q=liveness" width="100%" height="80%" frameBorder="0">
+        <p>Error al cargar el iframe. Tu browser no es compatible.</p>
+    </iframe>
+    <figcaption class="chartfig main"> gráfico interactivo. Clickeá las leyendas para ocultarlas. Deslizá el mouse
+        sobre las barras para ver información adicional.
+    </figcaption>
+
+    <content>
+        <p>
+            Se puede observar que más del 90% de las canciones tienen una probabilidad menor al 50% de
+            ser en vivo.
+        </p>
+        <p>
+            En particular, El 4.12% (2018), 2.6% (2019), 2.98% (2020) y 2.49% (2021) de los datos obtuvieron un valor de
+            ‘liveness’ mayor
+            al 0.8 (80%). Es decir, tuvieron una probabilidad alta de ser en vivo.
+        </p>
+
+        <h5 id="16">
+            &lt; speechiness &gt;
+        </h5>
+        <p>
+            La ‘speechiness’ o ‘habladuría’ mide qué tan presente está la palabra hablada en una grabación. La
+            documentación define cómo
+            interpretarla: “Valores por encima de 0.66 describen tracks que están probablemente compuestos en su
+            totalidad
+            de la palabra hablada. Valores entre 0.33 y 0.66 describen tracks que pueden contener tanto música como
+            palabra
+            -tanto en capas como de forma seccionada-, e incluye a la música rap. Valores por debajo del 0.33
+            probablemente
+            representan música y otros tipos de tracks sin palabra hablada."
+        </p>
+        <p>
+            El siguiente gráfico describe la distribución de éste atributo para los últimos cuatro años:
+        </p>
+    </content>
+
+    <iframe class="main" src="attributeHist.html?q=speechiness" width="100%" height="80%" frameBorder="0">
+        <p>Error al cargar el iframe. Tu browser no es compatible.</p>
+    </iframe>
+    <figcaption class="chartfig main"> gráfico interactivo. Clickeá las leyendas para ocultarlas. Deslizá el mouse
+        sobre las barras para ver información adicional.
+    </figcaption>
+
+    <content>
+        <p>
+            Siguiendo la interpretación provista por el manual, más del 97% de las canciones fueron
+            probablemente música o tracks sin palabra hablada -con más del 80% teniendo una alta probabilidad de
+            pertenecer
+            a esta categoría-. Menos del 2% fue probablemente una mezcla entre palabra y música y, en promedio, solo el
+            0.32%
+            fue probablemente palabra hablada sin música.
+        </p><!-- 
+        <p>
+            En particular, esta interpretación permite inferir que menos del 2% de los temas pertencieron a géneros
+            como el
+            rap.
+        </p> -->
+
+        <h4 id="17">
+            &lt; medidas /&gt;
+        </h4>
+        <p>
+            Las mediciones son atributos que describen númericamente las propiedades mas directamente mensurables de un fenómeno.
+            En el caso de Spotify, catalogan aspectos técnicos de las grabaciones subidas a la plataforma.
+        </p>
+        <h5 id="18">
+            &lt; key &gt;
+        </h5>
+        <p>
+            La ‘tonalidad’ clasifica a las canciones de acuerdo a la notación de clases del 
+            <a href="https://es.wikipedia.org/wiki/Temperamento_igual" rel="noreferrer noopener" target="blank">temperamento igual</a>. Estas
+            son: do (C) -
+            do# - re (D) - re# - mi (E) - fa (F) - fa# - sol (G) - sol# - la (A) - la# - si (B), y sus enarmonías.
+            Internamente,
+            Spotify las codifica con valores enteros entre 0 y 11. En general, la tonalidad se suele referir al contexto en el que se enmarcan los
+            tonos
+            -las frecuencias de sonido- dentro de una canción, o sección. Tanto en el sentido del reposo -qué sonidos
+            se sienten
+            'resolutivos'-, como en el sentido de la escala utilizada -qué tonos se utilizan para la composición-.
+        </p>
+        <p>
+            El siguiente gráfico describe la distribución de las tonalidades para
+            los últimos cuatro años. Las mismas fueron ordenadas de acuerdo al <a href="https://es.wikipedia.org/wiki/C%C3%ADrculo_de_quintas"  rel="noreferrer noopener" target="blank">círculo de quintas</a>, ya que este ordenamiento
+            presenta la
+            relación entre tonos consecutivos lo más estrecha posible.
+        </p>
+    </content>
+
+    <iframe class="main" src="attributeHist.html?q=key" width="100%" height="80%" frameBorder="0">
+        <p>Error al cargar el iframe. Tu browser no es compatible.</p>
+    </iframe>
+    <figcaption class="chartfig main"> gráfico interactivo. Clickeá las leyendas para ocultarlas. Deslizá el mouse
+        sobre las barras para ver información adicional.
+    </figcaption>
+
+    <content>
+        <p>
+            Para el análisis de este gráfico, es importante considerar que el círculo de quintas es justamente eso: un
+            círculo. Por
+            lo que a A#Bb (La sostenido) le sigue F (Fa). En consecuencia, se podria 
+            correr
+            el gráfico para situar la punta de su campana en el centro. Es decir, el gráfico está sesgado solo por su
+            ordenamiento.
+            Dada esta salvedad, sigue una distribución en apariencias normal, y sus colas son las tonalidades alteradas.
+        </p>
+        <p>
+            Una interpretación común al respecto es que las tonalidades alteradas son más difíciles de tocar en varios
+            instrumentos.
+            En particular, en la guitarra. Que D#Eb porte el valor mínimo refleja esta idea, ya que es la tonalidad más
+            alejada a la
+            afinación estándar del instrumento (Mi).
+        </p>
+
+        <h5 id="19">
+            &lt; mode &gt;
+        </h5>
+        <p>
+            Desde una mirada estructural, y en relación a la tonalidad, el 'modo' hace referencia a grupos de tonos
+            alternativos
+            -escalas- que se usan para componer una misma tonalidad. Spotify considera solo dos modalidades: mayor y
+            menor, pero hay
+            más. El siguiente gráfico muestra su distribución para los últimos cuatro años.
+        </p>
+    </content>
+
+    <iframe class="main" src="attributeHist.html?q=mode" width="100%" height="80%" frameBorder="0">
+        <p>Error al cargar el iframe. Tu browser no es compatible.</p>
+    </iframe>
+    <figcaption class="chartfig main"> gráfico interactivo. Clickeá las leyendas para ocultarlas. Deslizá el mouse
+        sobre las barras para ver información adicional.
+    </figcaption>
+
+    <content>
+        <p>
+            En general, se mantuvo una relación de alrededor de '3 cada 2' a favor del modo mayor.
+        </p>
+
+        <h5 id="20">
+            &lt; duration_ms &gt;
+        </h5>
+        <p>
+            La medida ‘duration_ms’ se refiere a la duración de una canción en milisegundos. El siguiente gráfico
+            describe la
+            distribución de esta medida -en intervalos de a 5 segundos- para los últimos cuatro años. Se tomó el rango
+            de 0 a
+            600 segundos (10 minutos), pero hubo algunos tracks que excedieron este límite.
+        </p>
+    </content>
+
+    <iframe class="main" src="attributeHist.html?q=duration_ms" width="100%" height="80%" frameBorder="0">
+        <p>Error al cargar el iframe. Tu browser no es compatible.</p>
+    </iframe>
+    <figcaption class="chartfig main"> gráfico interactivo. Clickeá las leyendas para ocultarlas. Deslizá el mouse
+        sobre las barras para ver información adicional.
+    </figcaption>
+
+    <content>
+        <p>
+            El intervalo 120s (2 minutos) a 300s (5 minutos) representa el grueso de los datos para los cuatro años,
+            abarcando el
+            82.6% para el 2018 y 2019, 82.3% para el 2020 y 83.03% para el 2021. En estos años, el promedio fue de:
+            220.26s
+            - aprox 3:40 min- (2018), 214.68s - aprox 3:34 min- (2019), 218.6s - aprox 3:38 min- (2020) y 212.15s -
+            aprox 3:32 min- (2021).
+        </p>
+        <p>
+            Se puede notar también un decremento del sesgo de la distribución entre el 2018 y el 2021. Es decir, los
+            temas duraron
+            relativamente menos en el 2021.
+        </p>
+
+        <h5 id="21">
+            &lt; tempo &gt;
+        </h5>
+        <p>
+            El atributo ‘tempo’ describe el tempo promedio del tema en BPM (beats per minute -pulsos por minuto-). Esta medida se
+            puede
+            pensar como la velocidad de la pieza en relación a la duración de cada pulso, donde un pulso es 
+            aquello que provee la regularidad y subdivisión temporal más básica a una canción. El gráfico muestra la
+            distribución de
+            ésta medida para los últimos cuatro años. El histograma está dividido en intervalos de a 5 BPM, en un rango
+            de 40 a 220
+            BPM.
+        </p>
+    </content>
+
+    <iframe class="main" src="attributeHist.html?q=tempo" width="100%" height="80%" frameBorder="0">
+        <p>Error al cargar el iframe. Tu browser no es compatible.</p>
+    </iframe>
+    <figcaption class="chartfig main"> gráfico interactivo. Clickeá las leyendas para ocultarlas. Deslizá el mouse
+        sobre las barras para ver información adicional.
+    </figcaption>
+
+    <content>
+        <p>
+            Los picos corresponden a los tempos más comunes: entre 90 y 100, 120 y 170 BPM.
+        </p>
+
+        <h5 id="22">
+            &lt; loudness &gt;
+        </h5>
+
+        <p>
+            El último atributo a considerar es el volúmen general del tema, en decibeles. El siguiente histograma
+            describe su
+            distribución para los últimos cuatro años en el rango -36 a 6 db.
+        </p>
+    </content>
+
+    <iframe class="main" src="attributeHist.html?q=loudness" width="100%" height="80%" frameBorder="0">
+        <p>Error al cargar el iframe. Tu browser no es compatible.</p>
+    </iframe>
+    <figcaption class="chartfig main"> gráfico interactivo. Clickeá las leyendas para ocultarlas. Deslizá el mouse
+        sobre las barras para ver información adicional.
+    </figcaption>
+
+    <content>
+
+        <h4 id="23">
+            &lt; La exploración micro /&gt;
+        </h4>
+        <p>
+        Aparte del análisis general, también es interesante detenerse en cada artista en particular. El siguiente 
+        widget 
+        fue diseñado para permitir la comparación entre ellos de una manera dinámica.
+        </p>
+        <p>
+        Se divide de la siguiente manera:
+    </p>
+    <p>
+        la pestaña 'ACP' -para <a href="https://es.wikipedia.org/wiki/An%C3%A1lisis_de_componentes_principales" rel="noreferrer noopener" target="blank" referrerpolicy='no-referrer'>‘análisis de componentes principales’</a>- 
+        condensa todos los predictores y medidas de cada canción
+        -salvo las categóricas (tonalidad y modo)- en un punto en el plano cartesiano. Es decir, reduce la información de todos
+        estos atributos en dos nuevos (y linealmente independientes entre sí), para simplificarlos. Uno representado por el eje
+        X y otro por el eje Y. Como esta es una reducción grosera, sólo se conserva el 43.51% de la información original. 
+        Este gráfico sirve para dar una idea
+        de qué tan similares son los distintos temas por su proximidad, pero no sirve para
+        hacer una comparación exhaustiva.
+    </p>
+    <p> 
+        Las pestañas 'Predictores' y 'Medidas' capturan esta misma información pero acorde a los números de resúmen para la totalidad
+        de los temas del artista, o para cada uno de sus álbumes. La información está
+        presentada en <a href="https://es.wikipedia.org/wiki/Diagrama_de_caja" rel="noreferrer noopener" target="blank" referrerpolicy='no-referrer'>diagramas de caja</a>. 
+        Cada caja representa cómo se distribuye el 50% de los datos
+        centrales, siendo la línea interna la mediana (el valor del medio), y el punto interno la media (el promedio). Los
+        puntos externos representan el mínimo y el máximo y los ‘bigotes’ (las T), representan un límite en la dispersión de los
+        datos a partir del cual se empiezan a considerar anómalos. En este caso se usó 1.5 veces el rango intercuartil. Los
+        diagramas de caja dan una idea general de la distribución de los datos y de su dispersión, lo cual es útil para
+        compararlos.
+    </p>
+    <p>
+        La pestaña 'Tonalidad', por su parte, grafica un histograma de la distribución de las tonalidades y modos, por album o por artista.
+    </p>
+    <h5>
+        
+    </h5>
+    
+    </content>
+    <iframe class="main" src="widget.html?a=1QOmebWGB6FdFtW7Bo3F0W,1bAftSH8umNcGZ0uyV7LMg" width="100%"
+        height="90%" frameBorder="0">
+        <p>Error al cargar el iframe. Tu browser no es compatible.</p>
+    </iframe>
+    <figcaption class="chartfig main"> widget interactivo. Clickeá la barra superior para buscar artistas.  Deslizá el mouse
+        sobre los gráficos para ver información adicional.
+    </figcaption>
+    <content>
+        
+        <h4 id="24">
+            &lt; Rakings y curiosidades /&gt;
+        </h4> 
+        <p>
+        Para finalizar, estas son algunas observaciones interesantes respecto a la muestra:
+        </p>
+        <p>
+        Los cinco artistas con más cantidad de álbumes publicados son:
+    </p>
+    </p>
+        <ul>
+            <li>
+                Carlos Gardel: 316 álbumes
+            </li>
+            <li>
+                Astor Piazzolla: 250 álbumes
+            </li>
+            <li>
+                Litto Nebbia: 104 álbumes
+            </li>
+            <li>
+                Atahualpa Yupanqui: 101 álbumes
+            </li>
+            <li>
+                Los Chalchaleros: 97 álbumes                
+            </li>
+        </ul>
+        <p>
+            La mayoría de estos álbumes son recopilados o reediciones creados para mercados extranjeros. En algunos casos,
+            también son interpretaciones o tributos realizados por otros músicos. 
+            En particular, Astor Piazzolla tiene adjudicados -por ser el compositor- algunos discos de interpretes japoneses, 
+            como ピアソラ:バンドネオン協奏曲 他  ('Piazzolla: Concierto para bandoneón, etc', según google translate) de Ryota Komatsu, 
+            y ブエノスアイレスの四季  ('Las cuatro estaciones de Buenos Aires') interpretado por Kazuma Miura.  
+        </p>
+        <p>
+        Por su parte, los cinco artistas con más sencillos publicados son:
+    </p>
+        <ul>
+            <li>
+                Ecko: 94 singles
+            </li>
+            <li>
+                Big Deiv: 84 singles
+            </li>
+            <li>
+                Duki: 79 singles
+            </li>
+            <li>
+                Astor Piazzolla: 73 singles
+            </li>
+            <li>
+                Malandro: 71 singles                
+            </li>
+        </ul>
+        
+        <p>
+            Los cinco temas más largos, sin lugar a duda son dj sets:
+        </p>
+        <ul>
+            <li>
+                Juan Hansen, Live at Burning Man's Dusty multiverse: 01:32:29 h
+            </li>
+            <li>
+                Juan Hansen, Boiler Room at Crobar club: 01:25:51 h
+            </li>
+            <li>
+                Hernan Cattaneo, Balance Presents Sudbeat - Continuous Mix 1: 01:18:41 h
+            </li>
+            <li>
+                Hernan Cattaneo, Balance Presents Sudbeat - Continuous Mix 2: 01:17:57 h
+            </li>
+            <li>
+                Hernan Cattaneo, Continous Mix 2 (Mixed by Hernan Cattaneo): 01:17:48 h              
+            </li>
+        </ul>
+
+        <p>
+            Y los cinco albumes más largos, que no son antologias o compilados post-mortem, son:
+        </p>
+        <ul>
+            <li>
+                El Salmon, Andrés Calamaro: 103 tracks
+            </li>
+            <li>
+                Film Music Songbook, Litto Nebbia: 79 tracks
+            </li>
+            <li>
+                #12 | Doce	tomi lebrero: 60 tracks
+            </li>
+            <li>
+                Beatles Songbook, Litto nebbia: 60 tracks
+            </li>
+            <li>
+                Desde el Alma,	Luis Salinas: 59 tracks
+            </li>
+        </ul>
+        <h4 id="25">
+            &lt; Explorar el Dataset /&gt;
+        </h4> 
+        <p>
+            Los archivos se encuentran subidos en formato csv en este 
+            <a href="https://github.com/fedeaar/spotify-data-analysis" rel="noreferrer noopener" target="blank">
+                repositorio</a>.
+            Allí también está subido todo el proceso de recopilación de datos, armado de las bases de datos, de los datasets y
+            del widget para investigar.  
+        </p>
+        <h4>
+           
+        </h4>
+
+    </content>
+</body>
+
+</html>

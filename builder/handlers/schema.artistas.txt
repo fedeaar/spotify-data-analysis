@@ -1,0 +1,85 @@
+CREATE TABLE artists (
+    artist_id TEXT PRIMARY KEY,
+    artist_name TEXT,
+    bio TEXT,
+    popularidad INT,
+    followers INT,
+    saved_albums INT,
+    total_albums INT,
+    spotify_url TEXT,
+    image_640x640 TEXT,
+    image_320x320 TEXT,
+    image_60x60 TEXT,
+    last_updated TEXT
+);
+CREATE TABLE albums (
+    artist_id TEXT,
+    album_id TEXT PRIMARY KEY,
+    album_name TEXT,
+    album_group TEXT,
+    album_type TEXT,
+    release_date TEXT,
+    release_date_precision TEXT,
+    total_tracks INT,
+    spotify_url TEXT,
+    image_640x640 TEXT,
+    image_320x320 TEXT,
+    image_60x60 TEXT,
+    last_updated TEXT,
+
+    FOREIGN KEY (artist_id) REFERENCES artists (artist_id)
+);
+CREATE TABLE tracks (
+    artist_id TEXT,
+    album_id TEXT,
+    track_id TEXT PRIMARY KEY,
+    track_name TEXT,
+    disc_number INT,
+    track_number INT,
+    explicit INT,
+    duration_ms INT,
+    key INT,
+    mode INT,
+    time_signature INT,
+    tempo REAL,
+    danceability REAL,
+    energy REAL,
+    valence REAL,
+    loudness REAL,
+    speechiness REAL,
+    acousticness REAL,
+    instrumentalness REAL,
+    liveness REAL,
+    spotify_url TEXT,
+    last_updated TEXT,
+
+    FOREIGN KEY (artist_id) REFERENCES artists (artist_id),
+    FOREIGN KEY (album_id) REFERENCES albums (album_id)
+);
+CREATE TABLE genres (
+    artist_id TEXT,
+    genre TEXT,
+    last_updated TEXT,
+
+    FOREIGN KEY (artist_id) REFERENCES artists (artist_id)
+);
+CREATE TABLE related (
+    artist_id TEXT,
+    other_artist TEXT,
+    relationship TEXT,
+    last_updated TEXT,
+
+    PRIMARY KEY (artist_id, other_artist),
+    FOREIGN KEY (artist_id) REFERENCES artists (artist_id),
+    FOREIGN KEY (other_artist) REFERENCES artists (artist_id)
+);
+CREATE TABLE listeners (
+    artist_id TEXT,
+    city TEXT,
+    country TEXT,
+    listeners INT,
+    last_updated TEXT,
+
+    PRIMARY KEY (artist_id, city, country),
+    FOREIGN KEY (artist_id) REFERENCES artists (artist_id)
+);

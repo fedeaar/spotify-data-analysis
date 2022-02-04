@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> spotify-data-analisis </title>
+
+    <style type="text/css">
+        body {
+            all: unset;
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        #main {
+            margin: 2.5%;
+            flex-grow: 1;
+            width: 95%;
+        }
+    </style>
+
+    <!-- chart js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"
+        integrity="sha512-TW5s0IT/IppJtu76UbysrBH9Hy/5X41OTAbQuffZFU6lQ1rdcLHzpU5BzVvr/YFykoiMYZVWlr/PX1mDcfM9Qg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+        </script>
+</head>
+
+<body>
+
+    <content id="main">
+        <canvas id="main-canvas"></canvas>
+    </content>
+</body>
+
+
+<script>
+
+    const pFormatter = new Intl.NumberFormat("en-US", { style: 'percent', maximumFractionDigits: 2 });
+
+    function constructChart(data) {
+
+        const canvasElement = document.getElementById("main-canvas");
+        const res = datasets(data);
+        const chart = new Chart(canvasElement, {
+            type: 'bar',
+            data: {
+                'labels': res.labels,
+                'datasets': [
+                    res.data
+                ]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'géneros',
+                        },
+                        ticks: {
+                            autoSkip: false
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'artistas',
+                        },
+                    }
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: `cantidad de artistas por género, o algún subgénero similar.`,
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: ctx => {
+                                let label = [
+                                    `total: ${ctx.raw} (${pFormatter.format(ctx.raw / data.represented)})`, 
+                                    'subgéneros:'
+                                ]
+                                for (const value of data.genres[ctx.label]['subgenres'])
+                                    label.push('- ' + value)
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+        return chart;
+    }
+
+
+    function datasets(data) {
+
+        const sorted = Object.entries(data.genres).sort(([, a], [, b]) => a.total < b.total)
+        const labels = [];
+        const datavalues = [];
+        for (const key of sorted) {
+            if (key[0] === '_misc') continue;
+            labels.push(key[0]);
+            datavalues.push(key[1].total);
+        }
+        return { labels: labels, data: dataset(datavalues) };
+    }
+
+
+    function dataset(data) {
+
+        return {
+            label: 'total',
+            data: data,
+            backgroundColor: '#0000ff' + '80',
+            borderColor: '#0000ff' + '40',
+            borderWidth: 1,
+            barPercentage: 1,
+            categoryPercentage: 1,
+        }
+    }
+
+
+    async function load() {
+
+        try {
+            const response = await fetch(`../../database/generated/genresDist.json`);
+            constructChart(await response.json());
+        }
+        catch {
+            const errorElement = document.createElement('div');
+            errorElement.textContent = `Error en la carga de datos. No se encontró genresDist.json.`
+            const main = document.getElementById('main');
+            main.insertBefore(errorElement, main.firstChild);
+        }
+    }
+
+    load();
+
+</script>
+
+</html>

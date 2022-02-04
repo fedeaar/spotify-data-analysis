@@ -1,0 +1,56 @@
+{
+    "labels": [
+        "menor",
+        "mayor"
+    ],
+    "data": {
+        "2018": {
+            "hist": [
+                5747,
+                9258
+            ],
+            "hist_density": [
+                0.383,
+                0.617
+            ],
+            "color": "#0000ff",
+            "hidden": false
+        },
+        "2019": {
+            "hist": [
+                6263,
+                10149
+            ],
+            "hist_density": [
+                0.3816,
+                0.6184
+            ],
+            "color": "#ff00ff",
+            "hidden": true
+        },
+        "2020": {
+            "hist": [
+                8787,
+                13901
+            ],
+            "hist_density": [
+                0.3873,
+                0.6127
+            ],
+            "color": "#ffff00",
+            "hidden": true
+        },
+        "2021": {
+            "hist": [
+                6357,
+                9066
+            ],
+            "hist_density": [
+                0.4122,
+                0.5878
+            ],
+            "color": "#ff0000",
+            "hidden": false
+        }
+    }
+}
