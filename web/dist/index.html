@@ -132,33 +132,33 @@
             &gt;
             <a href="#9">Predictores</a>
             :
-            <a href="#10">danceability</a>
+            <a href="#10">bailabilidad</a>
             -
-            <a href="#11">energy</a>
+            <a href="#11">energía</a>
             -
-            <a href="#12">valence</a>
+            <a href="#12">valencia</a>
             -
-            <a href="#13">acousticness</a>
+            <a href="#13">acusticidad</a>
             -
-            <a href="#14">instrumentalness</a>
+            <a href="#14">instrumentalidad</a>
             -
-            <a href="#15">liveness</a>
+            <a href="#15">en vivo</a>
             -
-            <a href="#16">speechiness</a>
+            <a href="#16">habladuría</a>
         </span>
         <span>
             &gt;
             <a href="#17">Medidas</a>
             :
-            <a href="#18">key</a>
+            <a href="#18">tonalidad</a>
             -
-            <a href="#19">mode</a>
+            <a href="#19">modo</a>
             -
-            <a href="#20">duration_ms</a>
+            <a href="#20">duración</a>
             -
             <a href="#21">tempo</a>
             -
-            <a href="#22">loudness</a>
+            <a href="#22">volumen</a>
         </span>
         <span>
             &gt;
@@ -411,7 +411,7 @@
             a cada uno. Sino, dan un panorama general de la popularidad <!-- como un fenómeno social -->.
         </p>
         <p>
-            El ranking al 31 de enero de 2021 es el siguiente:
+            El ranking al 31 de enero de 2022 es el siguiente:
         </p>
         <ul>
             <li>
@@ -456,14 +456,19 @@
             &lt; los aspectos escenciales /&gt;
         </h4>
         <p>
-            Los ‘features’, o atributos -también llamados cualidades, o vectores-, son, en el mundo de la estadística y
+            Cambiando de página, otra forma de entender la clase de música que se hace en el país es mirar aquellas cosas
+            que la hacen ser lo que es.   
+        </p>
+        <p>
+            Los ‘features’ <!-- -o atributos- --><!-- -también llamados cualidades, o vectores- --> son, en el mundo de la estadística<!-- y
             el
-            reconocimiento de patrones, propiedades mensurables, o medidas de confianza, respecto a ciertas
-            características
+            reconocimiento de patrones -->, propiedades mensurables, o medidas de confianza, respecto a <!-- ciertas
+            características -->aquellas cualidades
             que se suponen describen a un fenómeno. Spotify calcula y permite el acceso a una serie de atributos de
             audio
-            para cada canción que está cargada en la plataforma. Estos datos luego se utilizan para generar una serie de
-            inferencias y relaciones. En particular, para predecir si un tema nuevo puede llegar a gustarle a un
+            para cada canción que está cargada en la plataforma.<!--  Con estos, la plataforma busca describir cómo son y cuáles son
+            los aspectos escenciales que componen a un tema.  --> Estos datos luego se utilizan para generar una serie de
+            inferencias y relaciones. En particular, para predecir si un tema nuevo puede llegar a gustarle, o no, a un
             usuario, según
             su historial de escucha.
         </p>
@@ -471,7 +476,7 @@
             Los atributos que comparte la plataforma se pueden dividir en dos tipos: predictores y mediciones. 
         </p>
         <p>
-            En las siguientes secciones se da un panorama de ambos tipos de atributos para las canciones de la muestra. Se
+            En las siguientes secciones se da un panorama de ambos para las canciones de la muestra. Se
             observan solo los últimos cuatro años para dar una mirada más actual y posiblemente más representativa
             (dada la madurez de la plataforma como medio de consumo en el país). 
         </p>
@@ -483,12 +488,17 @@
             predictores, valga la redundancia, predicen.
             Es decir, dan un grado de confianza respecto a qué tan presente está una cualidad en una canción, acorde
             -por ejemplo- a cómo se compara
-            con otras canciones que usa de referencia (el 'training set' o grupo de control) o a la detección de otras
+            con otras canciones que se usan de referencia (el 'training set' o grupo de control) o a la detección de otras
             cualidades que se usan
-            como indicios. En general, se expresan como un porcentaje codificado entre 0 y 1. Spotify calcula los siguientes:
+            como indicios. En general, se expresan como un porcentaje codificado entre 0 y 1. 
+        </p> 
+        <p>  
+            Spotify calcula los siguientes predictores: qué tan 'bailable' es un tema, cuán 'energético' es, 
+            qué emociones transmite, qué tan 'acustico' se siente, qué tan 'instrumental' es,
+            qué tan 'en vivo' se escucha, y qué tan 'hablado' está. 
         </p>
         <h5 id="10">
-            &lt; danceability &gt;
+            &lt; bailabilidad &gt;
         </h5>
         <p>
             La ‘danceability’ o ‘bailabilidad’ es un predictor sobre qué tan bailable es una canción. Se calcula -según
@@ -499,7 +509,7 @@
         <p>
             En el siguiente gráfico se resume -con una serie de histogramas- la distribución de esta propiedad para el
             total de canciones
-            recolectadas en los últimos cuatro años:
+            recolectadas en los últimos años:
         </p>
     </content>
 
@@ -521,10 +531,10 @@
         </p>
 
         <h5 id="11">
-            &lt; energy &gt;
+            &lt; energía &gt;
         </h5>
         <p>
-            La ‘energía’ de un tema es una métrica que describe la intensidad y actividad que se puede percibir en el
+            La ‘energía’ o 'energy' de un tema es una métrica que describe la intensidad y actividad que se puede percibir en el
             mismo. Spotify detalla:
             “típicamente, una canción energética se siente rápida, fuerte y ruidosa. [...] las cualidades perceptuales
             que contribuyen a este
@@ -556,10 +566,10 @@
         </p>
 
         <h5 id="12">
-            &lt; valence &gt;
+            &lt; valencia &gt;
         </h5>
         <p>
-            La ‘valencia’ predice cuánta ‘positividad’ transmite una canción. Valores cercanos a cero son descriptos
+            La ‘valencia’ -'valence'- predice cuánta ‘positividad’ transmite una canción. Valores cercanos a cero son descriptos
             como
             “tristes, deprimentes o enojados” y valores cercanos a uno como “felices, alegres o eufóricos”.
         </p>
@@ -580,7 +590,7 @@
             En general, parece no haber sesgos hacia ninguno de los dos extremos.
         </p>
         <h5 id="13">
-            &lt; acousticness &gt;
+            &lt; acusticidad &gt;
         </h5>
         <p>
             Otro atributo a considerar es su ‘acousticness’ o ‘acusticidad’. Esta cualidad representa el grado de
@@ -611,10 +621,10 @@
         </p>
 
         <h5 id="14">
-            &lt; instrumentalness &gt;
+            &lt; instrumentalidad &gt;
         </h5>
         <p>
-            La ‘instrumentalidad’ de un tema predice si un tema tiene, o no, voces. El manual lo define del siguiente modo: 
+            La ‘instrumentalidad’ o 'instrumentalness' de un tema predice si un tema tiene, o no, voces. El manual lo define del siguiente modo: 
             “Los ‘aah’ y
             ‘ooh’ se tratan como sonidos instrumentales. El rap y la palabra hablada son claramente vocales. [...] La
             intención de esta medida es que los valores mayores a 0.5 representen tracks instrumentales”.
@@ -643,7 +653,7 @@
         </p>
 
         <h5 id="15">
-            &lt; liveness &gt;
+            &lt; en vivo &gt;
         </h5>
         <p>
             El ‘liveness’ o ‘en vivo’ calcula la probabilidad de que haya una audiencia presente en una grabación.
@@ -674,7 +684,7 @@
         </p>
 
         <h5 id="16">
-            &lt; speechiness &gt;
+            &lt; habladuría &gt;
         </h5>
         <p>
             La ‘speechiness’ o ‘habladuría’ mide qué tan presente está la palabra hablada en una grabación. La
@@ -718,14 +728,18 @@
             &lt; medidas /&gt;
         </h4>
         <p>
-            Las mediciones son atributos que describen númericamente las propiedades mas directamente mensurables de un fenómeno.
-            En el caso de Spotify, catalogan aspectos técnicos de las grabaciones subidas a la plataforma.
+            A diferencia de los predictores, las medidas son atributos que describen númericamente las propiedades mas 
+            directamente mensurables de un fenómeno. Como puede ser su color, o tamaño. 
+            En el caso de Spotify, catalogan aspectos técnicos de las grabaciones subidas a la plataforma. 
+        </p>
+        <p> 
+            Estas son: su tonalidad, su modo, su tempo, su volúmen y su duración.
         </p>
         <h5 id="18">
-            &lt; key &gt;
+            &lt; tonalidad &gt;
         </h5>
         <p>
-            La ‘tonalidad’ clasifica a las canciones de acuerdo a la notación de clases del 
+            La ‘tonalidad’ o 'key' clasifica a las canciones de acuerdo a la notación de clases del 
             <a href="https://es.wikipedia.org/wiki/Temperamento_igual" rel="noreferrer noopener" target="blank">temperamento igual</a>. Estas
             son: do (C) -
             do# - re (D) - re# - mi (E) - fa (F) - fa# - sol (G) - sol# - la (A) - la# - si (B), y sus enarmonías.
@@ -770,10 +784,10 @@
         </p>
 
         <h5 id="19">
-            &lt; mode &gt;
+            &lt; modo &gt;
         </h5>
         <p>
-            Desde una mirada estructural, y en relación a la tonalidad, el 'modo' hace referencia a grupos de tonos
+            Desde una mirada estructural, y en relación a la tonalidad, el 'modo' o 'mode' hace referencia a grupos de tonos
             alternativos
             -escalas- que se usan para componer una misma tonalidad. Spotify considera solo dos modalidades: mayor y
             menor, pero hay
@@ -794,10 +808,10 @@
         </p>
 
         <h5 id="20">
-            &lt; duration_ms &gt;
+            &lt; duración &gt;
         </h5>
         <p>
-            La medida ‘duration_ms’ se refiere a la duración de una canción en milisegundos. El siguiente gráfico
+            La medida 'duración' -‘duration_ms’- se refiere a la duración de una canción en milisegundos. El siguiente gráfico
             describe la
             distribución de esta medida -en intervalos de a 5 segundos- para los últimos cuatro años. Se tomó el rango
             de 0 a
@@ -855,11 +869,11 @@
         </p>
 
         <h5 id="22">
-            &lt; loudness &gt;
+            &lt; volumen &gt;
         </h5>
 
         <p>
-            El último atributo a considerar es el volúmen general del tema, en decibeles. El siguiente histograma
+            El último atributo a considerar es el volúmen general del tema -su 'loudness'-, en decibeles. El siguiente histograma
             describe su
             distribución para los últimos cuatro años en el rango -36 a 6 db.
         </p>
