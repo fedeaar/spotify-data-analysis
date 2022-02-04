@@ -670,7 +670,7 @@ export class MSDSearch {
 
     public elementFocus () {
         
-        setTimeout(() => this.element.focus(), 0);  // some weird timing bug 
+        //setTimeout(() => this.element.focus(), 0);  // some weird timing bug 
     }
 }
 

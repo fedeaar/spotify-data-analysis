@@ -29,7 +29,7 @@
             </div>
             <div id="SETTINGS" class="offcanvas-body opciones-panel">
             </div>
-            <div class="offcanvas-body"> 
+            <!-- <div class="offcanvas-body"> 
                 <ul class="opciones-ul">
                     Observaciones:
                     <li class="opciones-li" style="display: block; font-size:14px;">
@@ -43,8 +43,8 @@
                         comparar por albumes puede volverse lento y engorroso. Solo
                         recomendable para comparar albumes específicos, no todo el repertorio de cada artista.
                     </li>
-                    </ul>
-              </div>
+                </ul>
+            </div> -->
         </div>
 
         <!-- tabs -->
@@ -60,30 +60,38 @@
                         </button>
                     </li>
                 </div>
-                <!-- tab PCA -->
-                <li class="nav-item">
-                    <a id="tab-PCA" class="nav-link active" href="#">
-                        ACP
+                <div>
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                        tabs
                     </a>
-                </li>
-                <!-- tab atributos -->
-                <li class="nav-item">
-                    <a id="tab-atributos" class="nav-link" href="#">
-                        predictores
-                    </a>
-                </li>
-                 <!-- tab atributos -->
-                 <li class="nav-item">
-                    <a id="tab-medidas" class="nav-link" href="#">
-                        mediciones
-                    </a>
-                </li>
-                <!-- tab tonalidad -->
-                <li class="nav-item">
-                    <a id="tab-tonalidad" class="nav-link" href="#">
-                        tonalidad
-                    </a>
-                </li>
+                    <ul class="dropdown-menu">
+                        <!-- tab PCA -->
+                        <li>
+                            <a id="tab-PCA" class="dropdown-item active" href="#">
+                                ACP
+                            </a>
+                        </li>
+                        <!-- tab atributos -->
+                        <li>
+                            <a id="tab-atributos" class="dropdown-item" href="#">
+                                predictores
+                            </a>
+                        </li>
+                         <!-- tab atributos -->
+                         <li>
+                            <a id="tab-medidas" class="dropdown-item" href="#">
+                                mediciones
+                            </a>
+                        </li>
+                        <!-- tab tonalidad -->
+                        <li>
+                            <a id="tab-tonalidad" class="dropdown-item" href="#">
+                                tonalidad
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
             </ul>
         </div>
 
