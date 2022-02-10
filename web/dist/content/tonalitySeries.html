@@ -43,14 +43,16 @@
 
 <script>
     
+    const pFormatter = new Intl.NumberFormat("en-US", { style: 'percent', maximumFractionDigits: 2 });
+
     function constructChart(data) {
 
         const canvasElement = document.getElementById("main-canvas");
         const chart = new Chart(canvasElement, {
             type: 'bar',
             data: {
-                labels: data.labels,
-                'datasets': datasets(data)
+                'labels': data.labels,
+                'datasets': datasets(data.keys)
             },
             options: {
                 responsive: true,
@@ -58,7 +60,15 @@
                 plugins: {
                     title: {
                         display: true,
-                        text: `cantidad de singles y albumes lanzados por mes: 2000 - 2021`,
+                        text: `distribución de tonalidades por año: 2000 - 2021.`,
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: ctx => {
+                                const label = ctx.dataset.label + ': ' + pFormatter.format(ctx.raw)
+                                return label;
+                            }
+                        }
                     }
                 },
                 scales: {
@@ -66,14 +76,15 @@
                         stacked: true,
                         title: {
                             display: true,
-                            text: 'mes',
+                            text: 'año',
                         }
                     },
                     y: {
                         stacked: true,
+                        max: 1,
                         title: {
                             display: true,
-                            text: 'lanzamientos',
+                            text: 'tonalidades',
                         }
                     }
                 },
@@ -90,23 +101,23 @@
     function datasets(data) {
 
         const datasets = [];
-        datasets.push(dataset("albumes", data.albumes, "#0000ff"));
-        datasets.push(dataset("singles", data.singles, "#ff0000"));
+        for (const [key, value] of Object.entries(data)) {
+            datasets.push(dataset(key, value.hist, value.color));
+        }
         return datasets;
     }
 
 
-    function dataset(label, data, hexcolor, hidden = false) {
+    function dataset(label, data, hexcolor) {
 
         return {
             label: label,
             data: data,
-            backgroundColor: hexcolor + '80',
-            borderColor: hexcolor + '40',
+            backgroundColor: hexcolor,
+            borderColor: hexcolor,
             borderWidth: 1,
             barPercentage: 1,
-            categoryPercentage: 1,
-            hidden: hidden
+            categoryPercentage: 1
         }
     }
 
@@ -114,12 +125,12 @@
     async function load() {
 
         try {
-            const response = await fetch(`../../database/generated/releaseSeries.json`);
+            const response = await fetch(`../../../database/generated/tonalitySeries.json`);
             constructChart(await response.json());
         }
         catch {
             const errorElement = document.createElement('div');
-            errorElement.textContent = `Error en la carga de datos. No se encontró releaseSeries.json.`
+            errorElement.textContent = `Error en la carga de datos. No se encontró tonalitySeries.json.`
             const main = document.getElementById('main');
             main.insertBefore(errorElement, main.firstChild);
         }

@@ -25033,8 +25033,8 @@ const canvasMedicionesElementDuration = document.getElementById("canvas-medidas-
 const canvasTonalidadElement = document.getElementById("canvas-tonalidad");
 const acordeonElement = document.getElementById("opciones-acordeon");
 // globals
-const DBINDEXPATH = "../../database/generated/artistas.json";
-const DBPATH = "../../database/generated/datasets";
+const DBINDEXPATH = "../../../database/generated/artistas.json";
+const DBPATH = "../../../database/generated/datasets";
 var ARTISTS;
 const URLPARAMS = parseURL();
 var CURRENT = [];

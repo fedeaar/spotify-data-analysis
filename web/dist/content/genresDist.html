@@ -104,8 +104,7 @@
 
 
     function datasets(data) {
-
-        const sorted = Object.entries(data.genres).sort(([, a], [, b]) => a.total < b.total)
+        const sorted = Object.entries(data.genres).sort(([, a], [, b]) => b.total - a.total);
         const labels = [];
         const datavalues = [];
         for (const key of sorted) {
@@ -134,7 +133,7 @@
     async function load() {
 
         try {
-            const response = await fetch(`../../database/generated/genresDist.json`);
+            const response = await fetch(`../../../database/generated/genresDist.json`);
             constructChart(await response.json());
         }
         catch {

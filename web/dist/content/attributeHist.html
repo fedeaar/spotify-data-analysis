@@ -1,3 +1,8 @@
+<!-- 
+    url params:
+        f:  danceability | energy | valence | acousticness | liveness | instrumentalness | speechiness
+            key | loudness | duration_ms
+-->
 <!DOCTYPE html>
 
 <html lang="es">
@@ -46,56 +51,73 @@
     const nFormatter = new Intl.NumberFormat("en-US");
     const pFormatter = new Intl.NumberFormat("en-US", { style: 'percent', maximumFractionDigits: 2 });
 
+    const PARAMS = new URLSearchParams(window.location.search);
+    const FEATURE = PARAMS.has('q') ? PARAMS.get('q').toLowerCase() : null;
+
 
     function constructChart(data) {
-
 
         const canvasElement = document.getElementById("main-canvas");
         const chart = new Chart(canvasElement, {
             type: 'bar',
             data: {
                 labels: data.labels,
-                'datasets': [dataset(data.data)]
+                'datasets': datasets(data.data)
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
+                grouped: false,
                 scales: {
-                    y: {
-                        title: {
-                            display: true,
-                            text: 'artistas',
-                        }
-                    },
                     x: {
                         title: {
                             display: true,
-                            text: 'seguidores',
+                            text: `atributo '${FEATURE}'`,
+                        }
+                    },
+                    y: {
+                        ticks: {
+                            callback: function (value, index, ticks) {
+                                return pFormatter.format(value);
+                            }
                         },
-                        type: 'logarithmic'
+                        title: {
+                            display: true,
+                            text: 'porcentaje sobre el total',
+                        }
                     }
                 },
                 plugins: {
                     title: {
                         display: true,
-                        text: `Cantidad de artistas por cantidad de seguidores. Datos al 31 de Enero 2022.`,
+                        text: `Distrubición del atributo '${FEATURE}': 2018 - 2021.`,
                     },
                     tooltip: {
                         callbacks: {
-                            title: ctx => `${ctx[0].label} : ${nFormatter.format(data.labels[ctx[0].dataIndex + 1])}`,
+                            title: ctx => {
+                                let label = ctx[0].label;
+                                if (FEATURE !== 'key' && FEATURE !== 'mode') {
+                                    label += ` : ${data.labels[ctx[0].dataIndex + 1]}`
+                                }
+                                return label
+                            },
                             label: ctx => {
-                                const label = `${ctx.dataset.label}: ${ctx.raw} (${pFormatter.format(data.data.hist_density[ctx.dataIndex])})`
+                                const label = `${ctx.dataset.label}: ${pFormatter.format(ctx.raw)} (total: ${
+                                    nFormatter.format(ctx.dataset.qdata[ctx.dataIndex])})`
                                 return label;
                             },
                             footer: ctx => {
-                                let sump = 0;
-                                let sumt = 0;
-                                for (let i = 0; i <= ctx[0].dataIndex; ++i) {
-                                    sump += data.data.hist_density[i];
-                                    sumt += data.data.hist[i];
+                                text = []
+                                if (FEATURE !== 'key' && FEATURE !== 'mode') {
+                                    for (c of ctx) {
+                                        let sum = 0;
+                                        for (let i = 0; i <= c.dataIndex; ++i) {
+                                            sum += c.dataset.data[i];
+                                        }
+                                        text.push(`acumulado ${c.dataset.label}: ${pFormatter.format(Math.min(1, sum))}`)
+                                    }
                                 }
-                                const footer = `acumulado: ${nFormatter.format(sumt)} (${pFormatter.format(Math.min(1, sump))})`
-                                return footer
+                                return text
                             }
                         }
                     }
@@ -109,19 +131,28 @@
         return chart;
     }
 
-    function dataset(constructor) {
 
+    function datasets(data) {
+
+        const datasets = [];
+        for (const [key, value] of Object.entries(data)) {
+            datasets.push(dataset(key, value));
+        }
+        return datasets;
+    }
+
+
+    function dataset(label, data) {
         return {
-            label: 'total',
-            data: constructor.hist,
-            qdata: constructor.hist_density,
-            backgroundColor: constructor.color, 
-            borderColor: constructor.color,
+            label: label,
+            data: data.hist_density,
+            qdata: data.hist,
+            backgroundColor: data.color + '80',
+            borderColor: data.color + '40',
             borderWidth: 1,
             barPercentage: 1,
             categoryPercentage: 1,
-            barThickness: 'flex',
-            hidden: constructor.hidden
+            hidden: data.hidden
         }
     }
 
@@ -129,13 +160,12 @@
     async function load() {
 
         try {
-            const response = await fetch(`../../database/generated/followersDist.json`);
+            const response = await fetch(`../../../database/generated/histograms/${FEATURE}.json`);
             constructChart(await response.json());
         }
-        catch (error) {
-            console.log(error)
+        catch {
             const errorElement = document.createElement('div');
-            errorElement.textContent = `Error en la carga de datos para followersDist.json.`
+            errorElement.textContent = `Error en la carga de datos para el query: ${FEATURE}.`
             const main = document.getElementById('main');
             main.insertBefore(errorElement, main.firstChild);
         }

@@ -39,8 +39,8 @@ const acordeonElement = document.getElementById("opciones-acordeon") as HTMLElem
 
 // globals
 
-const DBINDEXPATH = "../../database/generated/artistas.json";
-const DBPATH = "../../database/generated/datasets";
+const DBINDEXPATH = "../../../database/generated/artistas.json";
+const DBPATH = "../../../database/generated/datasets";
 
 export var ARTISTS: ArtistsObject;
 const URLPARAMS = parseURL();

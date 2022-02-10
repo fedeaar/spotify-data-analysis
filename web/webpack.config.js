@@ -20,7 +20,7 @@ module.exports = {
   },
   output: {
     filename: 'widget.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'dist/widget/'),
   },
   optimization: {
     minimize: false
