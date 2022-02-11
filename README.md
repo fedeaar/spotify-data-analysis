@@ -96,19 +96,17 @@ Se pueden encontrar versiones csv de ambos datasets en: [./database/csv](https:/
 
 ## Estructura del repo:
 ### ./Builder
-Una serie de módulos en python. En particular, dependen de tener keys para la api de Spotify.
-
 #### ./builder/handlers:
-El flujo de datos entre la api de Spotify y las bases de datos.
+Estos módulos manejan el flujo de datos entre la api de Spotify y las bases de datos.
 
 #### ./builder/builders:
-La construcción de los archivos JSON utilizados para los gráficos de la muestra y de la aplicación.
+Estos módulos manejan la construcción de los archivos JSON utilizados para los gráficos de la nota y de la aplicación.
 
 #### ./builder/utils: 
-Utilidades generales para el resto de los módulos.
+Estos módulos porveen utilidades generales.
 
 ### ./database
-Las bases de datos y los JSON generados.
+Contiene las bases de datos y los JSON generados.
 
 ### ./web
-El source para la nota y la aplicación.
+Contiene el source para la nota y la aplicación.
