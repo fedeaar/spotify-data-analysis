@@ -5,8 +5,29 @@
 
     min-height: 0;
     max-height: 100vh;
-    
     height: 100vh;
+}
+#about-window
+{
+    flex-grow: 1;
+    display: block;
+    max-width: 100%;
+    
+    min-height: 0;
+    padding: 1rem;
+    font-family: sans-serif;
+    color: #74797f;
+    /* text-align: justify; */
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.centered
+{
+    display: block;
+    margin: 0 auto;
+    width: 95%;
+    max-width: 980px;
 }
 
 #main-window
@@ -65,18 +86,6 @@
     {
         min-width: min-content;
         max-width: 25%;
-    }
-}
-
-@media (min-aspect-ratio: 9/5) {
-    #main-content
-    {
-        max-width: 80%;
-    }
-    #opciones-acordeon
-    {
-        min-width: min-content;
-        max-width: 20%;
     }
 }
 

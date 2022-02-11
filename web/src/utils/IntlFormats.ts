@@ -1,7 +1,14 @@
+// simple interface for Intl.NumberFormat and some related functions
+
 export const numberFormatter = new Intl.NumberFormat("en-US", { maximumFractionDigits: 2 });
 export const percentFormatter = new Intl.NumberFormat("en-US", { style: 'percent', maximumFractionDigits: 2 });
 
-export function milisToTime (ms: number): string {
+/**
+ * converts miliseconds to an hh:mm:ss format 
+ * @param ms the miliseconds
+ * @returns an hh:mm:ss formatted string (without trailing zeros)
+ */
+export function milisToTime(ms: number): string {
 
     const h = ms/(1000*60*60);
     const hf = Math.floor(h);

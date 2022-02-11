@@ -18,17 +18,19 @@ const searchBarElement = document.getElementById("nav-search-bar") as HTMLElemen
 
 const settingsElement = document.getElementById("SETTINGS") as HTMLElement;
 
+const tabAboutElement = document.getElementById("tab-about") as HTMLElement;
 const tabPCAelement = document.getElementById("tab-PCA") as HTMLElement;
 const tabAtributosElement = document.getElementById("tab-atributos") as HTMLElement;
 const tabMedicionesElement = document.getElementById("tab-medidas") as HTMLElement;
 const tabTonalidadElement = document.getElementById("tab-tonalidad") as HTMLElement;
 
+const aboutElement = document.getElementById("about-window") as HTMLElement;
 const plotPCAelement = document.getElementById("plot-PCA") as HTMLElement;
 const plotAtributosElement = document.getElementById("plot-atributos") as HTMLElement;
 const plotMedicionesElement = document.getElementById("plot-medidas") as HTMLElement;
 const plotTonalidadElement = document.getElementById("plot-tonalidad") as HTMLElement;
 
-const canvasPCAelement = document.getElementById("canvas-PCA")             as HTMLCanvasElement;
+const canvasPCAelement = document.getElementById("canvas-PCA") as HTMLCanvasElement;
 const canvasAtributosElement = document.getElementById("canvas-atributos") as HTMLCanvasElement;
 const canvasMedicionesElementTempo = document.getElementById("canvas-medidas-tempo") as HTMLCanvasElement;
 const canvasMedicionesElementLoudness = document.getElementById("canvas-medidas-loudness") as HTMLCanvasElement;
@@ -36,6 +38,8 @@ const canvasMedicionesElementDuration = document.getElementById("canvas-medidas-
 const canvasTonalidadElement = document.getElementById("canvas-tonalidad") as HTMLCanvasElement;
 
 const acordeonElement = document.getElementById("opciones-acordeon") as HTMLElement;
+
+const main_window = document.getElementById("main-window") as HTMLElement;
 
 // globals
 
@@ -87,6 +91,7 @@ searchBar.element.addEventListener("MSD", async (event: CustomEventInit) => {
 
     CURRENT = event.detail.selectedOptions;
     await loadCurrent();
+    if (CURRENT.length > 0) tabSelect(tabPCAelement, plotPCAelement);
     update();
 });
 
@@ -97,7 +102,9 @@ settings.element.addEventListener("settingsChange", (event: CustomEventInit) => 
 })
 
 // tab select event
-
+tabAboutElement.addEventListener("click", () => {
+    tabSelect(tabAboutElement, aboutElement);
+});
 tabPCAelement.addEventListener("click", () => {
     tabSelect(tabPCAelement, plotPCAelement);
 });
@@ -229,13 +236,21 @@ function tabSelect (tabElement: HTMLElement, displayElement: HTMLElement): void 
     plotAtributosElement.style.display = "none";
     plotTonalidadElement.style.display = "none";
     plotMedicionesElement.style.display = "none";
+    aboutElement.style.display = "none";
     
     tabPCAelement.classList.remove("active");
     tabAtributosElement.classList.remove("active");
     tabTonalidadElement.classList.remove("active");
     tabMedicionesElement.classList.remove("active");
+    tabAboutElement.classList.remove("active");
 
-    displayElement.style.display = "flex";
+    if (displayElement.id === 'about-window') {
+        main_window.style.display = "none";
+        displayElement.style.display = "block";
+    } else {
+        displayElement.style.display = "flex";
+        main_window.style.display = "flex";
+    }
     tabElement.classList.add("active");
 }
 

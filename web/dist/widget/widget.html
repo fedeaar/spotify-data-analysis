@@ -28,22 +28,6 @@
             </div>
             <div id="SETTINGS" class="offcanvas-body opciones-panel">
             </div>
-            <!-- <div class="offcanvas-body"> 
-                <ul class="opciones-ul">
-                    Observaciones:
-                    <li class="opciones-li" style="display: block; font-size:14px;">
-                        <span style="color: red">(!)</span> 
-                        el ACP es para fines ilustrativos. El vector base de 10 dimensiones (los predictores y medidas de cada canción) 
-                        fue reducido a dos con una varianza capturada en el eje X del 27.18% 
-                        y en eje Y del 16.33% (43.51% de la información original).
-                    </li>
-                    <li class="opciones-li" style="display: block; font-size:14px;">
-                        <span style="color: red">(!)</span>  
-                        comparar por albumes puede volverse lento y engorroso. Solo
-                        recomendable para comparar albumes específicos, no todo el repertorio de cada artista.
-                    </li>
-                </ul>
-            </div> -->
         </div>
 
         <!-- tabs -->
@@ -59,44 +43,96 @@
                         </button>
                     </li>
                 </div>
-                <div>
-                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
-                        tabs
+                <li class="nav-item">
+                    <a id="tab-about" class="nav-link active" href="#">
+                        acerca
                     </a>
-                    <ul class="dropdown-menu">
-                        <!-- tab PCA -->
-                        <li>
-                            <a id="tab-PCA" class="dropdown-item active" href="#">
-                                ACP
-                            </a>
-                        </li>
-                        <!-- tab atributos -->
-                        <li>
-                            <a id="tab-atributos" class="dropdown-item" href="#">
-                                predictores
-                            </a>
-                        </li>
-                         <!-- tab atributos -->
-                         <li>
-                            <a id="tab-medidas" class="dropdown-item" href="#">
-                                mediciones
-                            </a>
-                        </li>
-                        <!-- tab tonalidad -->
-                        <li>
-                            <a id="tab-tonalidad" class="dropdown-item" href="#">
-                                tonalidad
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                </li>
+                <li class="nav-item">
+                    <a id="tab-PCA" class="nav-link" href="#">
+                        ACP
+                    </a>
+                </li>
+                <!-- tab atributos -->
+                <li class="nav-item">
+                    <a id="tab-atributos" class="nav-link" href="#">
+                        predictores
+                    </a>
+                </li class="nav-item">
+                    <!-- tab atributos -->
+                    <a id="tab-medidas" class="nav-link" href="#">
+                        mediciones
+                    </a>
+                </li>
+                <!-- tab tonalidad -->
+                <li class="nav-item">
+                    <a id="tab-tonalidad" class="nav-link" href="#">
+                        tonalidad
+                    </a>
+                </li>
                 
             </ul>
         </div>
 
         <!-- ventana -->
-        <div id="main-window">
-
+        <div id="about-window">
+            <div class="centered">
+            <p>
+                Esta aplicación grafica resúmenes de los atributos o 'features' que describen a las canciones de 4,848 artistas argentinos, 
+                según datos provistos por la API de Spotify. Los mismos fueron
+                actualizados por última vez el 31/01/2022.
+            </p>
+            <p>
+                Estos atributos son: 
+                <ul>
+                    <li>danceability: qué tan bailable es un tema.</li>
+                    <li>energy: cuán energético se siente.</li>
+                    <li>valence: qué emociones transmite.</li>
+                    <li>acousticness: la confianza que tiene Spotify en que el tema es acústico.</li>
+                    <li>instrumentalness: la confianza que tiene Spotify en que el tema es instrumental.</li>
+                    <li>liveness: la confianza que tiene Spotify en que el tema es en vivo.</li>
+                    <li>speechiness: qué tan 'hablada' es la grabación.</li>
+                    <li>key: en qué tonalidad está.</li>
+                    <li>mode: su modalidad (mayor o menor).</li>
+                    <li>tempo: su tempo promedio, en BPM.</li>
+                    <li>loudness: su volúmen promedio, en dB.</li>
+                    <li>duration_ms: su duración en milisegundos.</li>
+                </ul>
+                La plataforma utiliza esta información -entre otras cosas- para calcular qué música le puede llegar a gustar a un
+                usuario, según su historial de escucha. 
+            </p>
+            <p>
+                La pestaña 'ACP' -para análisis de componentes principales- condensa todos estos atributos 
+                para cada canción -salvo las categóricas (tonalidad y modo)- en un punto en el plano cartesiano. 
+                Es decir, reduce la información de todos estos atributos en dos nuevos, para simplificarlos. 
+                Uno representado por el eje X y otro por el eje Y. Como esta es una reducción grosera, 
+                sólo se conserva el 43.51% de la información original. 
+                Este gráfico sirve para dar una idea de qué tan similares son los distintos temas por su proximidad, 
+                pero no sirve para hacer una comparación exhaustiva.
+            </p>
+            <p>
+                Las pestañas 'Predictores' y 'Medidas' capturan esta misma información pero acorde a los números de resúmen para la
+                totalidad de los temas del artista, o para cada uno de sus álbumes. La información está presentada en diagramas de caja.
+                Cada caja representa cómo se distribuye el 50% de los datos centrales, siendo la línea interna la mediana (el valor del
+                medio), y el punto interno la media (el promedio). Los puntos externos representan el mínimo y el máximo y los ‘bigotes’
+                (las T), representan un límite en la dispersión de los datos a partir del cual se empiezan a considerar anómalos (Se
+                utilizó 1.5 veces el rango intercuartil). Los
+                diagramas de caja dan una idea general de la distribución de los datos y de su dispersión, lo cual es útil para
+                compararlos.
+            </p>
+            <p>
+                La pestaña 'Tonalidad', por su parte, grafica un histograma de la distribución de las tonalidades y modos, 
+                por álbum o por artista.        
+            </p>
+            <p>
+                Utilizá la barra superior para buscar (y graficar) hasta cinco artistas en simultáneo. Una explicación más detallada 
+                de toda esta información se encuentra en esta
+                <a href="https://fedeaar.github.io/spotify-data-analysis/web/dist/" rel="noreferrer noopener" target="blank">
+                nota</a>.
+            </p>
+        </div>
+        </div>
+        <div id="main-window" style="display: none;">
             <!-- plots -->
             <div id="main-content" class="container-fluid">
                 <div id="plot-display">

@@ -3,22 +3,22 @@
 
 /* === types === */
 
-export declare interface UrnProperties {
-
+export declare interface UrnProperties 
+{
     selection: 'random' | 'linear',
-    mode:      'reset' | 'deplete'
+    mode: 'reset' | 'deplete'
 }
 
 
 /* === class ===*/
 
-export class Urn<Type> {
-
+export class Urn<Type> 
+{
     /* === declarations === */
 
-    public set:       Type[];
+    public set: Type[];
     public selection: 'random' | 'linear' = 'random';
-    public mode:      'reset' | 'deplete' = 'reset';
+    public mode: 'reset' | 'deplete' = 'reset';
     protected scheme: {
         [hash: string]: {current: number, original: number, value: Type}
     } = {};
@@ -39,7 +39,7 @@ export class Urn<Type> {
     
         this.set = set;
         this.selection = UrnProperties.selection || this.selection;
-        this.mode =      UrnProperties.mode      || this.mode;
+        this.mode = UrnProperties.mode || this.mode;
 
         this.setup();
     }
@@ -51,10 +51,9 @@ export class Urn<Type> {
      * @param select 
      * how to select elements for retrieval. Options: "random" | "linear". 
      * Default = UrnProperties.selection value given at init. If no value was given, then "random".
-     * @returns 
-     * a value from the urn.
+     * @returns a value from the urn.
      */
-    public retrieve (select: 'random' | 'linear' = this.selection): Type | null {
+    public retrieve(select: 'random' | 'linear' = this.selection): Type | null {
 
         if (this.set.length == 0) return null;
         
@@ -80,10 +79,9 @@ export class Urn<Type> {
 
     /**
      * handles the urn's return process.
-     * @param value 
-     * a value that was originally in the urn.
+     * @param value a value that was originally in the urn.
      */
-    public return (value: Type): void {  
+    public return(value: Type): void {  
 
         if (this.scheme[this.hash(value)]?.current < this.scheme[this.hash(value)].original) {
             this.set.push(value);
@@ -94,7 +92,7 @@ export class Urn<Type> {
     /* === private === */
     
     /** constructs the urn's 'scheme' (metadata for the values stored). */
-    protected setup (): void {
+    protected setup(): void {
 
         for (const value of this.set) {
             const hash = this.hash(value);
@@ -116,14 +114,14 @@ export class Urn<Type> {
      * @returns 
      * a string hash of the value.
      */
-    protected hash (value: Type & {__urnhash?: number}): string {
+    protected hash(value: Type & {__urnhash?: number}): string {
 
         const hash = JSON.stringify(value);
         return hash;
     }
 
     /** resets the urn. */
-    protected reset (): void { 
+    protected reset(): void { 
 
         this.set = [];
         for (let hash in this.scheme) {

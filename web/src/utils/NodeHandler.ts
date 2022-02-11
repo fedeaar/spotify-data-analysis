@@ -31,18 +31,6 @@ interface HTMLCustomAttributes {
 
 /* === handler === */
 
-// declare global {
-    
-//     namespace JSX {
-
-//         // for typescript jsx compiler use. Accept anything as a tag.     
-//         interface IntrinsicElements { 
-            
-//             [element: string]: any; 
-//         } 
-//     }
-// }
-
 
 export class createElement {    
 
@@ -53,7 +41,7 @@ export class createElement {
      * @param children other HTMLElements or raw strings.
      * @returns a custom HTMLElement.
      */
-    public createElement (tag: string, attributes: HTMLCustomAttributes, 
+    public createElement(tag: string, attributes: HTMLCustomAttributes, 
         ...children: string[] | HTMLCustomElement[]): HTMLCustomElement {
         
         const newElement: HTMLCustomElement = document.createElement(tag);
@@ -83,13 +71,13 @@ export class createElement {
     }
     
     /** adds an attribute to the element. */
-    public setAttribute (element: HTMLCustomElement, name: string, value: string): void {
+    public setAttribute(element: HTMLCustomElement, name: string, value: string): void {
         
         element.setAttribute(name, value);
     }
 
     /** adds the given properties to the element's object. */
-    public setProperties (element: HTMLCustomElement, properties: HTMLCustomAttributes ["object"]): void {
+    public setProperties(element: HTMLCustomElement, properties: HTMLCustomAttributes ["object"]): void {
 
         for (let key in properties) {
             if (!element.custom) element.custom = {[key]: properties[key]}
@@ -98,7 +86,7 @@ export class createElement {
     }
     
     /** adds the given listeners to the element. */
-    public addEventListeners (element: HTMLCustomElement, events: HTMLCustomEvents): void {
+    public addEventListeners(element: HTMLCustomElement, events: HTMLCustomEvents): void {
 
         for (let key in events) {
             if (events[key]) element.addEventListener(key,  events[key]);
@@ -106,7 +94,7 @@ export class createElement {
     }
 
     /** appends multiple children to the same element. */
-    public appendChildren (element: HTMLCustomElement, ...children: string[] | HTMLCustomElement[]): void {
+    public appendChildren(element: HTMLCustomElement, ...children: string[] | HTMLCustomElement[]): void {
 
         for (let child of children) {
             if (typeof child === 'string') element.textContent += child;

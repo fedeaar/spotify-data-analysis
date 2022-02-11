@@ -1,4 +1,4 @@
-// LinkedLists.ts module defines a custom pair of 'double linked lists'-like datastructures: DLList<Type> and DLListIdx<Type>
+// LinkedLists.ts module defines a custom pair of 'double linked lists'-like datastructures: DLList<Type> and DLListIdx<Type>,
 // and their corresponding link object: DLink<Type>. 
 
 
@@ -34,7 +34,7 @@ export class DLink<Type>
     }
 
     /** removes DLink from its DDList. */
-    public remove (): void {
+    public remove(): void {
 
         this.list.remove(this);
     }
@@ -42,11 +42,11 @@ export class DLink<Type>
     /* === private === */
 
     /** simple barrier to avoid some structure mishandling. */
-    protected _validate (): void {
+    protected _validate(): void {
         
         if ((this.previous && this.list !== this.previous.list) || 
             (this.next && this.list !== this.next.list)) 
-            throw Error ('DLinks do not belong to the same DLList');
+            throw Error ('DLinks do not belong to the same DLList.');
 
         if ((this.previous && this.previous.next !== this.next) || 
             (this.next && this.next.previous !== this.previous))
@@ -92,7 +92,7 @@ export class DLList<Type>
      * @param insertBefore should the value be placed before or after the given link ? Default = false.
      * @returns the inserted new DLink.  
      */
-    public insert (value: Type, link: DLink<Type> | null, insertBefore = false): DLink<Type> {
+    public insert(value: Type, link: DLink<Type> | null, insertBefore = false): DLink<Type> {
     
         this._validate(link);    
             
@@ -107,7 +107,7 @@ export class DLList<Type>
 
         this._setProperties(newLink);
 
-        ++ this.length;    
+        ++this.length;    
 
         return newLink;
     }
@@ -117,7 +117,7 @@ export class DLList<Type>
      * @param values a set of values.
      * @returns the last DLink pushed.
      */
-    public push (...values: Type[]): DLink<Type> {
+    public push(...values: Type[]): DLink<Type> {
         
         for (const value of values) {
             this.insert(value, this.last);
@@ -131,7 +131,7 @@ export class DLList<Type>
      * @param values a set of values.
      * @returns the last DLink shifted.
      */
-    public shift (...values: Type[]): DLink<Type> {
+    public shift(...values: Type[]): DLink<Type> {
 
         for (let i = values.length - 1; i >= 0; --i) {
             this.insert(values[i], this.head, true);
@@ -144,7 +144,7 @@ export class DLList<Type>
      * pushes all the values of the DDList into the DLList.
      * @param linkedList another DLList.
      */
-    public concat (linkedList: DLList<Type>): void {
+    public concat(linkedList: DLList<Type>): void {
         
         for (const curr of linkedList) {
             if (curr) this.push(curr.value);  
@@ -155,7 +155,7 @@ export class DLList<Type>
      * removes the given link.
      * @param link a link belonging to the DLList.
      */
-    public remove (link: DLink<Type> | null): void {
+    public remove(link: DLink<Type> | null): void {
 
         this._validate(link); 
 
@@ -175,7 +175,7 @@ export class DLList<Type>
      * @param index the index of the wanted link.
      * @returns the i'th DLink.
      */
-    public getByIndex (index: number = 0): DLink<Type> {
+    public getByIndex(index: number = 0): DLink<Type> {
         
         let curr = this.head; 
         let i = 0;   
@@ -189,7 +189,7 @@ export class DLList<Type>
     /* === iteration === */
 
     /** for ... of - loop iterator definition. */
-    public [Symbol.iterator] (): Iterator<DLink<Type>> {
+    public [Symbol.iterator](): Iterator<DLink<Type>> {
 
         this.setCurrent();
         
@@ -206,7 +206,7 @@ export class DLList<Type>
      * sets currently pointed-at value.
      * @param fromLinkOrIndex DLink or index value. 
      */
-    public setCurrent (fromLinkOrIndex: DLink<Type> | number = 0): void {
+    public setCurrent(fromLinkOrIndex: DLink<Type> | number = 0): void {
 
         this.current = this._getOrValidateLink(fromLinkOrIndex);
     }  
@@ -215,7 +215,7 @@ export class DLList<Type>
      * simple yield-like iterator. Does not check for link-looping.
      * @returns currently pointed-at value.
      */
-    public yield (): DLink<Type> | null {
+    public yield(): DLink<Type> | null {
 
         const current = this.current;
         this.current = this.current?.next || null;  // will become null at list end (unless looping)
@@ -232,7 +232,7 @@ export class DLList<Type>
      * @param amount how many DLinks to include from fromLinkOrIndex. Default = this.length.
      * @returns a DLink array.
      */
-     public toArray (fromLinkOrIndex: DLink<Type> | number = 0, amount: number = this.length): Type[] {
+     public toArray(fromLinkOrIndex: DLink<Type> | number = 0, amount: number = this.length): Type[] {
 
         let array = [];
         
@@ -248,20 +248,20 @@ export class DLList<Type>
 
     /* === private === */
 
-    protected _setProperties (link: DLink<Type> | null): void {
+    protected _setProperties(link: DLink<Type> | null): void {
 
         if (!link?.previous) this._setHead(link);
         if (!link?.next) this._setLast(link);
     }
 
-    protected _setHead (link: DLink<Type> | null): void {
+    protected _setHead(link: DLink<Type> | null): void {
 
         delete this.head?.isHead;
         this.head = link;
         if (link) link.isHead = true;
     }
 
-    protected _setLast (link: DLink<Type> | null): void {
+    protected _setLast(link: DLink<Type> | null): void {
 
         delete this.last?.isLast;
         this.last = link;
@@ -269,7 +269,7 @@ export class DLList<Type>
         
     }
 
-    protected _getOrValidateLink (fromLinkOrIndex: DLink<Type> | number = 0): DLink<Type> {
+    protected _getOrValidateLink(fromLinkOrIndex: DLink<Type> | number = 0): DLink<Type> {
 
         let current = null;
         if (fromLinkOrIndex instanceof DLink) {
@@ -282,7 +282,7 @@ export class DLList<Type>
     }
 
     /** simple barrier to avoid some structure mishandling. */
-    protected _validate (link: DLink<Type> | null): void { 
+    protected _validate(link: DLink<Type> | null): void { 
 
         if (link && this !== link.list) 
             throw new Error ('DLink does not belong to this DLList.');
@@ -301,39 +301,39 @@ export class DLListIdx<Type> extends DLList<Type>
      */
     constructor (...values: Type[]) {
  
-        super (...values);
+        super(...values);
         this._reIndex(this.head);
     }
 
     /* === data manipulation === */
 
-    public insert (value: Type, link: DLink<Type> | null, insertBefore = false): DLink<Type> {
+    public insert(value: Type, link: DLink<Type> | null, insertBefore = false): DLink<Type> {
         
         const newLink = super.insert(value, link, insertBefore);
         this._reIndex(newLink.previous);
         return newLink;
     }
     
-    public push (...values: Type[]): DLink<Type> {
+    public push(...values: Type[]): DLink<Type> {
         
         this._batchReIndex(() => super.push(...values), this.last);
         if (!this.last) throw Error ("DLLink Error. Push called without values.");
         return this.last;
     }
 
-    public shift (...values: Type[]): DLink<Type> {
+    public shift(...values: Type[]): DLink<Type> {
 
         this._batchReIndex(() => super.shift(...values), null);
         if (!this.head) throw Error ("DLLink Error. Shift called without values.");
         return this.head;
     }
 
-    public concat (linkedList: DLList<Type>): void {
+    public concat(linkedList: DLList<Type>): void {
 
         this._batchReIndex(() => super.concat(linkedList), this.last);
     }
 
-    public remove (link: DLink<Type> | null): void {
+    public remove(link: DLink<Type> | null): void {
         
         const previous = link?.previous || null;
         super.remove(link);
@@ -342,14 +342,14 @@ export class DLListIdx<Type> extends DLList<Type>
 
     /* === data access === */
 
-    public getByIndex (index: number = 0): DLink<Type> {
+    public getByIndex(index: number = 0): DLink<Type> {
 
         return this.array[index];
     }
 
     /* === private === */
 
-    protected _reIndex (link: DLink<Type> | null): void {
+    protected _reIndex(link: DLink<Type> | null): void {
 
         if (!this._allowReIndex) return;
         
@@ -366,7 +366,7 @@ export class DLListIdx<Type> extends DLList<Type>
         }
     }
 
-    protected _batchReIndex (fn:() => any, link: DLink<Type> | null): void {
+    protected _batchReIndex(fn:() => any, link: DLink<Type> | null): void {
 
         this._allowReIndex = false;
         fn();

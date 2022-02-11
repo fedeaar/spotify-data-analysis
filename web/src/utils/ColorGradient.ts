@@ -4,7 +4,7 @@
 /* === types === */
 
 export declare type rgb = [number, number, number];  // number belongs to [0, 256)
-export declare type hex = string;                    // string encodes hex number between [0, ffffff]
+export declare type hex = string;                    // string encoded hex number between [0, ffffff]
 
 /* === basic sets ===*/
 
@@ -16,9 +16,9 @@ export const TABLEAU10 = ['#4E79A7', '#F28E2B', '#E15759', '#76B7B2', '#59A14F',
 /**
  * rgb to hexadecimal 'type' conversion.
  * @param rgb a [red, green, blue] triplet. Values belong to [0, 256).
- * @returns the hexadecimal representation of rgb.
+ * @returns the hexadecimal representation for the rgb.
  */
-export function rgbToHex (rgb: rgb): hex {
+export function rgbToHex(rgb: rgb): hex {
 
     return `#${toHex(rgb[0])}${toHex(rgb[1])}${toHex(rgb[2])}`
 }
@@ -28,7 +28,7 @@ export function rgbToHex (rgb: rgb): hex {
  * @param n a number.
  * @returns the hexadecimal representation of n.
  */
-export function toHex (n: number): hex {
+export function toHex(n: number): hex {
 
     return Math.floor(n).toString(16);
 }
@@ -38,14 +38,16 @@ export function toHex (n: number): hex {
  * @param hex a [0, ffffff] or [0, fff] string hexadecimal value.
  * @returns the rgb representation of hex.
  */
-export function hexToRgb (hex: hex): rgb {
+export function hexToRgb(hex: hex): rgb {
     // modified from: https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb
     const shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
     hex = hex.replace(shorthandRegex, function (m, r, g, b) {
         return r + r + g + g + b + b;
     });
     const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-    if (!result || result.length === 0) throw new Error('hexToRgb called with invalid hex string.');
+    if (!result || result.length === 0) {
+        throw new Error('hexToRgb called with invalid hex string.');
+    }
     return [
         parseInt(result[1], 16),
         parseInt(result[2], 16),
@@ -59,13 +61,13 @@ export function hexToRgb (hex: hex): rgb {
  * @param start the starting color. 
  * @param end the ending color.
  * @param inclusive should the ending color be included? default = true.
- * @returns an rgb[] of 'steps' equidistant colors from start to end.
+ * @returns an rgb[] of equidistant colors between start and end.
  */
-export function discreteGradient (steps: number, start: hex | rgb, end: hex | rgb, inclusive: boolean = true): rgb[] {
-
+export function discreteGradient(steps: number, start: hex | rgb, end: hex | rgb, inclusive: boolean = true): rgb[] {
+    
     if (typeof start === 'string') start = hexToRgb(start);
     if (typeof end === 'string') end = hexToRgb(end);
-    
+
     const hues = []
     const direction = [
         start[0] - end[0] > 0 ? -1 : 1,
@@ -96,7 +98,7 @@ export function discreteGradient (steps: number, start: hex | rgb, end: hex | rg
  * @param colors the set of colors (stops) to transition between. 
  * @returns an rgb[] of equidistant colors transitioning between each stop.
  */
-export function multiColorDiscreteGradient (steps: number, colors: (hex | rgb)[]): rgb[] {
+export function multiColorDiscreteGradient(steps: number, colors: (hex | rgb)[]): rgb[] {
 
     const hues = [];
     const size = colors.length - 1;                     // ending color is treated separately (as to always be included).

@@ -14699,7 +14699,7 @@ var ___CSS_LOADER_URL_REPLACEMENT_1___ = _node_modules_css_loader_dist_runtime_g
 var ___CSS_LOADER_URL_REPLACEMENT_2___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_2___);
 var ___CSS_LOADER_URL_REPLACEMENT_3___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_3___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".MSD-vars\r\n{\r\n    --open-icon: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n    --collapse-icon: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");\r\n    --collapse-icon-highlight: url(" + ___CSS_LOADER_URL_REPLACEMENT_2___ + ");\r\n    --pill-close: url(" + ___CSS_LOADER_URL_REPLACEMENT_3___ + ");\r\n}\r\n\r\n.MSD-main\r\n{\r\n    display: inline;\r\n\r\n    position: relative;\r\n\r\n\tpadding: 0 24px 0 0;\r\n\r\n    border: solid 1px #ced4da;\r\n\tborder-radius: 4px;\r\n\r\n\tbackground-color: white;\r\n\t\r\n\tbackground-image: var(--open-icon);\r\n\tbackground-repeat: no-repeat;\r\n\tbackground-position: right .5rem center;\r\n\tbackground-size: 16px 12px;\r\n\r\n    width: 100%;\r\n}\r\n.MSD-focused\r\n{\r\n\tpadding: 0;\r\n\tbackground-image: unset;\r\n\tborder: none;\r\n}\r\n.MSD-main-wrapper\r\n{\r\n\tposition: relative;\r\n\twidth: 100%;\r\n}\r\n.MSD-focused .MSD-main-wrapper\r\n{\r\n\tposition: absolute;\r\n\t\r\n\tbackground-color: white;\r\n\r\n\tborder: solid 1px #ced4da;\r\n\tborder-radius: 4px;\r\n\r\n\tz-index: 101;\r\n}\r\n\r\n.MSD-search-wrapper\r\n{\r\n\tpadding: 2px 5px;\r\n\tborder-radius: 4px;\r\n}\r\n\r\n.MSD-search-wrapper, .MSD-pill-wrapper\r\n{ \r\n\tdisplay: flex;\r\n\tflex-wrap: wrap;\r\n\r\n\tposition: relative;\r\n\t\r\n    gap: 2px 0.5rem;\r\n\r\n    width: 100%;\r\n}\r\n.MSD-search-wrapper-focus\r\n{\r\n\tbox-shadow: 0 0 3px 3px #3787fd70\r\n}\r\n\r\n.MSD-pill-wrapper\r\n{\r\n\tpadding: 8px;\r\n}\r\n.MSD-pill-wrapper-empty\r\n{\r\n\tpadding: 0;\r\n}\r\n\r\n.MSD-search \r\n{\r\n    all: unset;\r\n    display: inline-block;\r\n    \r\n    flex-grow: 1;\r\n    \r\n\tmargin: 0 1px; \r\n\tpadding: 1px 0;\r\n    \r\n  \tborder-radius: 4px; \r\n  \t\r\n    /* width: 0px; */\r\n}\r\n\r\n.MSD-list-wrapper\r\n{\r\n    display: none;\r\n\t\r\n    position: absolute;\r\n\r\n    border: solid 1px #ced4da;\r\n\tborder-radius: 4px;\r\n\r\n\tbackground-color: white;\r\n\r\n\tbox-shadow: gray 0 3px 8px;\r\n\r\n\tz-index: 100;\r\n    \r\n\twidth: 100%;\r\n}\r\n.MSD-focused .MSD-list-wrapper\r\n{\r\n\tdisplay: block;\r\n}\r\n\r\n.MSD-list\r\n{\r\n\tpadding: 5px 5px 0 5px;\r\n\r\n\tmax-height: 30vh;\r\n\tmax-width: 100%;\r\n    overflow-y:auto;\r\n\toverflow-x: hidden;\r\n}\r\n\r\n.MSD-list-option, .MSD-list-all\r\n{\r\n    display: flex;\r\n\r\n\talign-items: center;\r\n\r\n\tpadding: 5px;\r\n}\r\n\r\n.MSD-list-option:hover\r\n{\r\n\tbackground-color: #cdcdcd;\r\n}\r\n.MSD-list-option-focus, .MSD-list-option-focus:hover\r\n{\r\n\tbackground-color: #bdbcbc;\r\n}\r\n\r\n.MSD-list-option input, .MSD-list-all input\r\n{\r\n  margin-right: 0.35em;  \r\n\r\n  height: 1.15em;\r\n  width: 1.15em;\r\n}\r\n\r\n.MSD-list-option label, .MSD-list-all label\r\n{\r\n\toverflow: hidden;\r\n\twhite-space: nowrap;\r\n\ttext-overflow: ellipsis;\r\n}\r\n\r\n.MSD-list-all\r\n{\r\n\ttext-decoration: dotted underline;\r\n}\r\n.MSD-list-filtered .MSD-list-option:not(.MSD-matched)\r\n{\r\n\tdisplay: none;\r\n} \r\n.MSD-pill-wrapper\r\n{\r\n\tborder-bottom: solid 1px #ced4da;\r\n}\r\n\r\n.MSD-close-wrapper\r\n{\r\n\tdisplay: flex;\r\n\r\n\tjustify-content: center;\r\n\t\r\n    padding: 0.3em;\r\n\r\n\tborder-top: solid 1px #ced4da;\r\n}\r\n\r\n.MSD-close-icon\r\n{\r\n\tpadding: 1ex;\r\n\r\n\tborder: 4px solid #3787fd00;\r\n    border-radius:100%;\r\n\r\n\tbackground-image: var(--collapse-icon);\r\n\tbackground-size: contain;\r\n\tbackground-repeat: no-repeat;\r\n\tbackground-position: center;\r\n\r\n\ttransform: rotate(180deg);\r\n   \r\n    height: 2ex;\r\n\twidth: 2ex;\r\n}\r\n\r\n.MSD-close-wrapper:hover .MSD-close-icon\r\n{\r\n\tbackground-image: var(--collapse-icon-highlight);\r\n\tbackground-color: #3787fd70;\r\n}\r\n\r\n.MSD-pill\r\n{\r\n\tdisplay:flex;\r\n\r\n    padding:1px 0 1px 0.75em; \r\n    border-radius: 4px; \r\n    \r\n    color:white;\r\n\tbackground-color:#3787fd;\r\n\r\n\tmax-width: 100%;\r\n}\r\n.MSD-pill label\r\n{\r\n\toverflow: hidden;\r\n\twhite-space: nowrap;\r\n\ttext-overflow: ellipsis;\r\n}\r\n.MSD-pill div.MSD-pill-close \r\n{\r\n\tpadding: 10px 1em;\r\n\t\r\n\tbackground-image: var(--pill-close);\r\n  \tbackground-repeat: no-repeat;\r\n  \tbackground-position: center;\r\n\tbackground-size: 10px 10px;\r\n\r\n    width: 10px;\r\n}\r\n.MSD-pill-focus\r\n{\r\n\t/* box-shadow: 0 0 3px 3px #3787fd70; */\r\n\ttext-decoration: underline;\r\n}\r\n.MSD-hidden\r\n{\r\n\tdisplay: none;\r\n}\r\n\r\n\r\n.MSD-list-option-disabled, .MSD-disabled .MSD-list-option:not(.MSD-selected) \r\n{\r\n\tcolor: gray;\r\n\tpointer-events: none;\r\n}\r\n\r\n\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".MSD-vars\r\n{\r\n    --open-icon: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n    --collapse-icon: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");\r\n    --collapse-icon-highlight: url(" + ___CSS_LOADER_URL_REPLACEMENT_2___ + ");\r\n    --pill-close: url(" + ___CSS_LOADER_URL_REPLACEMENT_3___ + ");\r\n}\r\n\r\n.MSD-main\r\n{\r\n    display: inline;\r\n\r\n    position: relative;\r\n\r\n\tpadding: 0 24px 0 0;\r\n\r\n    border: solid 1px #ced4da;\r\n\tborder-radius: 4px;\r\n\r\n\tbackground-color: white;\r\n\t\r\n\tbackground-image: var(--open-icon);\r\n\tbackground-repeat: no-repeat;\r\n\tbackground-position: right .5rem center;\r\n\tbackground-size: 16px 12px;\r\n\r\n    width: 100%;\r\n}\r\n.MSD-focused\r\n{\r\n\tpadding: 0;\r\n\tbackground-image: unset;\r\n\tborder: none;\r\n}\r\n.MSD-main-wrapper\r\n{\r\n\tposition: relative;\r\n\twidth: 100%;\r\n}\r\n.MSD-focused .MSD-main-wrapper\r\n{\r\n\tposition: absolute;\r\n\t\r\n\tbackground-color: white;\r\n\r\n\tborder: solid 1px #ced4da;\r\n\tborder-radius: 4px;\r\n\r\n\tz-index: 101;\r\n}\r\n\r\n.MSD-search-wrapper\r\n{\r\n\tpadding: 2px 5px;\r\n\tborder-radius: 4px;\r\n}\r\n\r\n.MSD-search-wrapper, .MSD-pill-wrapper\r\n{ \r\n\tdisplay: flex;\r\n\tflex-wrap: wrap;\r\n\r\n\tposition: relative;\r\n\t\r\n    gap: 2px 0.5rem;\r\n\r\n    width: 100%;\r\n}\r\n.MSD-search-wrapper-focus\r\n{\r\n\tbox-shadow: 0 0 3px 3px #3787fd70\r\n}\r\n\r\n.MSD-pill-wrapper\r\n{\r\n\tpadding: 8px;\r\n}\r\n.MSD-pill-wrapper-empty\r\n{\r\n\tpadding: 0;\r\n}\r\n\r\n.MSD-search \r\n{\r\n    all: unset;\r\n    display: inline-block;\r\n    \r\n    flex-grow: 1;\r\n    \r\n\tmargin: 0 1px; \r\n\tpadding: 1px 0;\r\n    \r\n  \tborder-radius: 4px; \r\n  \t\r\n    /* width: 0px; */\r\n}\r\n\r\n.MSD-list-wrapper\r\n{\r\n    display: none;\r\n\t\r\n    position: absolute;\r\n\r\n    border: solid 1px #ced4da;\r\n\tborder-radius: 4px;\r\n\r\n\tbackground-color: white;\r\n\r\n\tbox-shadow: gray 0 3px 8px;\r\n\r\n\tz-index: 100;\r\n    \r\n\twidth: 100%;\r\n}\r\n.MSD-focused .MSD-list-wrapper\r\n{\r\n\tdisplay: block;\r\n}\r\n\r\n.MSD-list\r\n{\r\n\tpadding: 5px 5px 0 5px;\r\n\r\n\tmax-height: 30vh;\r\n\tmax-width: 100%;\r\n    overflow-y:auto;\r\n\toverflow-x: hidden;\r\n}\r\n\r\n.MSD-list-option, .MSD-list-all\r\n{\r\n    display: flex;\r\n\r\n\talign-items: center;\r\n\r\n\tpadding: 5px;\r\n\tcursor: pointer;\r\n}\r\n\r\n.MSD-list-option:hover\r\n{\r\n\tbackground-color: #cdcdcd;\r\n}\r\n.MSD-list-option-focus, .MSD-list-option-focus:hover\r\n{\r\n\tbackground-color: #bdbcbc;\r\n}\r\n\r\n.MSD-list-option input, .MSD-list-all input\r\n{\r\n  margin-right: 0.35em;  \r\n\r\n  height: 1.15em;\r\n  width: 1.15em;\r\n}\r\n\r\n.MSD-list-option label, .MSD-list-all label\r\n{\r\n\toverflow: hidden;\r\n\twhite-space: nowrap;\r\n\ttext-overflow: ellipsis;\r\n}\r\n\r\n.MSD-list-all\r\n{\r\n\ttext-decoration: dotted underline;\r\n}\r\n.MSD-list-filtered .MSD-list-option:not(.MSD-matched)\r\n{\r\n\tdisplay: none;\r\n} \r\n.MSD-pill-wrapper\r\n{\r\n\tborder-bottom: solid 1px #ced4da;\r\n}\r\n\r\n.MSD-close-wrapper\r\n{\r\n\tdisplay: flex;\r\n\r\n\tjustify-content: center;\r\n\t\r\n    padding: 0.3em;\r\n\r\n\tborder-top: solid 1px #ced4da;\r\n}\r\n\r\n.MSD-close-icon\r\n{\r\n\tpadding: 1ex;\r\n\r\n\tborder: 4px solid #3787fd00;\r\n    border-radius:100%;\r\n\r\n\tbackground-image: var(--collapse-icon);\r\n\tbackground-size: contain;\r\n\tbackground-repeat: no-repeat;\r\n\tbackground-position: center;\r\n\r\n\ttransform: rotate(180deg);\r\n   \r\n    height: 2ex;\r\n\twidth: 2ex;\r\n\tcursor: pointer;\r\n}\r\n\r\n.MSD-close-wrapper:hover .MSD-close-icon\r\n{\r\n\tbackground-image: var(--collapse-icon-highlight);\r\n\tbackground-color: #3787fd70;\r\n}\r\n\r\n.MSD-pill\r\n{\r\n\tdisplay:flex;\r\n\r\n    padding:1px 0 1px 0.75em; \r\n    border-radius: 4px; \r\n    \r\n    color:white;\r\n\tbackground-color:#3787fd;\r\n\r\n\tmax-width: 100%;\r\n}\r\n.MSD-pill label\r\n{\r\n\toverflow: hidden;\r\n\twhite-space: nowrap;\r\n\ttext-overflow: ellipsis;\r\n}\r\n.MSD-pill div.MSD-pill-close \r\n{\r\n\tpadding: 10px 1em;\r\n\t\r\n\tbackground-image: var(--pill-close);\r\n  \tbackground-repeat: no-repeat;\r\n  \tbackground-position: center;\r\n\tbackground-size: 10px 10px;\r\n\r\n    width: 10px;\r\n\tcursor: pointer;\r\n}\r\n.MSD-pill-focus\r\n{\r\n\t/* box-shadow: 0 0 3px 3px #3787fd70; */\r\n\ttext-decoration: underline;\r\n}\r\n.MSD-hidden\r\n{\r\n\tdisplay: none;\r\n}\r\n\r\n\r\n.MSD-list-option-disabled, .MSD-disabled .MSD-list-option:not(.MSD-selected) \r\n{\r\n\tcolor: gray;\r\n\tpointer-events: none;\r\n}\r\n\r\n\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -14722,7 +14722,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, ".MSD-vars\r\n{\r\n    --open-icon: url
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "#main\r\n{\r\n    display: flex;\r\n    flex-direction: column;\r\n\r\n    min-height: 0;\r\n    max-height: 100vh;\r\n    \r\n    height: 100vh;\r\n}\r\n\r\n#main-window\r\n{\r\n    flex-grow: 1;\r\n    \r\n    display: flex;\r\n    flex-direction: row-reverse;\r\n\r\n    max-width: 100%;\r\n    \r\n    min-height: 0;\r\n    height: 100%;\r\n}\r\n\r\n#main-content\r\n{\r\n    display: flex;\r\n    max-width: 70%;\r\n    flex-grow: 1;\r\n}\r\n\r\n#plot-display\r\n{\r\n    flex-grow: 1;\r\n\r\n    display: flex;\r\n    \r\n    max-width: 100%;\r\n    max-height: 100%;\r\n}\r\n\r\n\r\n#opciones-acordeon\r\n{\r\n    flex-grow: 1;\r\n\r\n    min-width: min-content;\r\n    max-width: 30%;\r\n    \r\n    overflow-y: auto;\r\n}\r\n\r\n#opciones-acordeon, #plot-display\r\n{\r\n    margin: 3vh 0;\r\n}\r\n\r\n\r\n@media (min-aspect-ratio: 7/5) {\r\n    #main-content\r\n    {\r\n        max-width: 75%;\r\n    }\r\n    #opciones-acordeon\r\n    {\r\n        min-width: min-content;\r\n        max-width: 25%;\r\n    }\r\n}\r\n\r\n@media (min-aspect-ratio: 9/5) {\r\n    #main-content\r\n    {\r\n        max-width: 80%;\r\n    }\r\n    #opciones-acordeon\r\n    {\r\n        min-width: min-content;\r\n        max-width: 20%;\r\n    }\r\n}\r\n\r\n@media (max-aspect-ratio: 6/5) {\r\n    #main-window {\r\n        flex-direction: column;\r\n    }\r\n    #main-content\r\n    {\r\n        max-width: 100%;\r\n        \r\n        max-height: 60%;\r\n    }\r\n    #opciones-acordeon\r\n    {\r\n        max-width: 100%;\r\n\r\n        min-height: min-content;\r\n        max-height: 40%;\r\n    }\r\n}\r\n\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "#main\r\n{\r\n    display: flex;\r\n    flex-direction: column;\r\n\r\n    min-height: 0;\r\n    max-height: 100vh;\r\n    height: 100vh;\r\n}\r\n#about-window\r\n{\r\n    flex-grow: 1;\r\n    display: block;\r\n    max-width: 100%;\r\n    \r\n    min-height: 0;\r\n    padding: 1rem;\r\n    font-family: sans-serif;\r\n    color: #74797f;\r\n    /* text-align: justify; */\r\n    height: 100%;\r\n    overflow-y: scroll;\r\n}\r\n\r\n.centered\r\n{\r\n    display: block;\r\n    margin: 0 auto;\r\n    width: 95%;\r\n    max-width: 980px;\r\n}\r\n\r\n#main-window\r\n{\r\n    flex-grow: 1;\r\n    \r\n    display: flex;\r\n    flex-direction: row-reverse;\r\n\r\n    max-width: 100%;\r\n    \r\n    min-height: 0;\r\n    height: 100%;\r\n}\r\n\r\n#main-content\r\n{\r\n    display: flex;\r\n    max-width: 70%;\r\n    flex-grow: 1;\r\n}\r\n\r\n#plot-display\r\n{\r\n    flex-grow: 1;\r\n\r\n    display: flex;\r\n    \r\n    max-width: 100%;\r\n    max-height: 100%;\r\n}\r\n\r\n\r\n#opciones-acordeon\r\n{\r\n    flex-grow: 1;\r\n\r\n    min-width: min-content;\r\n    max-width: 30%;\r\n    \r\n    overflow-y: auto;\r\n}\r\n\r\n#opciones-acordeon, #plot-display\r\n{\r\n    margin: 3vh 0;\r\n}\r\n\r\n\r\n@media (min-aspect-ratio: 7/5) {\r\n    #main-content\r\n    {\r\n        max-width: 75%;\r\n    }\r\n    #opciones-acordeon\r\n    {\r\n        min-width: min-content;\r\n        max-width: 25%;\r\n    }\r\n}\r\n\r\n@media (max-aspect-ratio: 6/5) {\r\n    #main-window {\r\n        flex-direction: column;\r\n    }\r\n    #main-content\r\n    {\r\n        max-width: 100%;\r\n        \r\n        max-height: 60%;\r\n    }\r\n    #opciones-acordeon\r\n    {\r\n        max-width: 100%;\r\n\r\n        min-height: min-content;\r\n        max-height: 40%;\r\n    }\r\n}\r\n\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -14746,13 +14746,15 @@ ___CSS_LOADER_EXPORT___.push([module.id, "#main\r\n{\r\n    display: flex;\r\n  
 
 
 
-var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(768), __webpack_require__.b);
-var ___CSS_LOADER_URL_IMPORT_1___ = new URL(/* asset import */ __webpack_require__(43), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(783), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_1___ = new URL(/* asset import */ __webpack_require__(286), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_2___ = new URL(/* asset import */ __webpack_require__(43), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 var ___CSS_LOADER_URL_REPLACEMENT_1___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_1___);
+var ___CSS_LOADER_URL_REPLACEMENT_2___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_2___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "/* opciones */\r\n\r\n.collapse-panel\r\n{\r\n    padding: 1em;\r\n    color: #676d73;\r\n}\r\n.opciones-li\r\n{\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n    color: gray;\r\n    padding: 0.5em 0;\r\n}\r\n\r\n.opciones-panel {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: space-between;\r\n}\r\n/* === acordeon === */\r\n\r\n.accordion \r\n{\r\n    position: relative;\r\n}\r\n.accordion-header\r\n{\r\n    display: flex;\r\n    align-items: center;\r\n\r\n    padding: 0 0 0 1.25rem;\r\n\r\n    background-color: transparent;\r\n}\r\n.accordion-header .accordion-button\r\n{\r\n    /* flex-grow: 1; */\r\n\r\n    background-color: transparent;\r\n    width: auto;\r\n}\r\n/* .accordion-header .accordion-button:hover\r\n{\r\n    flex-grow: 1;\r\n\r\n    background-color: lightblue;\r\n} */\r\n\r\n.accordion-button:not(.collapsed)\r\n{\r\n    box-shadow: none;/* 0 0 0 0 transparent; */\r\n}\r\n\r\n.accordion-body\r\n{\r\n    border-bottom: none;/*  0px solid transparent; */\r\n}\r\n\r\n.accordion-item\r\n{\r\n    border-bottom: none; /* 0px solid transparent; */\r\n    margin-bottom: 0.5em;\r\n}\r\n.accordion-button:focus \r\n{\r\n    border-color: transparent;\r\n    box-shadow: none; /* 0 0 0 0; */\r\n}\r\n.list-group-item\r\n{\r\n    border-bottom: none; /* 0px solid transparent; */\r\n}\r\n.form-check-input:checked\r\n{\r\n    background-color: transparent;\r\n    border-width: 2px;\r\n}\r\n.form-check-main:checked\r\n{\r\n    background-color: #0d6efd;\r\n    background-color: var(--form-check-main-color);\r\n    border-width: 1px\r\n}\r\n\r\n.toggler \r\n{\r\n    display: inline-block;\r\n    width: 1.5em;\r\n    height: 1.5em;\r\n    margin: 0 1.25em;\r\n    vertical-align: middle;\r\n    background-repeat: no-repeat;\r\n    background-position: center;\r\n    background-size: 100%;\r\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ")\r\n}\r\n\r\n.link-icon\r\n{\r\n    display: inline-block;\r\n    margin-left: 0.5rem;\r\n    width: 0.75rem;\r\n    height: 0.75rem;    \r\n    background-repeat: no-repeat;\r\n    background-position: center;\r\n    background-size: 100%;\r\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");\r\n}\r\n\r\n.btn-toggler:focus\r\n{\r\n    box-shadow:none !important;\r\n    outline:0px !important;\r\n}\r\n.TL-toggle\r\n{\r\n    flex-grow: 1;\r\n}\r\n\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "/* opciones */\r\n\r\n.collapse-panel\r\n{\r\n    padding: 1em;\r\n    color: #676d73;\r\n}\r\n.opciones-li\r\n{\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n    color: gray;\r\n    padding: 0.5em 0;\r\n}\r\n\r\n.opciones-panel {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: space-between;\r\n}\r\n/* === acordeon === */\r\n\r\n.accordion \r\n{\r\n    position: relative;\r\n}\r\n.accordion-header\r\n{\r\n    display: flex;\r\n    align-items: center;\r\n\r\n    padding: 0 0 0 1.25rem;\r\n\r\n    background-color: transparent;\r\n}\r\n.accordion-header .accordion-button\r\n{\r\n    /* flex-grow: 1; */\r\n\r\n    background-color: transparent;\r\n    width: auto;\r\n}\r\n/* .accordion-header .accordion-button:hover\r\n{\r\n    flex-grow: 1;\r\n\r\n    background-color: lightblue;\r\n} */\r\n\r\n.accordion-button:not(.collapsed)\r\n{\r\n    box-shadow: none;/* 0 0 0 0 transparent; */\r\n}\r\n\r\n.accordion-body\r\n{\r\n    border-bottom: none;/*  0px solid transparent; */\r\n}\r\n\r\n.accordion-item\r\n{\r\n    border-bottom: none; /* 0px solid transparent; */\r\n    margin-bottom: 0.5em;\r\n}\r\n.accordion-button:focus \r\n{\r\n    border-color: transparent;\r\n    box-shadow: none; /* 0 0 0 0; */\r\n}\r\n.list-group-item\r\n{\r\n    border-bottom: none; /* 0px solid transparent; */\r\n}\r\n.form-check-input:checked\r\n{\r\n    background-color: transparent;\r\n    border-width: 2px;\r\n}\r\n.form-check-main:checked\r\n{\r\n    background-color: #0d6efd;\r\n    background-color: var(--form-check-main-color);\r\n    border-width: 1px\r\n}\r\n\r\n.toggler \r\n{\r\n    display: inline-block;\r\n    width: 1.5em;\r\n    height: 1.5em;\r\n    margin: 0 1.25em;\r\n    vertical-align: middle;\r\n    background-repeat: no-repeat;\r\n    background-position: center;\r\n    background-size: 100%;\r\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ")\r\n}\r\n\r\n.about-icon\r\n{\r\n    display: inline-block;\r\n    width: 1.5em;\r\n    height: 1.5em;\r\n    margin: 0 1.25em;\r\n    vertical-align: middle;\r\n    background-repeat: no-repeat;\r\n    background-position: center;\r\n    background-size: 100%;\r\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");\r\n}\r\n.link-icon\r\n{\r\n    display: inline-block;\r\n    margin-left: 0.5rem;\r\n    width: 0.75rem;\r\n    height: 0.75rem;    \r\n    background-repeat: no-repeat;\r\n    background-position: center;\r\n    background-size: 100%;\r\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_2___ + ");\r\n}\r\n\r\n.btn-toggler:focus\r\n{\r\n    box-shadow:none !important;\r\n    outline:0px !important;\r\n}\r\n.TL-toggle\r\n{\r\n    flex-grow: 1;\r\n}\r\n\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -15218,6 +15220,14 @@ module.exports = "data:image/svg+xml,%3Csvg class=%27icon%27 viewBox=%270 0 100 
 
 /***/ }),
 
+/***/ 286:
+/***/ ((module) => {
+
+"use strict";
+module.exports = "data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 height=%27160%27 width=%27160%27 version=%271.0%27%3E%3Cg fill=%27%234b4b4b%27%3E%3Cpath d=%27m80 15c-35.88 0-65 29.12-65 65s29.12 65 65 65 65-29.12 65-65-29.12-65-65-65zm0 10c30.36 0 55 24.64 55 55s-24.64 55-55 55-55-24.64-55-55 24.64-55 55-55z%27/%3E%3Cpath d=%27m57.373 18.231a9.3834 9.1153 0 1 1 -18.767 0 9.3834 9.1153 0 1 1 18.767 0z%27 transform=%27matrix%281.1989 0 0 1.2342 21.214 28.75%29%27/%3E%3Cpath d=%27m90.665 110.96c-0.069 2.73 1.211 3.5 4.327 3.82l5.008 0.1v5.12h-39.073v-5.12l5.503-0.1c3.291-0.1 4.082-1.38 4.327-3.82v-30.813c0.035-4.879-6.296-4.113-10.757-3.968v-5.074l30.665-1.105%27/%3E%3C/g%3E%3C/svg%3E";
+
+/***/ }),
+
 /***/ 417:
 /***/ ((module) => {
 
@@ -15370,11 +15380,11 @@ module.exports = "data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%
 
 /***/ }),
 
-/***/ 768:
+/***/ 783:
 /***/ ((module) => {
 
 "use strict";
-module.exports = "data:image/svg+xml;charset=utf8,%3Csvg viewBox=%270 0 30 30%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cpath stroke=%27rgba%280, 0, 0, 0.5%29%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-miterlimit=%2710%27 d=%27M4 7h22M4 15h22M4 23h22%27/%3E%3C/svg%3E";
+module.exports = "data:image/svg+xml;charset=utf8,%3Csvg viewBox=%270 0 30 30%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cpath stroke=%27%234b4b4b%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-miterlimit=%2710%27 d=%27M4 7h22M4 15h22M4 23h22%27/%3E%3C/svg%3E";
 
 /***/ })
 
@@ -22690,14 +22700,6 @@ var charts_update = injectStylesIntoStyleTag_default()(charts/* default */.Z, ch
 // }
 // and assure this module is imported by (without 'as' handle) or loaded before any .tsx file. 
 /* === handler === */
-// declare global {
-//     namespace JSX {
-//         // for typescript jsx compiler use. Accept anything as a tag.     
-//         interface IntrinsicElements { 
-//             [element: string]: any; 
-//         } 
-//     }
-// }
 class createElement {
     /**
      * builds an HTMLElement object with possible custom properties.
@@ -22776,6 +22778,12 @@ class Dispatcher {
     constructor() {
         this.triggerPool = {};
     }
+    /**
+     * registers a function to to be called by a certain trigger.
+     * @param trigger the name of the trigger.
+     * @param id a handle id for the function.
+     * @param onTypeTriggerFn the function to be called.
+     */
     register(trigger, id, onTypeTriggerFn) {
         if (this.triggerPool[trigger]) {
             this.triggerPool[trigger][id] = onTypeTriggerFn;
@@ -22784,10 +22792,19 @@ class Dispatcher {
             this.triggerPool[trigger] = { [id]: onTypeTriggerFn };
         }
     }
+    /**
+     * deletes the associated function from the trigger group.
+     * @param trigger the name of the trigger.
+     * @param id the given id for the function.
+     */
     delete(trigger, id) {
         if (this.triggerPool[trigger][id])
             delete this.triggerPool[trigger][id];
     }
+    /**
+     * calls all functions registered to the given triggers.
+     * @param triggers the name of the triggers.
+     */
     trigger(...triggers) {
         for (let trigger of triggers) {
             for (let id in this.triggerPool[trigger]) {
@@ -22798,7 +22815,7 @@ class Dispatcher {
 }
 
 ;// CONCATENATED MODULE: ./src/utils/LinkedLists.ts
-// LinkedLists.ts module defines a custom pair of 'double linked lists'-like datastructures: DLList<Type> and DLListIdx<Type>
+// LinkedLists.ts module defines a custom pair of 'double linked lists'-like datastructures: DLList<Type> and DLListIdx<Type>,
 // and their corresponding link object: DLink<Type>. 
 class DLink {
     /**
@@ -22824,7 +22841,7 @@ class DLink {
     _validate() {
         if ((this.previous && this.list !== this.previous.list) ||
             (this.next && this.list !== this.next.list))
-            throw Error('DLinks do not belong to the same DLList');
+            throw Error('DLinks do not belong to the same DLList.');
         if ((this.previous && this.previous.next !== this.next) ||
             (this.next && this.next.previous !== this.previous))
             throw Error('provided DLinks are not contiguous.');
@@ -23110,8 +23127,7 @@ class Urn {
      * @param select
      * how to select elements for retrieval. Options: "random" | "linear".
      * Default = UrnProperties.selection value given at init. If no value was given, then "random".
-     * @returns
-     * a value from the urn.
+     * @returns a value from the urn.
      */
     retrieve(select = this.selection) {
         if (this.set.length == 0)
@@ -23138,8 +23154,7 @@ class Urn {
     }
     /**
      * handles the urn's return process.
-     * @param value
-     * a value that was originally in the urn.
+     * @param value a value that was originally in the urn.
      */
     return(value) {
         var _a;
@@ -24264,8 +24279,14 @@ class TLSubitem extends TLBase {
 }
 
 ;// CONCATENATED MODULE: ./src/utils/IntlFormats.ts
+// simple interface for Intl.NumberFormat and some related functions
 const numberFormatter = new Intl.NumberFormat("en-US", { maximumFractionDigits: 2 });
 const percentFormatter = new Intl.NumberFormat("en-US", { style: 'percent', maximumFractionDigits: 2 });
+/**
+ * converts miliseconds to an hh:mm:ss format
+ * @param ms the miliseconds
+ * @returns an hh:mm:ss formatted string (without trailing zeros)
+ */
 function milisToTime(ms) {
     const h = ms / (1000 * 60 * 60);
     const hf = Math.floor(h);
@@ -25017,10 +25038,12 @@ var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _argume
 // main DOM elements
 const searchBarElement = document.getElementById("nav-search-bar");
 const settingsElement = document.getElementById("SETTINGS");
+const tabAboutElement = document.getElementById("tab-about");
 const tabPCAelement = document.getElementById("tab-PCA");
 const tabAtributosElement = document.getElementById("tab-atributos");
 const tabMedicionesElement = document.getElementById("tab-medidas");
 const tabTonalidadElement = document.getElementById("tab-tonalidad");
+const aboutElement = document.getElementById("about-window");
 const plotPCAelement = document.getElementById("plot-PCA");
 const plotAtributosElement = document.getElementById("plot-atributos");
 const plotMedicionesElement = document.getElementById("plot-medidas");
@@ -25032,6 +25055,7 @@ const canvasMedicionesElementLoudness = document.getElementById("canvas-medidas-
 const canvasMedicionesElementDuration = document.getElementById("canvas-medidas-duration_ms");
 const canvasTonalidadElement = document.getElementById("canvas-tonalidad");
 const acordeonElement = document.getElementById("opciones-acordeon");
+const main_window = document.getElementById("main-window");
 // globals
 const DBINDEXPATH = "../../../database/generated/artistas.json";
 const DBPATH = "../../../database/generated/datasets";
@@ -25070,6 +25094,8 @@ const chartTonalidad = new ChartTonalidad(canvasTonalidadElement);
 searchBar.element.addEventListener("MSD", (event) => __awaiter(void 0, void 0, void 0, function* () {
     CURRENT = event.detail.selectedOptions;
     yield loadCurrent();
+    if (CURRENT.length > 0)
+        tabSelect(tabPCAelement, plotPCAelement);
     main_update();
 }));
 // settings event
@@ -25077,6 +25103,9 @@ settings.element.addEventListener("settingsChange", (event) => {
     main_update();
 });
 // tab select event
+tabAboutElement.addEventListener("click", () => {
+    tabSelect(tabAboutElement, aboutElement);
+});
 tabPCAelement.addEventListener("click", () => {
     tabSelect(tabPCAelement, plotPCAelement);
 });
@@ -25180,11 +25209,20 @@ function tabSelect(tabElement, displayElement) {
     plotAtributosElement.style.display = "none";
     plotTonalidadElement.style.display = "none";
     plotMedicionesElement.style.display = "none";
+    aboutElement.style.display = "none";
     tabPCAelement.classList.remove("active");
     tabAtributosElement.classList.remove("active");
     tabTonalidadElement.classList.remove("active");
     tabMedicionesElement.classList.remove("active");
-    displayElement.style.display = "flex";
+    tabAboutElement.classList.remove("active");
+    if (displayElement.id === 'about-window') {
+        main_window.style.display = "none";
+        displayElement.style.display = "block";
+    }
+    else {
+        displayElement.style.display = "flex";
+        main_window.style.display = "flex";
+    }
     tabElement.classList.add("active");
 }
 function populateSearchBar() {
