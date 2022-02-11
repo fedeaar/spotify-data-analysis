@@ -1,4 +1,4 @@
-##La huella digital de la música argentina 
+## La huella digital de la música argentina 
 Éste repositorio reune todo el materia utilizado para crear esta [nota](https://fedeaar.github.io/spotify-data-analysis/web/dist/) y esta [aplicación](https://fedeaar.github.io/spotify-data-analysis/web/dist/widget/widget.html).
 Ambas son una exploración de un dataset generado a partir de diversas llamadas a la api de Spotify y una serie de modulos complementarios. 
 
@@ -94,21 +94,21 @@ También se creo un segundo dataset que recopila números de resumen para el pro
 
 Se pueden encontrar versiones csv de ambos datasets en: [./database/csv](https://github.com/fedeaar/spotify-data-analysis/tree/main/database/csv).
 
-##Estructura del repo:
-###./Builder
+## Estructura del repo:
+### ./Builder
 Una serie de módulos en python. En particular, dependen de tener keys para la api de Spotify.
 
-####./builder/handlers:
+#### ./builder/handlers:
 El flujo de datos entre la api de Spotify y las bases de datos.
 
-####./builder/builders:
+#### ./builder/builders:
 La construcción de los archivos JSON utilizados para los gráficos de la muestra y de la aplicación.
 
-####./builder/utils: 
+#### ./builder/utils: 
 Utilidades generales para el resto de los módulos.
 
-###./database
+### ./database
 Las bases de datos y los JSON generados.
 
-###./web
+### ./web
 El source para la nota y la aplicación.
