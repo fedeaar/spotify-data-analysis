@@ -103,8 +103,8 @@ figcaption {
             <a href="#3b">Géneros</a> - 
             <a href="#3c">Popularidad</a>
         </span>
-        <span> &gt; <a href="#4">Los aspectos esenciales</a> </span>
-        <span> &gt; <a href="#4a">Predictores</a>:
+        <span> &gt; <a href="#4">En detalle</a> </span>
+        <span> &gt; <a href="#4a">Respuestas</a>:
             <a href="#4aa">bailabilidad</a> -
             <a href="#4ab">energía</a> -
             <a href="#4ac">valencia</a> -
@@ -384,23 +384,23 @@ figcaption {
 
 <!-- sección 4 -->
     <h4 id="4">
-        &lt; Los aspectos esenciales /&gt;
+        &lt; En detalle /&gt;
     </h4>
     <p dir="ltr">
         Otra forma de entender la clase de música que se hace en el país es mirar
-        aquellas cosas que la hacen ser lo que es.
+        aquellas propiedades que la hacen ser lo que es.
     </p>
     <p dir="ltr">
-        Los ‘features’, o atributos, son -en el mundo de la estadística-
-        propiedades mensurables, o medidas de confianza, respecto a aquellas
-        cualidades que se suponen describen a un fenómeno. Spotify calcula y
-        permite el acceso a una serie de atributos de audio para cada canción que
-        está cargada en la plataforma. Estos datos luego se utilizan, por ejemplo,
-        para predecir si un tema nuevo puede llegar a gustarle, o no, a un usuario.
+        Los ‘features’, son -en el mundo de la estadística y el machine learning- 
+        propiedades mensurables, respecto a aquellas cualidades que se suponen 
+        describen a un fenómeno. Estos, además,  se pueden utilizar como predictores 
+        para inferir nuevos datos, usualmente llamados respuestas. Spotify calcula 
+        y permite el acceso a una serie de atributos de audio y respuestas para cada 
+        canción que está cargada en la plataforma. 
     </p>
     <p dir="ltr">
         Los atributos que comparte la plataforma se pueden dividir en dos tipos:
-        predictores y mediciones. En las siguientes secciones se da un panorama de
+        las respuestas y las mediciones. En las siguientes secciones se da un panorama de
         ambos para las canciones de la muestra. Se observan solo los últimos cuatro
         años para dar una mirada más actual y posiblemente más representativa (dada
         la madurez de la plataforma como medio de consumo en el país).
@@ -408,18 +408,17 @@ figcaption {
 
 <!-- sección 4a -->
     <h4 id="4a">
-        &lt; Predictores /&gt;
+        &lt; Respuestas /&gt;
     </h4>
     <p dir="ltr">
-        Los predictores, valga la redundancia, predicen. Es decir, dan un grado de
-        confianza respecto a qué tan presente está una cualidad en una canción,
-        acorde -por ejemplo- a cómo se compara con otras canciones que se usan de
-        referencia (el 'training set') o a la detección de otras
-        cualidades que se usan como indicios. En general, se expresan con un
-        porcentaje codificado entre 0 y 1.
+        Las respuestas son el resultado de un proceso de inferencia. En este caso, 
+        dan un grado de confianza respecto a qué tan presente está una cualidad en 
+        una canción, acorde -por ejemplo- a cómo se compara con otras canciones que 
+        se usan de referencia o a la detección de otras cualidades que se usan como 
+        indicios. En general, se expresan con un porcentaje codificado entre 0 y 1.
     </p>
     <p dir="ltr">
-        Spotify calcula los siguientes predictores: qué tan 'bailable' es un tema,
+        Spotify calcula las siguientes respuestas: qué tan 'bailable' es un tema,
         cuán 'energético' es, qué emociones transmite, qué tan 'acustico' se
         siente, qué tan 'instrumental' es, qué tan 'en vivo' se escucha, y qué tan
         'hablado' está.
@@ -430,7 +429,7 @@ figcaption {
         &lt; bailabilidad &gt;
     </h5>
     <p dir="ltr">
-        La ‘danceability’ o ‘bailabilidad’ es un predictor sobre qué tan bailable
+        La ‘danceability’ o ‘bailabilidad’ es una respuesta a qué tan bailable
         es una canción. Se calcula -según el manual para desarrolladores- por medio
         de “una combinación de elementos musicales que incluyen el tempo, la
         estabilidad rítmica, la fuerza del beat y la regularidad general del tema”.
@@ -567,7 +566,7 @@ figcaption {
         valores mayores a 0.5 representen tracks instrumentales”.
     </p>
     <p dir="ltr">
-        El siguiente gráfico muestra la distribución de éste predictor -para cada
+        El siguiente gráfico muestra la distribución de ésta respuesta -para cada
         uno de los últimos cuatro años- sobre las canciones de la muestra:
     </p>
     
@@ -679,8 +678,8 @@ figcaption {
         &lt; Medidas /&gt;
     </h4>
     <p dir="ltr">
-        A diferencia de los predictores, las medidas son atributos que describen
-        numéricamente las propiedades más directamente medibles de un fenómeno.
+        A diferencia de las respuestas, las medidas son atributos que describen
+        numéricamente las propiedades más directamente mensurables de un fenómeno.
         Como puede ser su color, o tamaño. En el caso de Spotify, catalogan
         aspectos técnicos de las grabaciones subidas a la plataforma.
     </p>
@@ -865,14 +864,14 @@ figcaption {
     <p dir="ltr">
         Aparte del análisis general, también es interesante detenerse en cada
         artista por particular. El siguiente widget fue diseñado para permitir la
-        comparación entre ellos de una manera dinámica.
+        comparación entre la mayoría de ellos de una manera dinámica.
     </p>
     <p dir="ltr">
         Se divide de la siguiente manera:
     </p>
     <p dir="ltr">
         La pestaña 'ACP' -para análisis de componentes principales- condensa todos
-        los predictores y medidas de cada canción -salvo las categóricas (tonalidad
+        las respuestas y medidas de cada canción -salvo las categóricas (tonalidad
         y modo)- en un punto en el plano cartesiano. Es decir, reduce la
         información de todos estos atributos en dos nuevos, para simplificarlos.
         Uno representado por el eje X y otro por el eje Y. Como esta es una
@@ -882,7 +881,7 @@ figcaption {
         exhaustiva.
     </p>
     <p dir="ltr">
-        Las pestañas 'Predictores' y 'Medidas' capturan esta misma información pero
+        Las pestañas 'Respuestas' y 'Medidas' capturan esta misma información pero
         acorde a los números de resúmen para la totalidad de los temas del artista,
         o para cada uno de sus álbumes. La información está presentada en diagramas
         de caja. Cada caja representa cómo se distribuye el 50% de los datos

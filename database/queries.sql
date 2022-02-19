@@ -74,3 +74,22 @@ LEFT JOIN albums ON tracks.album_id = albums.album_id
 LEFT JOIN artists ON tracks.artist_id = artists.artist_id
 GROUP by tracks.album_id
 ORDER by count(tracks.track_id) DESC;
+
+/* artistas ultimos cuatro años */
+SELECT count(DISTINCT tracks.artist_id) 
+FROM tracks
+LEFT JOIN albums
+ON tracks.album_id = albums.album_id 
+WHERE release_date_precision = 'day' AND release_date >= '2018';
+
+/* tracks ultimos cuatro años */
+SELECT count(track_id) 
+FROM tracks
+LEFT JOIN albums
+ON tracks.album_id = albums.album_id 
+WHERE release_date_precision = 'day' AND release_date >= '2018';
+
+/* lanzamientos 2020 */
+SELECT count(album_id) 
+FROM albums
+WHERE release_date_precision = 'day' AND release_date >= '2020' AND release_date < '2021';
