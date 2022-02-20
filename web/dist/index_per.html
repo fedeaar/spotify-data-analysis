@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <title> La huella digital de la música argentina </title>
+    <meta name="description" content="una exploración sobre 5083 artistas argentinos.">
+    <meta name="author" content="Federico Arienti">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<style type="text/css">
+body {
+    all: unset;
+    font-family: sans-serif;
+}
+h1 {
+    margin: 3rem 0 2rem;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 1rem;
+}
+h3 {
+    font-style: italic;
+    font-weight: unset;
+}
+h4 {
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 1rem;
+    padding-top: 2rem;
+}
+h5 {
+    padding-top: 1rem;
+    padding-bottom: 0;
+}
+p {
+    text-align: justify;
+    color: rgb(49, 44, 44);
+}
+a:link, a:visited {
+    color: black;
+}
+a:hover, a:active {
+    text-decoration: underline;
+}
+.main, content {
+    display: block;
+    margin: 0 auto;
+    width: 95%;
+    max-width: 980px;
+}
+figcaption {
+    padding-top: 1em;
+    font-size: small;
+    font-style: italic;
+}
+#header-img {
+    width: 100%;
+    max-height: 50vh;
+}
+#index {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin: 1em auto 0 auto;
+    font-style: italic;
+    text-decoration: none;
+    color: rgb(49, 44, 44);
+}
+.chartfig {
+    padding-top: none;
+    padding-bottom: 1em;
+    text-align: center;
+    color: #666666;
+}
+.chart {
+    height: 70vh;
+}
+.widget {
+    height: 90vh;
+}
+</style>
+
+<body>
+<!-- header img -->
+    <img id="header-img" class="main" 
+        src="content/header.png" alt="imágen de un gráfico de barras.">
+    <figcaption class="main"> 
+        Distribución de las tonalidades, por año, de 208,884 canciones nacionales 
+        (2000 - 2021). Cada columna representa un año, cada color una tonalidad (desde do).
+    </figcaption>
+    
+<!-- índice -->
+    <h4 class="main">
+        &lt; índice /&gt;
+    </h4>
+    <div id="index" class="main" >
+        <span> &gt; <a href="#1">Introducción</a> </span>
+        <span> &gt; <a href="#2">La canción argentina</a> </span>
+        <span> &gt; <a href="#3">Mitos no tan mitos</a> </span>
+        <span> &gt; <a href="#4">La Popularidad</a> </span>
+        <span> &gt; <a href="#5">Los géneros locales</a> </span>
+        <span> &gt; <a href="#6">En detalle</a> </span>
+        <span> &gt; <a href="#7">Rakings y curiosidades</a> </span>
+        <span> &gt; <a href="#8">La muestra</a> </span>
+        <span> &gt; <a href="#9">Explorar el dataset</a> </span>
+    </div>
+    <br/>
+<content>
+<!-- title -->
+    <header id="1">
+        <h1> La huella digital de la música argentina </h1>
+        <h6> por Federico Arienti - <em>última actualización 19/02/2022</em> </h6>
+        <h3> 
+            Según datos de Spotify, casi el 55% de las canciones nacionales son bailables y energéticas, el artista más popular del país, con más de 14,5 millones de seguidores,  es Paulo Londra, y el indie, el rock y el folclore son los géneros que más representatividad tienen.
+        </h3>
+    </header>
+        
+    <p dir="ltr">
+        Una base de datos enorme, tanto de música como de hábitos de consumo, tiene las puertas abiertas para cualquier curioso que quiera aventurarse a recorrerla. O mejor dicho, entreabiertas. Los hábitos de consumo están bajo llave -salvo los propios- pero una enorme cantidad de información respecto a la música que en ella se almacena está disponible para investigar de forma masiva. Siempre y cuando, se sepa qué es lo que se está buscando.
+    </p>
+    <p dir="ltr">
+        En particular, la creciente popularidad de Spotify en Argentina -desde su lanzamiento en el 2013- convirtió al sitio en el predilecto para que toda clase de artistas carguen su música. Sean del género que fueren, conocidos o desconocidos, hayan grabado profesionalmente o con un celular -y lo hayan hecho hoy o hace 50 años-, todo músico tiene su presencia digital garantizada, si así lo desea.
+    </p>
+    <p dir="ltr">
+        Con cada canción publicada, también se carga una gran cantidad de información -directa e indirectamente relacionada- que la plataforma almacena. Estos datos se utilizan, por ejemplo, para recomendar nuevas canciones a los usuarios según sus hábitos de escucha, o para asociar a dos artistas según cuánto se los reproduce juntos.  
+    </p>
+        
+<!-- sección 2 -->
+    <h4 id="2"> 
+        &lt; La canción argentina /&gt; 
+    </h4>
+
+    <p dir="ltr">
+        ¿Qué música se hace en el país? 
+    </p>
+    <p dir="ltr">
+        En base a una muestra de 5083 artistas, se analizaron las 69,892 canciones que fueron publicadas por, o adjudicadas a, ellos en la plataforma durante estos últimos cuatro años. Como no todos los músicos publicaron durante este periodo, los temas corresponden a 3,727 artistas.
+    </p>
+    <p dir="ltr">
+        Casi el 55% de las canciones nacionales son bailables y energéticas. Es decir, mantienen un ritmo estable (pero no siempre), y son tanto ruidosas como rápidas. Comparativamente, en estos últimos años las canciones se volvieron alrededor de un 4.7% más bailables y un 8.8% menos energéticas.
+    </p>
+    <p dir="ltr">
+        Los temas no son, por lo general, ni muy alegres, ni muy tristes, pero tampoco se concentran en el medio. Se puede encontrar música a lo largo de todo el espectro. En estos últimos cuatro años, el 2020 fue el año menos positivo. Mientras que el 2021 fue el año más ‘feliz’. 
+    </p>
+    <p dir="ltr">
+        Se puede decir que, en general, la música es más eléctrica, o electrónica, que acústica. Por su parte, menos del 20% es instrumental, y menos del 2% mezcla a la palabra hablada con la música, como podría hacerlo -por ejemplo- el rap. Del total, sólo alrededor del 10% es probablemente en vivo. 
+    </p>
+    <p dir="ltr">
+        Mucha de la música local se compone utilizando las tonalidades naturales -por sobre las alteradas- y Sol y La son las escalas favoritas. Los temas duran en promedio 3:30 minutos y se han vuelto progresivamente un poco más cortos a lo largo de los años. Por sus volúmenes, se puede inferir que fueron grabados (o masterizados) por técnicos de sonido, ya que siguen los criterios que se suelen considerar ‘mejores’ para las plataformas de streaming. 
+    </p>
+    <p dir="ltr">
+        Los siguientes histogramas muestran en más detalle cómo se distribuyen estos aspectos a lo largo de la muestra. Para los primeros, el gráfico representa el grado de adecuación que tienen distintas cantidades de temas al atributo señalado. Con '1' siendo 'se adecúa completamente.':
+    </p>
+    
+</content>
+    <iframe class="main chart" src="./content/slider.html?m=medidas" width="100%" height="80%" 
+        frameBorder="0">
+        Error al cargar el iframe. Tu browser no es compatible.
+    </iframe>
+    <figcaption class="chartfig main"> 
+        Gráfico interactivo. Clickeá las leyendas para mostrar u ocultarlas. Deslizá el mouse sobre las barras para ver información adicional. Clickeá las flechas para cambiar de visualización.
+    </figcaption>
+<content>
+    
+<!-- sección 3 -->
+    <h4 id="3"> 
+        &lt; Mitos no tan mitos /&gt; 
+    </h4>
+    
+    <p dir="ltr">
+        Es moneda corriente entre los artistas emergentes decir que lo más importante ya no es lanzar álbumes, sino sencillos. Entre las razones, se suele citar la idea que lanzar poco material ‘seguido’ mantiene más el interés que lanzar mucho ‘cada tanto’. ¿Hasta qué punto se verifica esta forma de producir en los datos?
+    </p>
+    <p dir="ltr">
+        El siguiente gráfico describe la cantidad de lanzamientos, de álbumes y de sencillos, por mes, desde el año 2000 hasta el final del 2021 e incluye a 4796 de los artistas en la muestra.
+    </p>
+
+</content>
+    <iframe class="main chart" src="./content/releaseSeries.html" width="100%" height="80%" 
+        frameBorder="0">
+        Error al cargar el iframe. Tu browser no es compatible.
+    </iframe>
+    <figcaption class="chartfig main"> 
+        Gráfico interactivo. Clickeá las leyendas para mostrar u ocultarlas. Deslizá el mouse sobre las barras para ver información adicional.
+    </figcaption>
+<content>
+ 
+    <p dir="ltr">
+        Ya que es posible que los datos previos al lanzamiento de la plataforma no sean representativos, por incompletos -probablemente muchos de los sencillos y álbumes ‘menores’, que fracasaron o fueron olvidados, nunca se cargaron en el catálogo-, es mejor concentrarse en los años posteriores.
+    </p>
+    <p dir="ltr">
+        La diferencia es significativa. Del 2013 al 2017 hubo -al menos- 4,036 álbumes y 2,841 sencillos. Una relación de 0.7 sencillos por álbum. En cambio, en los últimos cuatro años se lanzaron -al menos- 4,017 álbumes y 15,258 sencillos. Es decir, 3.8 sencillos por álbum.
+    </p>
+    <p dir="ltr">
+        Los datos parecen confirmar el patrón mencionado más arriba y, además, muestran que la cantidad de lanzamientos, en general, comienza a acelerar pasado el 2013. Más allá, el aumento sigue siendo significativo hasta el día de hoy. 
+    </p>
+    <p dir="ltr">
+        Una explicación posible es que la masificación de los métodos de grabación caseros y la sencillez para publicar en esta plataforma, o similares -en comparación a la publicación por medio de sellos discográficos-, permiten que cada vez más bandas y artistas puedan producir y lanzar su música.
+    </p>
+
+<!-- sección 4 -->
+    <h4 id="4"> 
+        &lt; La popularidad /&gt; 
+    </h4>
+
+    <p dir="ltr">
+        El siguiente histograma muestra cómo se distribuyen todos los artistas de la muestra según su cantidad de seguidores. Se tomó una escala logarítmica para abarcar todo el rango. Salvo las primeras, las cajas representan medidas equidistantes.
+    </p>
+
+</content>
+    <iframe class="main chart" src="./content/followersHist.html" width="100%" height="80%" 
+        frameBorder="0">
+        Error al cargar el iframe. Tu browser no es compatible.
+    </iframe>
+    <figcaption class="chartfig main"> 
+        Gráfico interactivo. Clickeá las leyendas para mostrar u ocultarlas. Deslizá el mouse sobre las barras para ver información adicional.
+    </figcaption>
+<content>
+ 
+    <p dir="ltr">
+        Se puede observar que el 36.67% de los artistas tienen -a lo sumo- 100 seguidores, el 68.23% -3,468 artistas- no supera los 1,000 seguidores, y el 90.79% -4,615 artistas- no supera los 20,000 seguidores. Solo un 0.75% supera el millón: 38 artistas.
+    </p>
+    <p dir="ltr">
+        A pesar de las apariencias del gráfico (por la escala utilizada), la diferencia entre el 'primer' 90% y el artista con mayor cantidad de seguidores es de más de 14.6 millones. Un dato más a favor de la idea de que sólo unos pocos artistas concentran la mayor parte de la audiencia.  
+    </p>
+    <p dir="ltr">
+        ¿Quiénes son? El ranking al 31 de enero de 2022 es el siguiente:
+    </p>
+    <ul>
+        <li> Paulo Londra: 14,629,973 seguidores. </li>
+        <li> Soda Stereo: 6,272,402 seguidores. </li>
+        <li> Duki: 5,258,435 seguidores. </li>
+        <li> Bizarrap: 4,422,620 seguidores. </li>
+        <li> Cazzu: 4,198,218 seguidores. </li>
+        <li> Tini: 3,775,643 seguidores. </li>
+        <li> Khea: 3,700,828 seguidores. </li>
+        <li> Abel Pintos: 2,937,433 seguidores. </li>
+        <li> Gustavo Cerati: 2,903,882 seguidores. </li>
+        <li> Lit Killah: 2,887,629 seguidores. </li>
+    </ul>
+
+<!-- sección 5 -->
+    <h4 id="5"> 
+        &lt; Los géneros locales /&gt; 
+    </h4>
+
+    <p dir="ltr">
+        El 61% de los artistas en la muestra no tiene ningún género asociado, o no se les ha asignado. Para el resto, unos 1987 artistas, el siguiente gráfico resume cómo se distribuyen:
+    </p>
+
+</content>
+    <iframe class="main chart" src="././content/genresDist.html" width="100%" height="80%" 
+        frameBorder="0">
+        Error al cargar el iframe. Tu browser no es compatible.
+    </iframe>
+    <figcaption class="chartfig main"> 
+        Gráfico interactivo. Clickeá las leyendas para mostrar u ocultarlas. Deslizá el mouse sobre las barras para ver información adicional.
+    </figcaption>
+<content>
+
+    <p dir="ltr">
+        Un mismo artista puede pertenecer a más de un género pero no se considera que pertenezca a más de un subgénero dentro del mismo. 
+    </p>
+    <p dir="ltr">
+        De éstos datos, podemos concluir que la música argentina, como representada por la plataforma, pertenece principalmente al ‘indie’, es decir: se grabó de forma independiente -por fuera de los sellos discográficos-, y oscila -en general- entre el rock, el folclore y el metal. Asimismo, estas son simplificaciones de una diversidad de géneros más grande, como muestran los diversos subgéneros que están asociados a cada uno.
+    </p>
+
+<!-- sección 6 -->
+    <h4 id="6"> 
+        &lt; En detalle /&gt; 
+    </h4>
+
+    <p dir="ltr">
+        Aparte del análisis general, también es interesante detenerse en cada artista en particular. El siguiente widget fue diseñado para permitir la comparación entre la mayoría de ellos de una manera dinámica. En la pestaña ‘acerca’ se explica cómo leer los siguientes gráficos. Estos representan, de manera un poco más técnica, todas aquellas propiedades que describen su música.
+    </p>
+    </br>
+</content>
+    <iframe class="main widget" src="./widget/widget.html?a=1QOmebWGB6FdFtW7Bo3F0W,1bAftSH8umNcGZ0uyV7LMg" 
+        width="100%" height="100%" frameBorder="0">
+        Error al cargar el iframe. Tu browser no es compatible.
+    </iframe>
+    <figcaption class="chartfig main"> 
+        Widget interactivo. Clickeá la barra superior para buscar artistas. Clickeá las pestañas para cambiar gráficos. Deslizá el mouse sobre los mismos para ver información adicional.
+    </figcaption>
+<content>
+
+<!-- sección 7 -->
+    <h4 id="7">
+        &lt; Rakings y curiosidades /&gt;
+    </h4> 
+    <p dir="ltr">
+        Para finalizar, estas son algunas observaciones interesantes respecto a la muestra:
+    </p>
+    <p dir="ltr">
+        Los cinco artistas con más cantidad de álbumes publicados son:
+    </p>
+    <ul>
+        <li> Carlos Gardel: 316 álbumes </li>
+        <li> Astor Piazzolla: 250 álbumes </li>
+        <li> Litto Nebbia: 104 álbumes </li>
+        <li> Atahualpa Yupanqui: 101 álbumes </li>
+        <li> Los Chalchaleros: 97 álbumes </li>
+    </ul>
+    <p dir="ltr">
+        La mayoría de estos álbumes son recopilados o reediciones creados para mercados extranjeros. En algunos casos, también son interpretaciones o tributos realizados por otros músicos. En particular, Astor Piazzolla tiene adjudicados -por ser el compositor- algunos discos de intérpretes japoneses, como ピアソラ:バンドネオン協奏曲 他 ('Piazzolla: Concierto para bandoneón, etc', según google translate) de Ryota Komatsu, y ブエノスアイレスの四季 ('Las cuatro estaciones de Buenos Aires') interpretado por Kazuma Miura.
+    </p>
+    <p dir="ltr">
+        Por su parte, los cinco artistas con más sencillos publicados son:
+    </p>
+    <ul>
+        <li> Ecko: 94 singles </li>
+        <li> Big Deiv: 84 singles </li>
+        <li> Duki: 79 singles </li>
+        <li> Astor Piazzolla: 73 singles </li>
+        <li> Malandro: 71 singles </li>
+    </ul>
+        
+    <p dir="ltr">
+        Los cinco temas más largos son dj sets:
+    </p>
+    <ul>
+        <li> Juan Hansen, Live at Burning Man's Dusty multiverse: 01:32:29 h </li>
+        <li> Juan Hansen, Boiler Room at Crobar club: 01:25:51 h </li>
+        <li> Hernan Cattaneo, Balance Presents Sudbeat - Continuous Mix 1: 01:18:41 h </li>
+        <li> Hernan Cattaneo, Balance Presents Sudbeat - Continuous Mix 2: 01:17:57 h </li>
+        <li> Hernan Cattaneo, Continuous Mix 2 (Mixed by Hernan Cattaneo): 01:17:48 h </li>
+    </ul>
+    <p dir="ltr">
+        Y los cinco álbumes más largos, que no son antologías o compilados post-mortem, son:
+    </p>
+    <ul>
+        <li> El Salmón, Andrés Calamaro: 103 tracks </li>
+        <li> Film Music Songbook, Litto Nebbia: 79 tracks </li>
+        <li> #12 | Doce, Tomi Lebrero: 60 tracks </li>
+        <li> Beatles Songbook, Litto Nebbia: 60 tracks </li>
+        <li> Desde el Alma,	Luis Salinas: 59 tracks </li>
+    </ul>
+
+<!-- sección 8 -->
+    <h4 id="8">
+        &lt; La muestra /&gt;
+    </h4>
+
+    <p dir="ltr">
+        La base de datos recolectada se compone de 5083 artistas argentinos, curados de distintos medios: páginas enciclopédicas como<a href="https://www.rock.com.ar" rel="noreferrer noopener" target="blank" referrerpolicy='no-referrer'>www.rock.com.ar</a>, diversas playlists de diversos géneros de música nacional, y una búsqueda reiterada a los ‘artistas relacionados’ -una información que provee la plataforma- de cada músico ya en la base de datos, y de los ‘artistas invitados’ para cada canción suya. En total, estos artistas acumulan 35,741 álbumes y 239,342 canciones al 31 de enero de 2022, sin contar compilados. 
+    </p>
+    <p dir="ltr">
+        Dado que Spotify no comparte información sobre la procedencia de los músicos, cada uno fue seleccionado bajo algún claro indicio de pertenecer al país -o de tener miembros argentinos en el caso de las bandas-, sea por medio de una búsqueda por afuera de Spotify, o que en su ‘bio’ o ‘géneros’ se destaque su localidad.
+    </p>
+
+<!-- sección 9 -->
+    <h4 id="9">
+        &lt; Explorar el dataset /&gt;
+    </h4> 
+    <p dir="ltr">
+        A pesar del desarrollo de esta nota, todavía quedan muchos más datos por explorar.
+    </p>
+    <p dir="ltr"></p>
+        Todos los archivos utilizados se encuentran subidos en formato csv en este <a href="https://github.com/fedeaar/spotify-data-analysis" rel="noreferrer noopener" target="blank"> repositorio</a>. Allí también está subido todo el proceso de recopilación de datos, armado de las bases de datos, de los datasets y del widget, para explorar.
+    </p>
+
+    <h4></h4>
+
+</content>
+</body>
+
+</html>
