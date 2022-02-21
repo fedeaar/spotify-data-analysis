@@ -7,84 +7,99 @@
     <title> spotify-data-analisis </title>
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" 
-        rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" 
-        crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <!-- CSS -->
     <style type="text/css">
+        body {
+            all: unset;
 
-    body {
-        all: unset;
+            display: flex;
+            font-family: sans-serif;
+            height: 100vh;
+        }
 
-        display: flex;
-        font-family: sans-serif;
-        height: 100vh;
-        width: 100vw;
-    }
+        content {
+            width: 100%;
+            margin: 0 auto;
+            flex-grow: 1;
+        }
 
-    content {
-        width: 100%;
-        margin: 0 auto;
-        flex-grow: 1;
-    }
-    main {
-        display: flex;
-        width: 95%;
-        margin: auto;
-        flex-grow: 1;
-    }
+        main {
+            display: flex;
+            width: 95%;
+            margin: auto;
+            flex-grow: 1;
+        }
 
-    .canvas-container {
-        padding: 1rem 5% 3rem 5%;
-        height: 100vh;
-    }
-    p {
-        text-align: justify;
-        color: rgb(49, 44, 44);
-    }
-    .title {
-        padding: 1rem 0;
-        font-weight: bold;
-    }
+        .canvas-container {
+            padding: 1rem;
+        }
 
-    .chartfig {
-        padding-top: none;
-        padding-bottom: 1em;
-        text-align: center;
-        color: #666666;
-        font-size: small;
-    }
+        p {
+            text-align: justify;
+            color: rgb(49, 44, 44);
+        }
 
+        .title {
+            padding: 1rem 0;
+            font-weight: bold;
+        }
+
+        .chartfig {
+            padding-top: none;
+            padding-bottom: 1em;
+            text-align: center;
+            color: #666666;
+            font-size: small;
+        }
+
+        #carousel {
+            display: flex; 
+            flex-direction:column-reverse;
+        }
+
+        #indicators {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        #indicators-box {
+            margin: unset; 
+            position: relative;
+            padding: 1rem 1rem 2rem 1rem;
+        }
     </style>
 </head>
 
-<body>   
-    <content id = "container">
+<body>
+    <content id="container">
         <div id="carousel" class="carousel carousel-dark slide carousel-fade" data-bs-interval="false">
-            <div class="carousel-indicators">
-                
+            <div id ="indicators-box" class="carousel-indicators">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carousel"
+                    style="box-sizing: border-box; position: relative;" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
                 <div id="indicators"></div>
+                <button class="carousel-control-next" type="button" data-bs-target="#carousel"
+                    style="box-sizing: border-box; position: relative;" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
             <main id="carousel-body" class="carousel-inner"></main>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carousel" style="width: 5%; margin-left: 10px;" 
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carousel" style="width: 5%;  margin-right: 10px;" 
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
         </div>
     </content>
- 
+
 </body>
 
 <!-- bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
 
 <!-- chart js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"
@@ -93,214 +108,224 @@
 
 <script>
 
-// globals
-const features = [
-    { 
-        atributo: "danceability",
-        title: "¿qué tan bailables son los temas de la muestra?"
-    }, 
-    {
-        atributo: "energy",
-        title:  "cuánta energía tiene los temas de la muestra?"
-    },
-    {
-        atributo: "valence",
-        title: "¿Qué tanta positividad transmiten los temas de la muestra?"
-    }, 
-    {   
-        atributo: "acousticness",
-        title: "¿Qué tan acústicos se sienten los temas de la muestra?"
-    }, 
-    {
-        atributo: "liveness",
-        title: "¿Qué tan 'en vivo' se sienten los temas de la muestra?"
-    },
-    { 
-        atributo: "instrumentalness",
-        title: "¿Qué tan instrumentales son los temas de la muestra?" 
-    }, 
-    {
-        atributo: "speechiness",
-        title: "¿qué tan 'hablados' están los temas de la muestra?"
-    },
-    { 
-        atributo: "key",
-        title: "¿En qué tonalidad están los temas de la muestra?"
-    }, 
-    {
-        atributo: "mode",
-        title:  "En qué 'modo' están los temas de la muestra?"
-    },
-    {
-        atributo: "duration_ms",
-        title: "¿Cuánto duran (en segundos) los temas de la muestra?"
-    }, 
-    {   
-        atributo: "tempo",
-        title: "¿En qué tempo (en BPM) están los temas de la muestra?"
-    }, 
-    {
-        atributo: "loudness",
-        title: "¿A qué volumen (en dB) están los temas de la muestra?"
-    }];
+    // globals
+    const features = [
+        {
+            atributo: "danceability",
+            title: "¿qué tan bailables son los temas de la muestra?"
+        },
+        {
+            atributo: "energy",
+            title: "cuánta energía tiene los temas de la muestra?"
+        },
+        {
+            atributo: "valence",
+            title: "¿Qué tanta positividad transmiten los temas de la muestra?"
+        },
+        {
+            atributo: "acousticness",
+            title: "¿Qué tan acústicos se sienten los temas de la muestra?"
+        },
+        {
+            atributo: "liveness",
+            title: "¿Qué tan 'en vivo' se sienten los temas de la muestra?"
+        },
+        {
+            atributo: "instrumentalness",
+            title: "¿Qué tan instrumentales son los temas de la muestra?"
+        },
+        {
+            atributo: "speechiness",
+            title: "¿qué tan 'hablados' están los temas de la muestra?"
+        },
+        {
+            atributo: "key",
+            title: "¿En qué tonalidad están los temas de la muestra?"
+        },
+        {
+            atributo: "mode",
+            title: "En qué 'modo' están los temas de la muestra?"
+        },
+        {
+            atributo: "duration_ms",
+            title: "¿Cuánto duran (en segundos) los temas de la muestra?"
+        },
+        {
+            atributo: "tempo",
+            title: "¿En qué tempo (en BPM) están los temas de la muestra?"
+        },
+        {
+            atributo: "loudness",
+            title: "¿A qué volumen (en dB) están los temas de la muestra?"
+        }];
 
-// formatting
-const nFormatter = new Intl.NumberFormat("en-US");
-const pFormatter = new Intl.NumberFormat("en-US", { style: "percent", maximumFractionDigits: 2 });
+    // formatting
+    const nFormatter = new Intl.NumberFormat("en-US");
+    const pFormatter = new Intl.NumberFormat("en-US", { style: "percent", maximumFractionDigits: 2 });
 
-// carousel
-var SLIDE = 0;
-function createCarouselIndicator(current = false) {
-    // button
-    const btn = document.createElement("button");
-    btn.setAttribute("type", "button");
-    btn.setAttribute("data-bs-target", "#carousel");
-    btn.setAttribute("data-bs-slide-to", SLIDE);
-    btn.setAttribute("aria-label", `slide ${SLIDE++}`);
-    if (current) {
-        btn.setAttribute("aria-current", "true");
-        btn.classList.add("active");
+    // carousel
+    var SLIDE = 0;
+    function createCarouselIndicator(current = false) {
+        // button
+        const btn = document.createElement("button");
+        btn.setAttribute("type", "button");
+        btn.setAttribute("data-bs-target", "#carousel");
+        btn.setAttribute("data-bs-slide-to", SLIDE);
+        btn.setAttribute("aria-label", `slide ${SLIDE++}`);
+        if (current) {
+            btn.setAttribute("aria-current", "true");
+            btn.classList.add("active");
+        }
+        // place
+        document.getElementById("indicators").appendChild(btn);
     }
-    // place
-    document.getElementById("indicators").appendChild(btn);
-}
 
 
-function createCarouselSlide(atributo, current = false) {
-    //slide
-    const slide = document.createElement("div");
-    slide.classList.add("carousel-item");
-    if (current) {
-        slide.classList.add("active");
+    function createCarouselSlide(atributo, current = false) {
+        //slide
+        const slide = document.createElement("div");
+        slide.classList.add("carousel-item");
+        if (current) {
+            slide.classList.add("active");
+        }
+        const slideContainer = document.createElement("div");
+        slide.appendChild(slideContainer);
+        // container
+        const container = document.createElement("div");
+        container.classList.add('canvas-container');
+        slideContainer.appendChild(container);
+        // canvas
+        const canvas = document.createElement("canvas");
+        container.appendChild(canvas);
+        // place
+        document.getElementById("carousel-body").appendChild(slide);
+        return canvas;
     }
-    const slideContainer = document.createElement("div");
-    slide.appendChild(slideContainer);
-    // container
-    const container = document.createElement("div");
-    container.classList.add('canvas-container');
-    slideContainer.appendChild(container);
-    // canvas
-    const canvas = document.createElement("canvas");
-    container.appendChild(canvas);
-    // place
-    document.getElementById("carousel-body").appendChild(slide);
-    return canvas;
-}
 
 
-// Chart
-function createChart(atributo, data, canvas) {
-    // vars
-    const title = atributo.title;
-    const subtitle = `Distrubición del atributo '${atributo.atributo}': 2018 - 2021.`;
-    const xAxis = `atributo '${atributo.atributo}'`;
-    const yAxis = "porcentaje sobre el total";
-    const dataSets = createDatasets(data.data);
-    const callBacks = createTooltipCallbacks(atributo.atributo, data);
-    // chart
-    const chart = new Chart(canvas, {
-        type: "bar",
-        data: { labels: data.labels, datasets: dataSets },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                title: { display: true, text: title },
-                subtitle: { display: true, text: subtitle },
-                tooltip: { callbacks: callBacks }
-            },
-            scales: {
-                x: { title: { display: true, text: xAxis } },
-                y: { ticks: { format: { style: "percent" } },
-                     title: { display: true, text: yAxis }
+    // Chart
+    function createChart(atributo, data, canvas) {
+        // vars
+        const title = atributo.title;
+        const subtitle = `Distrubición del atributo '${atributo.atributo}': 2018 - 2021.`;
+        const xAxis = `atributo '${atributo.atributo}'`;
+        const yAxis = "porcentaje sobre el total";
+        const dataSets = createDatasets(data.data);
+        const callBacks = createTooltipCallbacks(atributo.atributo, data);
+        // chart
+        const chart = new Chart(canvas, {
+            type: "bar",
+            data: { labels: data.labels, datasets: dataSets },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: { display: true, text: title },
+                    subtitle: { display: true, text: subtitle },
+                    tooltip: { callbacks: callBacks }
+                },
+                scales: {
+                    x: { title: { display: true, text: xAxis } },
+                    y: {
+                        ticks: { format: { style: "percent" } },
+                        title: { display: true, text: yAxis }
+                    }
+                },
+                interaction: { intersect: false, mode: "index" },
+                grouped: false
+            }
+        });
+        return chart;
+    }
+
+
+    function createDatasets(data) {
+        const datasets = [];
+        for (const [label, dataset] of Object.entries(data)) {
+            datasets.push({
+                "label": label,
+                "data": dataset.hist_density,
+                "qdata": dataset.hist,
+                "backgroundColor": dataset.color + "80",
+                "borderColor": dataset.color + "40",
+                "borderWidth": 1,
+                "barPercentage": 1,
+                "categoryPercentage": 1,
+                "hidden": dataset.hidden
+            });
+        }
+        return datasets;
+    }
+
+
+    function createTooltipCallbacks(atributo, data) {
+        // title
+        const titleFn = (ctx) => {
+            let label = ctx[0].label;
+            if (atributo !== "key" && atributo !== "mode") {
+                label += ` : ${data.labels[ctx[0].dataIndex + 1]}`
+            }
+            return label;
+        }
+        // label
+        const labelFn = (ctx) => {
+            const label = `${ctx.dataset.label}: ${pFormatter.format(ctx.raw)} ` +
+                `(total: ${nFormatter.format(ctx.dataset.qdata[ctx.dataIndex])})`
+            return label;
+        }
+        // footer
+        const footerFn = (ctx) => {
+            text = []
+            if (atributo !== "key" && atributo !== "mode") {
+                for (c of ctx) {
+                    let sum = 0;
+                    for (let i = 0; i <= c.dataIndex; ++i) {
+                        sum += c.dataset.data[i];
+                    }
+                    sum = Math.min(1, sum); // rounding error
+                    text.push(`acumulado ${c.dataset.label}: ${pFormatter.format(sum)}`);
                 }
-            },
-            interaction: { intersect: false, mode: "index" },
-            grouped: false
+            }
+            return text;
+        }
+        const callbacks = {
+            title: titleFn,
+            label: labelFn,
+            footer: footerFn
+        }
+        return callbacks;
+    }
+
+
+    // init
+    async function load(atributo) {
+        const data = await fetch(`../../../database/generated/histograms/${atributo}.json`);
+        return data.json();
+    }
+
+
+    async function populate() {
+        const atributos = features;
+        for (let i = 0; i < atributos.length; ++i) {
+            const att = atributos[i].atributo;
+            const data = await load(att);
+            const canvas = createCarouselSlide(att, i === 0);
+            createCarouselIndicator(i === 0);
+            createChart(atributos[i], data, canvas);
+        }
+    }
+
+
+    populate();
+
+    const indicators = document.getElementById("indicators-box");
+    const observer = new ResizeObserver(() => {
+        for (const chart of document.getElementsByClassName("canvas-container")) {
+            chart.style.height = document.body.offsetHeight - indicators.offsetHeight;
         }
     });
-    return chart;
-}
-
-
-function createDatasets(data) {
-    const datasets = [];
-    for (const [label, dataset] of Object.entries(data)) {
-        datasets.push({
-            "label": label,
-            "data": dataset.hist_density,
-            "qdata": dataset.hist,
-            "backgroundColor": dataset.color + "80",
-            "borderColor": dataset.color + "40",
-            "borderWidth": 1,
-            "barPercentage": 1,
-            "categoryPercentage": 1,
-            "hidden": dataset.hidden
-        });
-    }
-    return datasets;
-}
-
-
-function createTooltipCallbacks(atributo, data) {
-    // title
-    const titleFn = (ctx) => {
-        let label = ctx[0].label;
-        if (atributo !== "key" && atributo !== "mode") {
-            label += ` : ${data.labels[ctx[0].dataIndex + 1]}`
-        }
-        return label;
-    }
-    // label
-    const labelFn = (ctx) => {
-        const label = `${ctx.dataset.label}: ${pFormatter.format(ctx.raw)} ` + 
-            `(total: ${nFormatter.format(ctx.dataset.qdata[ctx.dataIndex])})`
-        return label;
-    }
-    // footer
-    const footerFn = (ctx) => {
-        text = []
-        if (atributo !== "key" && atributo !== "mode") {
-            for (c of ctx) {
-                let sum = 0;
-                for (let i = 0; i <= c.dataIndex; ++i) {
-                    sum += c.dataset.data[i];
-                }
-                sum = Math.min(1, sum); // rounding error
-                text.push(`acumulado ${c.dataset.label}: ${pFormatter.format(sum)}`);
-            }
-        }
-        return text;
-    }
-    const callbacks = {
-        title: titleFn,
-        label: labelFn,
-        footer: footerFn
-    }
-    return callbacks;
-}
-
-
-// init
-async function load(atributo) {
-    const data = await fetch(`../../../database/generated/histograms/${atributo}.json`);
-    return data.json();
-}
-
-
-async function populate() {
-    const atributos = features;
-    for (let i = 0; i < atributos.length; ++i) {
-        const att = atributos[i].atributo;
-        const data = await load(att);
-        const canvas = createCarouselSlide(att, i === 0);
-        createCarouselIndicator(i === 0);
-        createChart(atributos[i], data, canvas);
-    }
-}
-
-
-populate();
-
+    observer.observe(indicators);
+    observer.observe(document.body);
 </script>
+
 </html>
