@@ -7,77 +7,85 @@
     <title> spotify-data-analisis </title>
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" 
-        rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" 
-        crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <!-- CSS -->
     <style type="text/css">
+        body {
+            all: unset;
 
-    body {
-        all: unset;
+            display: flex;
+            font-family: sans-serif;
+            height: 100vh;
+        }
 
-        display: flex;
-        font-family: sans-serif;
-    }
+        content {
+            width: 100%;
+            margin: 0 auto;
+            flex-grow: 1;
+        }
 
-    content {
-        width: 100%;
-        margin: 0 auto;
-    }
-    main {
-        display: block;
-        width: 95%;
-        max-width: 980px;
-        margin: auto;
-    }
+        main {
+            display: flex;
+            width: 95%;
+            margin: auto;
+            flex-grow: 1;
+        }
 
-    #carousel {
-        width: inherit;
-        scroll-behavior: smooth;
-    }
+        .canvas-container {
+            padding: 1rem;
+        }
 
-    #carousel-body {
-        padding: 0 1rem 3rem 1rem;
-    }
+        p {
+            text-align: justify;
+            color: rgb(49, 44, 44);
+        }
 
-    .canvas-container {
-        height: 70vh;
-        max-height: 500px;
-        margin: 2rem 0;
-    }
-    p {
-        text-align: justify;
-        color: rgb(49, 44, 44);
-    }
-    .title {
-        padding: 1rem 0;
-        font-weight: bold;
-    }
+        .title {
+            padding: 1rem 0;
+            font-weight: bold;
+        }
 
-    .chartfig {
-        padding-top: none;
-        padding-bottom: 1em;
-        text-align: center;
-        color: #666666;
-        font-size: small;
-    }
+        .chartfig {
+            padding-top: none;
+            padding-bottom: 1em;
+            text-align: center;
+            color: #666666;
+            font-size: small;
+        }
 
+        #carousel {
+            display: flex; 
+            flex-direction:column-reverse;
+        }
+
+        #indicators {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        #indicators-box {
+            margin: unset; 
+            position: relative;
+            padding: 1rem 1rem 2rem 1rem;
+        }
     </style>
 </head>
 
-<body>   
-    <content id = "container">
-        <div id="carousel" class="carousel carousel-dark slide carousel-fade" data-bs-wrap="false" data-bs-interval="false">
-            <div class="carousel-indicators">
-                <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev" 
-                    style="background: none; position: relative;">
+<body>
+    <content id="container">
+        <div id="carousel" class="carousel carousel-dark slide carousel-fade" data-bs-interval="false">
+            <div id ="indicators-box" class="carousel-indicators">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carousel"
+                    style="box-sizing: border-box; position: relative;" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
                 <div id="indicators"></div>
-                <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next" 
-                    style="background: none; position: relative;">
+                <button class="carousel-control-next" type="button" data-bs-target="#carousel"
+                    style="box-sizing: border-box; position: relative;" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
@@ -85,12 +93,13 @@
             <main id="carousel-body" class="carousel-inner"></main>
         </div>
     </content>
- 
+
 </body>
 
 <!-- bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
 
 <!-- chart js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"
@@ -99,418 +108,224 @@
 
 <script>
 
-const nFormatter = new Intl.NumberFormat("en-US");
-const pFormatter = new Intl.NumberFormat("en-US", { style: "percent", maximumFractionDigits: 2 });
+    // globals
+    const features = [
+        {
+            atributo: "danceability",
+            title: "¿qué tan bailables son los temas de la muestra?"
+        },
+        {
+            atributo: "energy",
+            title: "cuánta energía tiene los temas de la muestra?"
+        },
+        {
+            atributo: "valence",
+            title: "¿Qué tanta positividad transmiten los temas de la muestra?"
+        },
+        {
+            atributo: "acousticness",
+            title: "¿Qué tan acústicos se sienten los temas de la muestra?"
+        },
+        {
+            atributo: "liveness",
+            title: "¿Qué tan 'en vivo' se sienten los temas de la muestra?"
+        },
+        {
+            atributo: "instrumentalness",
+            title: "¿Qué tan instrumentales son los temas de la muestra?"
+        },
+        {
+            atributo: "speechiness",
+            title: "¿qué tan 'hablados' están los temas de la muestra?"
+        },
+        {
+            atributo: "key",
+            title: "¿En qué tonalidad están los temas de la muestra?"
+        },
+        {
+            atributo: "mode",
+            title: "En qué 'modo' están los temas de la muestra?"
+        },
+        {
+            atributo: "duration_ms",
+            title: "¿Cuánto duran (en segundos) los temas de la muestra?"
+        },
+        {
+            atributo: "tempo",
+            title: "¿En qué tempo (en BPM) están los temas de la muestra?"
+        },
+        {
+            atributo: "loudness",
+            title: "¿A qué volumen (en dB) están los temas de la muestra?"
+        }];
 
-const PARAMS = new URLSearchParams(window.location.search);
-const SQUERY = PARAMS.has('m') ? PARAMS.get('m') : "features"; 
+    // formatting
+    const nFormatter = new Intl.NumberFormat("en-US");
+    const pFormatter = new Intl.NumberFormat("en-US", { style: "percent", maximumFractionDigits: 2 });
 
-const carousel = document.getElementById("carousel");
-carousel.addEventListener("slid.bs.carousel", () => {
-    carousel.scrollIntoView({ behavior:"smooth", block: "start" });
-});
-
-var SLIDE = 0;
-function createCarouselIndicator(current = false) {
-    // button
-    const btn = document.createElement("button");
-    btn.setAttribute("type", "button");
-    btn.setAttribute("data-bs-target", "#carousel");
-    btn.setAttribute("data-bs-slide-to", SLIDE);
-    btn.setAttribute("aria-label", `slide ${SLIDE++}`);
-    if (current) {
-        btn.setAttribute("aria-current", "true");
-        btn.classList.add("active");
+    // carousel
+    var SLIDE = 0;
+    function createCarouselIndicator(current = false) {
+        // button
+        const btn = document.createElement("button");
+        btn.setAttribute("type", "button");
+        btn.setAttribute("data-bs-target", "#carousel");
+        btn.setAttribute("data-bs-slide-to", SLIDE);
+        btn.setAttribute("aria-label", `slide ${SLIDE++}`);
+        if (current) {
+            btn.setAttribute("aria-current", "true");
+            btn.classList.add("active");
+        }
+        // place
+        document.getElementById("indicators").appendChild(btn);
     }
-    // place
-    document.getElementById("indicators").appendChild(btn);
-}
 
 
-function createCarouselSlide(atributo, text, current = false) {
-    //slide
-    const slide = document.createElement("div");
-    slide.classList.add("carousel-item");
-    if (current) {
-        slide.classList.add("active");
+    function createCarouselSlide(atributo, current = false) {
+        //slide
+        const slide = document.createElement("div");
+        slide.classList.add("carousel-item");
+        if (current) {
+            slide.classList.add("active");
+        }
+        const slideContainer = document.createElement("div");
+        slide.appendChild(slideContainer);
+        // container
+        const container = document.createElement("div");
+        container.classList.add('canvas-container');
+        slideContainer.appendChild(container);
+        // canvas
+        const canvas = document.createElement("canvas");
+        container.appendChild(canvas);
+        // place
+        document.getElementById("carousel-body").appendChild(slide);
+        return canvas;
     }
-    const slideContainer = document.createElement("div");
-    slide.appendChild(slideContainer);
-    // title
-    const title = document.createElement("div");
-    title.textContent = text.title,
-    title.classList.add('title');
-    slideContainer.appendChild(title);
-    // header
-    const header = document.createElement("div"); 
-    for (const paragraph of text.header) {
-        const p = document.createElement("p");
-        p.innerHTML = paragraph;
-        header.appendChild(p);
-    }
-    slideContainer.appendChild(header);
-    // container
-    const container = document.createElement("div");
-    container.classList.add('canvas-container');
-    slideContainer.appendChild(container);
-    // canvas
-    const canvas = document.createElement("canvas");
-    container.appendChild(canvas);
-    // caption
-    const caption = document.createElement("figcaption");
-    caption.classList.add("chartfig");
-    caption.innerHTML = `gráfico interactivo. Clickeá las leyendas para ocultarlas. Deslizá el mouse
-        sobre las barras para ver información adicional.`;
-    slideContainer.appendChild(caption);
-    // footer
-    const footer = document.createElement("div"); 
-    for (const paragraph of text.footer) {
-        const p = document.createElement("p");
-        p.innerHTML = paragraph;
-        footer.appendChild(p);
-    }
-    slideContainer.appendChild(footer);
-    // place
-    document.getElementById("carousel-body").appendChild(slide);
-    return canvas;
-}
 
-function createChart(atributo, data, canvas) {
-    // vars
-    const title = `Distrubición ${SQUERY === "medidas" ? "de la medida" : "del atributo"} '${atributo}': 2018 - 2021.`;
-    const xAxis = `${SQUERY === "medidas" ? "medida" : "atributo"} '${atributo}'`;
-    const yAxis = "" //"porcentaje sobre el total";
-    const dataSets = createDatasets(data.data);
-    const callBacks = createTooltipCallbacks(atributo, data);
-    // chart
-    const chart = new Chart(canvas, {
-        type: "bar",
-        data: { labels: data.labels, datasets: dataSets },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                title: { display: true, text: title },
-                tooltip: { callbacks: callBacks }
-            },
-            scales: {
-                x: { title: { display: true, text: xAxis } },
-                y: { ticks: { format: { style: "percent" } },
-                     title: { display: true, text: yAxis }
+
+    // Chart
+    function createChart(atributo, data, canvas) {
+        // vars
+        const title = atributo.title;
+        const subtitle = `Distrubición del atributo '${atributo.atributo}': 2018 - 2021.`;
+        const xAxis = `atributo '${atributo.atributo}'`;
+        const yAxis = "porcentaje sobre el total";
+        const dataSets = createDatasets(data.data);
+        const callBacks = createTooltipCallbacks(atributo.atributo, data);
+        // chart
+        const chart = new Chart(canvas, {
+            type: "bar",
+            data: { labels: data.labels, datasets: dataSets },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: { display: true, text: title },
+                    subtitle: { display: true, text: subtitle },
+                    tooltip: { callbacks: callBacks }
+                },
+                scales: {
+                    x: { title: { display: true, text: xAxis } },
+                    y: {
+                        ticks: { format: { style: "percent" } },
+                        title: { display: true, text: yAxis }
+                    }
+                },
+                interaction: { intersect: false, mode: "index" },
+                grouped: false
+            }
+        });
+        return chart;
+    }
+
+
+    function createDatasets(data) {
+        const datasets = [];
+        for (const [label, dataset] of Object.entries(data)) {
+            datasets.push({
+                "label": label,
+                "data": dataset.hist_density,
+                "qdata": dataset.hist,
+                "backgroundColor": dataset.color + "80",
+                "borderColor": dataset.color + "40",
+                "borderWidth": 1,
+                "barPercentage": 1,
+                "categoryPercentage": 1,
+                "hidden": dataset.hidden
+            });
+        }
+        return datasets;
+    }
+
+
+    function createTooltipCallbacks(atributo, data) {
+        // title
+        const titleFn = (ctx) => {
+            let label = ctx[0].label;
+            if (atributo !== "key" && atributo !== "mode") {
+                label += ` : ${data.labels[ctx[0].dataIndex + 1]}`
+            }
+            return label;
+        }
+        // label
+        const labelFn = (ctx) => {
+            const label = `${ctx.dataset.label}: ${pFormatter.format(ctx.raw)} ` +
+                `(total: ${nFormatter.format(ctx.dataset.qdata[ctx.dataIndex])})`
+            return label;
+        }
+        // footer
+        const footerFn = (ctx) => {
+            text = []
+            if (atributo !== "key" && atributo !== "mode") {
+                for (c of ctx) {
+                    let sum = 0;
+                    for (let i = 0; i <= c.dataIndex; ++i) {
+                        sum += c.dataset.data[i];
+                    }
+                    sum = Math.min(1, sum); // rounding error
+                    text.push(`acumulado ${c.dataset.label}: ${pFormatter.format(sum)}`);
                 }
-            },
-            interaction: { intersect: false, mode: "index" },
-            grouped: false
+            }
+            return text;
+        }
+        const callbacks = {
+            title: titleFn,
+            label: labelFn,
+            footer: footerFn
+        }
+        return callbacks;
+    }
+
+
+    // init
+    async function load(atributo) {
+        const data = await fetch(`../../../database/generated/histograms/${atributo}.json`);
+        return data.json();
+    }
+
+
+    async function populate() {
+        const atributos = features;
+        for (let i = 0; i < atributos.length; ++i) {
+            const att = atributos[i].atributo;
+            const data = await load(att);
+            const canvas = createCarouselSlide(att, i === 0);
+            createCarouselIndicator(i === 0);
+            createChart(atributos[i], data, canvas);
+        }
+    }
+
+
+    populate();
+
+    const indicators = document.getElementById("indicators-box");
+    const observer = new ResizeObserver(() => {
+        for (const chart of document.getElementsByClassName("canvas-container")) {
+            chart.style.height = document.body.offsetHeight - indicators.offsetHeight;
         }
     });
-    return chart;
-}
-
-function createDatasets(data) {
-    const datasets = [];
-    for (const [label, dataset] of Object.entries(data)) {
-        datasets.push({
-            "label": label,
-            "data": dataset.hist_density,
-            "qdata": dataset.hist,
-            "backgroundColor": dataset.color + "80",
-            "borderColor": dataset.color + "40",
-            "borderWidth": 1,
-            "barPercentage": 1,
-            "categoryPercentage": 1,
-            "hidden": dataset.hidden
-        });
-    }
-    return datasets;
-}
-
-function createTooltipCallbacks(atributo, data) {
-    // title
-    const titleFn = (ctx) => {
-        let label = ctx[0].label;
-        if (atributo !== "key" && atributo !== "mode") {
-            label += ` : ${data.labels[ctx[0].dataIndex + 1]}`
-        }
-        return label;
-    }
-    // label
-    const labelFn = (ctx) => {
-        const label = `${ctx.dataset.label}: ${pFormatter.format(ctx.raw)} ` + 
-            `(total: ${nFormatter.format(ctx.dataset.qdata[ctx.dataIndex])})`
-        return label;
-    }
-    // footer
-    const footerFn = (ctx) => {
-        text = []
-        if (atributo !== "key" && atributo !== "mode") {
-            for (c of ctx) {
-                let sum = 0;
-                for (let i = 0; i <= c.dataIndex; ++i) {
-                    sum += c.dataset.data[i];
-                }
-                sum = Math.min(1, sum); // rounding error
-                text.push(`acumulado ${c.dataset.label}: ${pFormatter.format(sum)}`);
-            }
-        }
-        return text;
-    }
-    const callbacks = {
-        title: titleFn,
-        label: labelFn,
-        footer: footerFn
-    }
-    return callbacks;
-}
-
-async function load(atributo) {
-    const data = await fetch(`../../../database/generated/histograms/${atributo}.json`);
-    return data.json();
-}
-
-async function populate() {
-    const atributos = SQUERY === "medidas" ? measures : features;
-    const text = SQUERY === "medidas" ? measures_text : features_text;
-    for (let i = 0; i < atributos.length; ++i) {
-        const atributo = atributos[i];
-        const data = await load(atributo);
-        const canvas = createCarouselSlide(atributo, text[i], i === 0);
-        createCarouselIndicator(i === 0);
-        createChart(atributo, data, canvas);
-    }
-}
-
-const features = ["danceability", "energy", "valence", "acousticness", "liveness", "instrumentalness", "speechiness"];
-const measures = ["key", "mode", "duration_ms", "tempo", "loudness"];
-
-const features_text = [
-    {
-        title: `< bailabilidad >`,
-        header: [
-            `La ‘danceability’ o ‘bailabilidad’ es un predictor sobre qué tan bailable es una canción. 
-        Se calcula -según el manual para desarrolladores- acorde a “una combinación de elementos musicales que incluyen 
-        el tempo, la estabilidad rítmica, la fuerza del beat y la regularidad general del tema”`,
-
-            `En el siguiente gráfico se resume -con una serie de histogramas- la distribución de esta propiedad para el total 
-        de canciones recolectadas en los últimos años: `
-        ],
-        footer: [
-            `En este caso, es interesante notar el pequeño sesgo por encima del 50% que tiene la distribución. 
-        En general, las canciones tienden a inclinarse hacia aquellas propiedades que las hacen más bailables, 
-        aunque solo por un poco. Por otra parte, entre el 2018 y el 2021 se puede notar un aumento del 4.7% en temas 
-        con una 'bailabilidad' predicta mayor al 0.6 (60%).`
-        ]
-    },
-    {
-        title: `< energía >`,
-        header: [
-            `La ‘energía’ o 'energy' de un tema es una métrica que describe la intensidad y actividad que se puede percibir en el
-        mismo. Spotify detalla: “típicamente, una canción energética se siente rápida, fuerte y ruidosa. [...] las cualidades 
-        perceptuales que contribuyen a este atributo incluyen el rango de dinámicas, el volúmen percibido, el timbre, la tasa 
-        de ‘golpe’ de los sonidos (si ocurren repentinamente o de forma gradual), y la entropía general".`,
-
-            `El siguiente gráfico describe la distribución de esta propiedad en el total de canciones recolectadas para
-        cada uno de los últimos cuatro años:`
-        ],
-        footer: [
-            `Se puede notar que hay un sesgo más pronunciado hacia los valores altos de energía. Asimismo, también, hubo
-        un decremento del 8.8% para los valores mayores al 0.7 (70%) entre el 2018 y el 2021. Esta diferencia, conjunto a la
-        variación en la 'bailabilidad', se puede interpretar como un movimiento leve de la música hacia géneros menos energéticos y
-        más bailables. Por ejemplo, de algo más rockero hacia algo más pop.`
-        ]
-    },
-    {
-        title: `< valencia >`,
-        header: [
-            `La ‘valencia’ -'valence'- predice cuánta ‘positividad’ transmite una canción. Valores cercanos a cero son descriptos
-        como “tristes, deprimentes o enojados” y valores cercanos a uno como “felices, alegres o eufóricos”.`,
-
-            `El siguiente gráfico destaca la distribución de ésta propiedad durante los últimos cuatro años:`
-        ],
-        footer: [
-            `En general, parece no haber sesgos hacia ninguno de los dos extremos.`
-        ]
-    },
-    {
-        title: `< acusticidad >`,
-        header: [
-            `Otro atributo a considerar es su ‘acousticness’ o ‘acusticidad’. Esta cualidad representa el grado de
-        confianza que tiene Spotify respecto a si un tema es acústico o no.`,
-
-            `El siguiente gráfico describe la distribución de esta propiedad durante los últimos cuatro años:`
-        ],
-        footer: [
-            `En general, Spotify considera que la mayoría de los temas no son acústicos. Alrededor del 30%
-        de los datos -en cualquiera de estos años- registra entre un 0 (0%) y 0.05 (5%) de confianza.
-        Mientras que alrededor del 65% presenta valores menores o iguales al 0.5 (50%).`,
-
-            `Por otro lado, hubo un crecimiento del 7.5% en la confianza mayor a 0.7 (70%) entre el 2018 y el 2021. 
-        Es decir, hubo un aumento en los temas probablemente -para Spotify- acústicos.`
-        ]
-    },
-    {
-        title: `< instrumentalidad >`,
-        header: [
-            ` La ‘instrumentalidad’ o 'instrumentalness' de un tema predice si un tema tiene, o no, voces. El manual lo define 
-        del siguiente modo:  “Los ‘aah’ y ‘ooh’ se tratan como sonidos instrumentales. El rap y la palabra hablada son claramente 
-        vocales. [...] La intención de esta medida es que los valores mayores a 0.5 representen tracks instrumentales”.`,
-
-            `El siguiente gráfico muestra la distribución de éste predictor -para cada uno de los últimos cuatro años-
-        sobre las canciones de la muestra:`
-        ],
-        footer: [
-            `Spotify predice, con alta probabilidad, que alrededor del 70% de las canciones en estos años no son
-        instrumentales. Es decir, tiene una confianza entre el 0 (0%) y 0.05 (5%) de que lo sean. En cambio, entre
-        el 14.29% (2018) y 19.5% (2020, 2021) de las canciones entran en el umbral de probablemente instrumentales 
-        (más de 50% de confianza). En el 2021, solo el 5.03% de los datos tuvieron una alta confianza de ser instrumentales 
-        (más del 90%).`
-        ]
-    },
-    {
-        title: `< en vivo >`,
-        header: [
-            `El ‘liveness’ o ‘en vivo’ calcula la probabilidad de que haya una audiencia presente en una grabación.
-        En este caso, valores mayores al 0.8 (80%) dan una probabilidad alta de que el tema sea en vivo.`,
-
-            `El siguiente gráfico describe la distribución de éste atributo para los últimos años:`
-        ],
-        footer: [
-            ` Se puede observar que más del 90% de las canciones tienen una probabilidad menor al 50% de
-        ser en vivo.`,
-
-            ` En particular, El 4.12% (2018), 2.6% (2019), 2.98% (2020) y 2.49% (2021) de los datos obtuvieron un valor de
-        ‘liveness’ mayor al 0.8 (80%). Es decir, tuvieron una probabilidad alta de ser en vivo.`
-        ]
-    },
-    {
-        title: `< habladuría >`,
-        header: [
-            `La ‘speechiness’ o ‘habladuría’ mide qué tan presente está la palabra hablada en una grabación. La
-        documentación define cómo interpretarla: “Valores por encima de 0.66 describen tracks que están probablemente
-        compuestos en su totalidad de la palabra hablada. Valores entre 0.33 y 0.66 describen tracks que pueden contener 
-        tanto música como palabra -tanto en capas como de forma seccionada-, e incluye a la música rap. Valores por debajo 
-        del 0.33 probablemente representan música y otros tipos de tracks sin palabra hablada."`,
-
-            `El siguiente gráfico describe la distribución de éste atributo para los últimos cuatro años:`
-        ],
-        footer: [
-            `Siguiendo la interpretación provista por el manual, más del 97% de las canciones fueron
-        probablemente música o tracks sin palabra hablada -con más del 80% teniendo una alta probabilidad de
-        pertenecer a esta categoría-. Menos del 2% fue probablemente una mezcla entre palabra y música y, en promedio, solo el
-        0.32% fue probablemente palabra hablada sin música.`
-        ]
-    }
-]
-
-const measures_text = [
-    {
-        title:`< tonalidad >`,
-        header: [
-            `La ‘tonalidad’ o 'key' clasifica a las canciones de acuerdo a la notación de clases del 
-            <a href="https://es.wikipedia.org/wiki/Temperamento_igual" rel="noreferrer noopener" target="blank">temperamento igual</a>. Estas
-            son: do (C) -
-            do# - re (D) - re# - mi (E) - fa (F) - fa# - sol (G) - sol# - la (A) - la# - si (B), y sus enarmonías.
-            Internamente,
-            Spotify las codifica con valores enteros entre 0 y 11. En general, la tonalidad se suele referir al contexto en el que se enmarcan los
-            tonos
-            -las frecuencias de sonido- dentro de una canción, o sección. Tanto en el sentido del reposo -qué sonidos
-            se sienten
-            'resolutivos'-, como en el sentido de la escala utilizada -qué tonos se utilizan para la composición-.`,
-            
-            `El siguiente gráfico describe la distribución de las tonalidades para
-            los últimos cuatro años. Las mismas fueron ordenadas de acuerdo al <a href="https://es.wikipedia.org/wiki/C%C3%ADrculo_de_quintas"  rel="noreferrer noopener" target="blank">círculo de quintas</a>, ya que este ordenamiento
-            presenta la
-            relación entre tonos consecutivos lo más estrecha posible.`
-        ],
-        footer: [
-            `Para el análisis de este gráfico, es importante considerar que el círculo de quintas es justamente eso: un
-            círculo. Por
-            lo que a A#Bb (La sostenido) le sigue F (Fa). En consecuencia, se podria 
-            correr
-            el gráfico para situar la punta de su campana en el centro. Es decir, el gráfico está sesgado solo por su
-            ordenamiento.
-            Dada esta salvedad, sigue una distribución en apariencias normal, y sus colas son las tonalidades alteradas.`,
-            `Una interpretación común al respecto es que las tonalidades alteradas son más difíciles de tocar en varios
-            instrumentos.
-            En particular, en la guitarra. Que D#Eb porte el valor mínimo refleja esta idea, ya que es la tonalidad más
-            alejada a la
-            afinación estándar del instrumento (Mi).`
-        ]
-    },
-    {
-        title:`< modo >`,
-        header: [
-            `Desde una mirada estructural, y en relación a la tonalidad, el 'modo' o 'mode' hace referencia a grupos de tonos
-            alternativos
-            -escalas- que se usan para componer una misma tonalidad. Spotify considera solo dos modalidades: mayor y
-            menor, pero hay
-            más. El siguiente gráfico muestra su distribución para los últimos cuatro años.`
-        ],
-        footer: [
-            `En general, se mantuvo una relación de alrededor de '3 cada 2' a favor del modo mayor.`
-        ]
-    },
-    {
-        title:`< duración >`,
-        header: [
-            `La medida 'duración' -‘duration_ms’- se refiere a la duración de una canción en milisegundos. El siguiente gráfico
-            describe la
-            distribución de esta medida -en intervalos de a 5 segundos- para los últimos cuatro años. Se tomó el rango
-            de 0 a
-            600 segundos (10 minutos), pero hubo algunos tracks que excedieron este límite.`   
-        ],
-        footer: [
-            `El intervalo 120s (2 minutos) a 300s (5 minutos) representa el grueso de los datos para los cuatro años,
-            abarcando el
-            82.6% para el 2018 y 2019, 82.3% para el 2020 y 83.03% para el 2021. En estos años, el promedio fue de:
-            220.26s
-            - aprox 3:40 min- (2018), 214.68s - aprox 3:34 min- (2019), 218.6s - aprox 3:38 min- (2020) y 212.15s -
-            aprox 3:32 min- (2021).`,
-
-            `Se puede notar también un decremento del sesgo de la distribución entre el 2018 y el 2021. Es decir, los
-            temas duraron
-            relativamente menos en el 2021.`
-        ]
-    },
-    {
-        title:`< tempo >`,
-        header: [
-            `El atributo ‘tempo’ describe el tempo promedio del tema en BPM (beats per minute -pulsos por minuto-). Esta medida se
-            puede
-            pensar como la velocidad de la pieza en relación a la duración de cada pulso, donde un pulso es 
-            aquello que provee la regularidad y subdivisión temporal más básica a una canción. El gráfico muestra la
-            distribución de
-            ésta medida para los últimos cuatro años. El histograma está dividido en intervalos de a 5 BPM, en un rango
-            de 40 a 220
-            BPM.`
-        ],
-        footer: [
-            `Los picos corresponden a los tempos más comunes: entre 90 y 100, 120 y 170 BPM.`
-        ]
-    },
-    {
-        title:`< volumen >`,
-        header: [
-            `El último atributo a considerar es el volúmen general del tema -su 'loudness'-, en decibeles. El siguiente histograma
-            describe su
-            distribución para los últimos cuatro años en el rango -36 a 6 db.`
-        ],
-        footer: []
-    }
-]
-
-populate();
-
-const sendPostMessage = () => {
-    let height = document.getElementById('container').scrollHeight;
-    let key = `frameHeight${SQUERY === "medidas" ? "medidas" : "features"}`
-    window.parent.postMessage({
-        [key]: height
-    }, '*');
-}
-
-window.onload = () => sendPostMessage();
-const observer = new ResizeObserver(sendPostMessage);
-observer.observe(document.body);
-
+    observer.observe(indicators);
+    observer.observe(document.body);
 </script>
+
 </html>
