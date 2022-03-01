@@ -1,5 +1,6 @@
 artistas_db = 'database/artistas.db'
 analisis_db = 'database/analisis.db'
+invited_db = 'database/invited.db'
 artistas_json = 'database/artistas.json'
 generated = 'database/generated'
 artistas_dataset = generated + '/datasets'
