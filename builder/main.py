@@ -17,9 +17,7 @@ import builder.builders.FridaySeriesBuilder as fridaySB
 import builder.builders.invitedArtistsBuilder as invitedSB
 
 if __name__ == '__main__':
-    releaseSB.build(grouping='1Y')
-    fridaySB.build(grouping='1Y')
-    invitedSB.build(grouping='1Y')
+    histogramB.build_duration()
     pass
 
 
