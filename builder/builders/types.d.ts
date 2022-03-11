@@ -57,6 +57,15 @@ declare interface ReleaseSeries {
     labels: string[]
 }
 
+declare interface FridaySeries {
+    releases: number[],
+    labels: string[]
+}
+
+declare interface InvitedSeries {
+    releases: number[],
+    labels: string[]
+}
 
 declare interface TonalitySeries {
     "labels": string[],

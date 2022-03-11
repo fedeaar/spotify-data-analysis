@@ -83,10 +83,10 @@ def build_duration(path: str = PATH):
     bins = [x for x in range(0, 605000, 5000)]
     build('duration_ms',
           bins=bins,
-          start_y=2018, stop_y=2022,
+          start_y=2013, stop_y=2022,
           labels=[str(round(x/1000)) + 's' for x in bins],
-          colors=["#0000ff", "#ff00ff", "#ffff00", "#ff0000"],
-          hidden=[False, True, True, False],
+          colors=["#0000ff", "#ff00ff", "#ffff00", "#ff0000", "#0000ff", "#ff00ff", "#ffff00", "#ff0000", "#ff0000"],
+          hidden=[False, True, True, True, True, True, True, True, False],
           path=path)
 
 

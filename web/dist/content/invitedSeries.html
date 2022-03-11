@@ -58,7 +58,7 @@
                 plugins: {
                     title: {
                         display: true,
-                        text: `cantidad de singles y albumes lanzados, por año: 2013 - 2021`,
+                        text: `porcentaje de lanzamientos con al menos un artista invitado, por año: 2013 - 2021`,
                     }
                 },
                 scales: {
@@ -73,7 +73,12 @@
                         stacked: true,
                         title: {
                             display: true,
-                            text: 'lanzamientos',
+                            text: 'porcentaje sobre el total'
+                        },
+                        ticks:{
+                            format: {
+                                style: 'percent'
+                            }
                         }
                     }
                 },
@@ -90,8 +95,7 @@
     function datasets(data) {
 
         const datasets = [];
-        datasets.push(dataset("albumes", data.albumes, "#0000ff"));
-        datasets.push(dataset("singles", data.singles, "#ff0000"));
+        datasets.push(dataset("lanzamientos", data.releases, "#ff0000"));
         return datasets;
     }
 
@@ -114,12 +118,12 @@
     async function load() {
 
         try {
-            const response = await fetch(`../../../database/generated/releaseSeries.json`);
+            const response = await fetch(`../../../database/generated/invitedSeries.json`);
             constructChart(await response.json());
         }
         catch {
             const errorElement = document.createElement('div');
-            errorElement.textContent = `Error en la carga de datos. No se encontró releaseSeries.json.`
+            errorElement.textContent = `Error en la carga de datos. No se encontró invitedSeries.json.`
             const main = document.getElementById('main');
             main.insertBefore(errorElement, main.firstChild);
         }

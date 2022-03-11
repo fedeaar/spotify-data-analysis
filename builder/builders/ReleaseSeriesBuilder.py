@@ -10,7 +10,7 @@ DBAR = dbAR.ArtistasDB()
 PATH = paths.generated
 
 
-def build(path: str = PATH, start='2000-01-01', stop='2021-12-31', grouping='1M', precision='day') -> None:
+def build(path: str = PATH, start='2013-01-01', stop='2021-12-31', grouping='1M', precision='day') -> None:
     series = {
         "albumes":  _generate_data(start, stop, 'album', grouping, precision),
         "singles": _generate_data(start, stop, 'single', grouping, precision),

@@ -7,20 +7,19 @@ import builder.utils.Helper as helper
 import builder.utils.Stats as stats
 import builder.paths as paths
 
-import builder.builders.DatasetBuilder as datasetBuilder
-import builder.builders.GenresBuilder as genresBuilder
-import builder.builders.HistogramBuilder as histogramBuilder
-import builder.builders.PopularityBuilder as popularityBuilder
-import builder.builders.ReleaseSeriesBuilder as releaseSeriesBuilder
-import builder.builders.TonalitySeries as tonalitySeriesBuilder
-
-import sqlite3 as sq
+import builder.builders.DatasetBuilder as datasetB
+import builder.builders.GenresBuilder as genresB
+import builder.builders.HistogramBuilder as histogramB
+import builder.builders.PopularityBuilder as popularityB
+import builder.builders.ReleaseSeriesBuilder as releaseSB
+import builder.builders.TonalitySeries as tonalitySB
+import builder.builders.FridaySeriesBuilder as fridaySB
+import builder.builders.invitedArtistsBuilder as invitedSB
 
 if __name__ == '__main__':
-    x = dbIN.InvitedDB()
-    y = dbAR.ArtistasDB()
-    z = y.query("SELECT artist_id, album_id FROM albums WHERE release_date >= '2013' AND release_date < '2022';")
-    x.batch_create(z)
+    releaseSB.build(grouping='1Y')
+    fridaySB.build(grouping='1Y')
+    invitedSB.build(grouping='1Y')
     pass
 
 

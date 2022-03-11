@@ -48,7 +48,7 @@ def to_datetime(dataframe, date_column='release_date', date_format='%Y-%m-%d') -
     dataframe.set_index(date_column)
 
 
-def date_range(start, stop, grouping='1M', strformat="%Y-%m") -> [str]:
+def date_range(start, stop, grouping='1M', strformat=None) -> [str]:
     """ wrapper for pandas' date_range().strftime().tolist()
     :param start: the starting date
     :param stop: the end date
@@ -56,6 +56,13 @@ def date_range(start, stop, grouping='1M', strformat="%Y-%m") -> [str]:
     :param strformat: the resulting dates' format.
     :return: a date range.
     """
+    if not strformat:
+        if grouping == '1M':
+            strformat = "%Y-%m"
+        elif grouping == '1Y':
+            strformat = "%Y"
+        else:
+            raise ValueError("no strformat deduced for grouping type. Set param. strformat directly.")
     return pd.date_range(start, stop, freq=f'{grouping}').strftime(strformat).tolist()
 
 
