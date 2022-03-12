@@ -313,17 +313,19 @@
             createCarouselIndicator(i === 0);
             createChart(atributos[i], data, canvas);
         }
+        canvasSize();
     }
 
 
     populate();
 
-    const indicators = document.getElementById("indicators-box");
-    const observer = new ResizeObserver(() => {
+    function canvasSize() {
         for (const chart of document.getElementsByClassName("canvas-container")) {
             chart.style.height = document.body.offsetHeight - indicators.offsetHeight;
         }
-    });
+    }
+    const indicators = document.getElementById("indicators-box");
+    const observer = new ResizeObserver(canvasSize);
     observer.observe(indicators);
     observer.observe(document.body);
 </script>
